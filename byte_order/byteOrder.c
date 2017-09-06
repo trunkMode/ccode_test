@@ -4,19 +4,19 @@
 int main()
 {
 	struct {
-		int a;	//4
-		char b;	//1 + 3
-		double c;//8
-		short d; //2 + 2
-		float e; //4 
-		int f;	//4
-		char g; //1
+		int a;	    //4
+		char b;	    //1 + 3
+		double c;   //8
+		short d;    //2 + 2
+		float e;    //4 
+		int f;	    //4
+		char g;     //1
 	}A;
 
 	struct {
-		char a;//1 + 1
-		short b; // 2
-		char c; //1 + 1
+		char a;     //1 + 1
+		short b;    // 2
+		char c;     //1 + 1
 	}B;
 	char array[] = {1,2,3,4,5};
 	char *p = array;
