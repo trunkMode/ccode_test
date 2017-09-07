@@ -38,5 +38,6 @@ int main()
 	int range = atoi("123");
 	printf("range = %d\n", range);	
 	range = atoi(NULL);
-	printf("range = %d\n", range);	
+	printf("range = %d\n", range);
+	/*hgr update */	
 }
