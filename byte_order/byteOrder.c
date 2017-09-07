@@ -42,5 +42,5 @@ int main()
 	printf("range = %d\n", range);
 	/*hgr update */	
 	printf("range = %d\n", range);	
-	/*alan changed*/
+	/*alan changed =====*/
 }
