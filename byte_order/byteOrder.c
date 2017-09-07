@@ -18,6 +18,7 @@ int main()
 		short b;    // 2
 		char c;     //1 + 1
 	}B;
+
 	char array[] = {1,2,3,4,5};
 	char *p = array;
 	printf("sizeof(A.a) = %d\n", sizeof(A.a));
@@ -40,4 +41,6 @@ int main()
 	range = atoi(NULL);
 	printf("range = %d\n", range);
 	/*hgr update */	
+	printf("range = %d\n", range);	
+	/*alan changed*/
 }
