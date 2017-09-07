@@ -6,17 +6,19 @@ int main()
 	int ret,fd;
 	int buf[32] = {0};
 	fd_set rdset;
-
+	struct timeval tv;
+	
 	unlink(FIFO_PATH);
 
 	if (mkfifo(FIFO_PATH, 0777) < 0)
 		printf("failed to create fifo\n");
 //	fd = open(FIFO_PATH, O_RDWR|O_NONBLOCK);//O_NONBLOC
 	fd = open(FIFO_PATH, O_RDWR);
-	if (ret < 0)
+	if (ret < 0) {
 		printf("Failed to open fifo\n");
-printf("open fifo is ok in read \n");
-	struct timeval tv;
+	}
+		
+    printf("open fifo is ok in read \n");
 
 	while (1)
 	{
