@@ -10,18 +10,20 @@ int main()
 	
 	unlink(FIFO_PATH);
 
-	if (mkfifo(FIFO_PATH, 0777) < 0)
+	if (mkfifo(FIFO_PATH, 0777) < 0) {
 		printf("failed to create fifo\n");
+	}
 //	fd = open(FIFO_PATH, O_RDWR|O_NONBLOCK);//O_NONBLOC
 	fd = open(FIFO_PATH, O_RDWR);
+
 	if (ret < 0) {
 		printf("Failed to open fifo\n");
 	}
 		
     printf("open fifo is ok in read \n");
 
-	while (1)
-	{
+
+	while (1) {
 #if 1
 		tv.tv_usec = 0;
 		tv.tv_sec = 60;
