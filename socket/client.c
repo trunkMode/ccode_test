@@ -155,36 +155,39 @@ int main(int argc, char **argv)
 	printf("@client@ start to send data to server after 5s ..@@@@@@@@@@@@@@@@@.\n");
 //	sleep(1);
 	while (1) {
-	memset(sendbuf, 0x00, sizeof(sendbuf));
-    memset(sendbuf, 0xaa, sizeof(sendbuf) - 1);
-	sendlen = sizeof(sendbuf);
-	retlen = 0;
-	leftlen = sendlen;
-	ptr = sendbuf;
-	int test = 3;
-	int total_len = 0;
-//sleep(1);
-	while(leftlen) {
-	//	printf("@client@ sending a first string...\n");
-		///retlen = send(skfd, ptr, sendlen, 0);
-        retlen = write(skfd, ptr, sendlen);
-	///	printf("@client@ sending completed....retlen= %d.......@@@@@@@@@@@@@@@@@@\n", retlen);
-// 		sleep(1);
-		if(retlen < 0) {
-			perror("@client@ send error:");
-			printf("@client@ errno = %d\n", errno);
-			if(errno == EINTR)
-				retlen = 0;
-			else
-				exit(1);
-		} else if (retlen == 0) {
-			printf("@client@  connection has been closed by server\n");
-			exit(0);
-		}
-		total_len += retlen;
-		leftlen -= retlen;
-		//ptr += retlen;
-	}
+	    memset(sendbuf, 0x00, sizeof(sendbuf));
+        memset(sendbuf, 0xaa, sizeof(sendbuf) - 1);
+	    sendlen = sizeof(sendbuf);
+	    retlen = 0;
+	    leftlen = sendlen;
+	    ptr = sendbuf;
+	    int test = 3;
+	    int total_len = 0;
+    //sleep(1);
+	    while(leftlen) {
+	    //	printf("@client@ sending a first string...\n");
+		    ///retlen = send(skfd, ptr, sendlen, 0);
+            retlen = write(skfd, ptr, sendlen);
+	    ///	printf("@client@ sending completed....retlen= %d.......@@@@@@@@@@@@@@@@@@\n", retlen);
+    // 		sleep(1);
+		    if(retlen < 0)
+		    {
+			    perror("@client@ send error:");
+			    printf("@client@ errno = %d\n", errno);
+			    if(errno == EINTR)
+				    retlen = 0;
+			    else
+				    exit(1);
+		    }
+		    else if (retlen == 0)
+		    {
+			    printf("@client@  connection has been closed by server\n");
+			    exit(0);
+		    }
+		    total_len += retlen;
+		    leftlen -= retlen;
+		    //ptr += retlen;
+	    }
 	}
 	//printf("@client@ connection will be closed in 1s....\n");
 	sleep(5);
