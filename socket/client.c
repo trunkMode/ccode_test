@@ -25,14 +25,13 @@
 static void SignalHandler(int nSigno)  
 {  
     signal(nSigno, SignalHandler);  
-    switch(nSigno)  
-    {  
-    case SIGPIPE:  
-        printf("Process will not exit\n");  
-        break;  
-    default:  
-        printf("%d signal unregister\n", nSigno);  
-        break;  
+    switch(nSigno)  {  
+        case SIGPIPE:  
+            printf("Process will not exit\n");  
+            break;  
+        default:  
+            printf("%d signal unregister\n", nSigno);  
+            break;  
     }  
 }  
   
@@ -62,16 +61,14 @@ int main(int argc, char **argv)
     server_addr.sin_port = htons(SERVER_PORT);
 
 	/*create socket*/
-    if((skfd = socket(AF_INET, SOCK_STREAM, 0)) < 0)  
-    {  
+    if ((skfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {  
         printf("##@client@ create socket failed");
         exit(1);  
     }
      
     ts1 = time(NULL);
 	/*connecting to server '10.103.12.202'*/
-    if((ret = connect(skfd, (struct sockaddr *)&server_addr, sizeof(server_addr))) < 0)
-    {  
+    if((ret = connect(skfd, (struct sockaddr *)&server_addr, sizeof(server_addr))) < 0) {  
 		printf("##error = %d\n", errno);
         printf("\n@client@ connect socket failed@, ret = %d\n", ret);
 		perror("error :");
