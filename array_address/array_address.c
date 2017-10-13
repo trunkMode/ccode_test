@@ -10,4 +10,5 @@ int main()
 	printf("p = %p, q = %p");
 	
 	printf("alan update\n");
+	printf("alan add 20171013\n");
 }
