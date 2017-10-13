@@ -7,4 +7,6 @@ int main()
 	char *q = &p;
 	printf("&a = %p, &a[0] = %p, &&a[0] = %p\n", &a, &a[0], &&a[0]]);
 	printf("p = %p, q = %p");
+
+	printf("trunk add A 20171013\n");
 }
