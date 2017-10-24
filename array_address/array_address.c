@@ -11,4 +11,6 @@ int main()
 	
 	printf("alan update\n");
 	printf("alan add 20171013\n");
+	printf("alan add 20171016_1:31\n");
+	printf("alan add \n");
 }
