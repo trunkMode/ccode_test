@@ -1,0 +1,145 @@
+SonicWave200 board data match :
+
+==================================GB=======================
+ loadWlanModules 1314:  [echo 0 > /proc/irq/140/smp_affinity_list] (0)
+
+ loadWlanModules 1315:  [echo 0 > /proc/irq/142/smp_affinity_list] (0)
+ath10k_pci 0000:01:00.0: board_file api 1 bmi_id N/A crc32 546cca0d
+ath10k_ahb a800000.wifi: found calibration file ath10k/cal-ahb-a800000.wifi.bin
+ath10k_ahb a000000.wifi: found calibration file ath10k/cal-ahb-a000000.wifi.bin
+ath10k_ahb a000000.wifi: qca4019 hw1.0 target 0x01000000 chip_id 0x003900ff sub 0000:0000
+ath10k_ahb a000000.wifi: kconfig debug 0 debugfs 1 tracing 0 dfs 1 testmode 0
+ath10k_ahb a000000.wifi: firmware ver 10.4-3.5.3-00053 api 5 features no-p2p,mfp,peer-flow-ctrl,btcoex-param,allows-mesh-bcast crc32 7afd94b8
+
+[BD INFO]: country = GB, unit 1, ant_idx[5g] 0, ant_idx[2g] 0, radio_unit 3, rd 0x30
+
+unit = 1, radio_name[1] = 2G
+unit = 1, radio_name[1] = 2G
+rd_ctl_ok = 0, rd_matched= 0, specific_matched = 0
+unit = 1, radio_name[1] = 2G
+rd_ctl_ok = 1, rd_matched= 1, specific_matched = 0
+matched_cnt = 1
+unit = 1, radio_name[1] = 2G
+rd_ctl_ok = 0, rd_matched= 0, specific_matched = 0
+ath10k_ahb a000000.wifi: board data use boardData_IPQ4019_DK04_2G_ant_omini_default_indoor_sp231c_US_JP_etsi_000.bin 
+ath10k_ahb a000000.wifi: board_file api 2 bmi_id 0:0 crc32 9a9f719e
+ath10k_ahb a800000.wifi: qca4019 hw1.0 target 0x01000000 chip_id 0x003900ff sub 0000:0000
+ath10k_ahb a800000.wifi: kconfig debug 0 debugfs 1 tracing 0 dfs 1 testmode 0
+ath10k_ahb a800000.wifi: firmware ver 10.4-3.5.3-00053 api 5 features no-p2p,mfp,peer-flow-ctrl,btcoex-param,allows-mesh-bcast crc32 7afd94b8
+
+[BD INFO]: country = GB, unit 0, ant_idx[5g] 0, ant_idx[2g] 0, radio_unit 3, rd 0x30
+
+unit = 0, radio_name[0] = 5G
+unit = 0, radio_name[0] = 5G
+unit = 0, radio_name[0] = 5G
+unit = 0, radio_name[0] = 5G
+rd_ctl_ok = 1, rd_matched= 1, specific_matched = 0
+matched_cnt = 1
+unit = 0, radio_name[0] = 5G
+unit = 0, radio_name[0] = 5G
+rd_ctl_ok = 0, rd_matched= 0, specific_matched = 0
+unit = 0, radio_name[0] = 5G
+rd_ctl_ok = 0, rd_matched= 0, specific_matched = 0
+unit = 0, radio_name[0] = 5G
+rd_ctl_ok = 0, rd_matched= 0, specific_matched = 0
+unit = 0, radio_name[0] = 5G
+rd_ctl_ok = 1, rd_matched= 1, specific_matched = 0
+matched_cnt = 2
+
+ matched 2 board files at first round: 
+boardData_IPQ4019_DK04_5G_ant_omini_default_indoor_sp231c_etsi_000.bin
+boardData_IPQ4019_DK04_5G_ant_omini_default_indoor_sp231c_sp231o_etsi_000.bin
+>> i = 0
+
+ select the default one: boardData_IPQ4019_DK04_5G_ant_omini_default_indoor_sp231c_etsi_000.bin 
+ath10k_ahb a800000.wifi: board data use boardData_IPQ4019_DK04_5G_ant_omini_default_indoor_sp231c_etsi_000.bin 
+ath10k_ahb a800000.wifi: board_file api 2 bmi_id 0:0 crc32 9cd5ad19
+
+=====================================================CN================================
+ath10k_ahb a000000.wifi: found calibration file ath10k/cal-ahb-a000000.wifi.bin
+ath10k_ahb a000000.wifi: qca4019 hw1.0 target 0x01000000 chip_id 0x003900ff sub 0000:0000
+ath10k_ahb a800000.wifi: found calibration file ath10k/cal-ahb-a800000.wifi.bin
+ath10k_ahb a800000.wifi: qca4019 hw1.0 target 0x01000000 chip_id 0x003900ff sub 0000:0000
+ath10k_ahb a800000.wifi: kconfig debug 0 debugfs 1 tracing 0 dfs 1 testmode 0
+ath10k_ahb a800000.wifi: firmware ver 10.4-3.5.3-00053 api 5 features no-p2p,mfp,peer-flow-ctrl,btcoex-param,allows-mesh-bcast crc32 7afd94b8
+ath10k_pci 0000:01:00.0: board_file api 1 bmi_id N/A crc32 546cca0d
+
+[BD INFO]: country = CN, unit 0, ant_idx[5g] 0, ant_idx[2g] 0, radio_unit 3, rd 0xff
+
+rd_ctl_ok = 0, rd_matched= 1, specific_matched = 0
+rd_ctl_ok = 1, rd_matched= 0, specific_matched = 0
+matched_cnt = 1
+rd_ctl_ok = 1, rd_matched= 0, specific_matched = 0
+matched_cnt = 2
+rd_ctl_ok = 1, rd_matched= 0, specific_matched = 0
+matched_cnt = 3
+rd_ctl_ok = 0, rd_matched= 1, specific_matched = 0
+
+ matched 3 board files at first round: 
+boardData_IPQ4019_DK04_5G_ant_omini_default_indoor_sp231c_US_JP_000.bin
+boardData_IPQ4019_DK04_5G_ant_omini_default_indoor_sp231c_CA_AU_000.bin
+boardData_IPQ4019_DK04_5G_ant_omini_default_indoor_sp231c_sp231o_000.bin
+>> i = 2
+
+ select the default one: boardData_IPQ4019_DK04_5G_ant_omini_default_indoor_sp231c_sp231o_000.bin 
+ath10k_ahb a800000.wifi: board data use boardData_IPQ4019_DK04_5G_ant_omini_default_indoor_sp231c_sp231o_000.bin 
+ath10k_ahb a800000.wifi: board_file api 2 bmi_id 0:0 crc32 2e704024
+ath10k_ahb a000000.wifi: kconfig debug 0 debugfs 1 tracing 0 dfs 1 testmode 0
+ath10k_ahb a000000.wifi: firmware ver 10.4-3.5.3-00053 api 5 features no-p2p,mfp,peer-flow-ctrl,btcoex-param,allows-mesh-bcast crc32 7afd94b8
+
+[BD INFO]: country = CN, unit 1, ant_idx[5g] 0, ant_idx[2g] 0, radio_unit 3, rd 0xff
+
+rd_ctl_ok = 1, rd_matched= 0, specific_matched = 0
+matched_cnt = 1
+rd_ctl_ok = 0, rd_matched= 1, specific_matched = 0
+rd_ctl_ok = 1, rd_matched= 0, specific_matched = 0
+matched_cnt = 2
+
+ matched 2 board files at first round: 
+boardData_IPQ4019_DK04_2G_ant_omini_default_indoor_sp231c_CA_AU_000.bin
+boardData_IPQ4019_DK04_2G_ant_omini_default_indoor_sp231c_sp231o_sp224w_000.bin
+>> i = 1
+
+ select the default one: boardData_IPQ4019_DK04_2G_ant_omini_default_indoor_sp231c_sp231o_sp224w_000.bin 
+ath10k_ahb a000000.wifi: board data use boardData_IPQ4019_DK04_2G_ant_omini_default_indoor_sp231c_sp231o_sp224w_000.bin 
+ath10k_ahb a000000.wifi: board_file api 2 bmi_id 0:0 crc32 24fca46e
+ath10k_pci 0000:01:00.0: htt-ver 2.1 wmi-op 5 htt-op 2 cal file max-sta 128 raw 0 hwcrypto 1
+ath10k_ahb a800000.wifi: htt-ver 2.2 wmi-op 6 htt-op 4 cal file max-sta 128 raw 0 hwcrypto 1
+ath10k_ahb a000000.wifi: htt-ver 2.2 wmi-op 6 htt-op 4 cal file max-sta 128 raw 0 hwcrypto 1
+
+
+===================US==================
+
+
+ loadWlanModules 1315:  [echo 0 > /proc/irq/142/smp_affinity_list] (0)
+ath10k_ahb a000000.wifi: found calibration file ath10k/cal-ahb-a000000.wifi.bin
+ath10k_ahb a000000.wifi: qca4019 hw1.0 target 0x01000000 chip_id 0x003900ff sub 0000:0000
+ath10k_ahb a000000.wifi: kconfig debug 0 debugfs 1 tracing 0 dfs 1 testmode 0
+ath10k_ahb a800000.wifi: found calibration file ath10k/cal-ahb-a800000.wifi.bin
+ath10k_ahb a800000.wifi: qca4019 hw1.0 target 0x01000000 chip_id 0x003900ff sub 0000:0000
+ath10k_ahb a800000.wifi: kconfig debug 0 debugfs 1 tracing 0 dfs 1 testmode 0
+ath10k_ahb a800000.wifi: firmware ver 10.4-3.5.3-00053 api 5 features no-p2p,mfp,peer-flow-ctrl,btcoex-param,allows-mesh-bcast crc32 7afd94b8
+ath10k_pci 0000:01:00.0: board_file api 1 bmi_id N/A crc32 546cca0d
+
+[BD INFO]: country = US, unit 0, ant_idx[5g] 0, ant_idx[2g] 0, radio_unit 3, rd 0xff
+
+rd_ctl_ok = 0, rd_matched= 1, specific_matched = 0
+rd_ctl_ok = 1, rd_matched= 0, specific_matched = 1
+matched_cnt = 1
+ath10k_ahb a800000.wifi: board data use boardData_IPQ4019_DK04_5G_ant_omini_default_indoor_sp231c_US_JP_000.bin 
+ath10k_ahb a800000.wifi: board_file api 2 bmi_id 0:0 crc32 36b3fe17
+ath10k_ahb a000000.wifi: firmware ver 10.4-3.5.3-00053 api 5 features no-p2p,mfp,peer-flow-ctrl,btcoex-param,allows-mesh-bcast crc32 7afd94b8
+
+[BD INFO]: country = US, unit 1, ant_idx[5g] 0, ant_idx[2g] 0, radio_unit 3, rd 0xff
+
+rd_ctl_ok = 1, rd_matched= 0, specific_matched = 0
+matched_cnt = 1
+rd_ctl_ok = 0, rd_matched= 1, specific_matched = 1
+matched_cnt = 2
+ath10k_ahb a000000.wifi: board data use boardData_IPQ4019_DK04_2G_ant_omini_default_indoor_sp231c_US_JP_etsi_000.bin 
+ath10k_ahb a000000.wifi: board_file api 2 bmi_id 0:0 crc32 9a9f719e
+ath10k_pci 0000:01:00.0: htt-ver 2.1 wmi-op 5 htt-op 2 cal file max-sta 128 raw 0 hwcrypto 1
+ath10k_ahb a800000.wifi: htt-ver 2.2 wmi-op 6 htt-op 4 cal file max-sta 128 raw 0 hwcrypto 1
+ath10k_ahb a000000.wifi: htt-ver 2.2 wmi-op 6 htt-op 4 cal file max-sta 128 raw 0 hwcrypto 1
+
+===================================================================
