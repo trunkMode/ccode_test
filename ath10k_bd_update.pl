@@ -1,4 +1,5 @@
 #!/usr/bin/perl -w
+#alan 2018/06/07 18:40
 use strict;
 use warnings;
 
