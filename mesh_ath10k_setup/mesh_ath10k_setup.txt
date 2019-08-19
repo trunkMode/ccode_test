@@ -1,0 +1,59 @@
+iw phy wifi0 interface add mesh0 type mesh
+iw dev mesh0 set freq 5805 80 5775
+ifconfig mesh0 hw ether 18:B1:69:4D:29:89
+brctl addif br0 mesh0
+ifconfig mesh0 up
+iw dev mesh0 mesh join alan_mesh_test
+
+
+iw phy wifi0 interface add mesh0 type mesh
+iw dev mesh0 set freq 5180 80 5210
+ifconfig mesh0 hw ether 18:B1:69:4D:29:89
+brctl addif br0 mesh0
+ifconfig mesh0 up
+iw dev mesh0 mesh join alan_mesh_test
+
+
+
+modprobe ath10k_pci
+iw phy phy1 interface add mesh0 type mesh
+iw dev mesh0 set freq 5180 80 5210
+ifconfig mesh0 hw ether 00:11:22:33:44:55
+brctl addbr br0
+brctl addif br0 eth0
+brctl addif br0 mesh0
+ifconfig mesh0 up
+ifconfig eth0 up
+ifconfig br0 20.1.1.133 netmask 255.255.255.0
+iw dev mesh0 mesh join alan_mesh_test
+
+
+modprobe ath10k_pci
+iw phy phy1 interface add mesh0 type mesh
+iw dev mesh0 set freq 5180 80 5210
+ifconfig mesh0 hw ether 18:B1:69:4D:29:89
+brctl addbr br0
+brctl addif br0 eth0
+brctl addif br0 mesh0
+ifconfig mesh0 up
+ifconfig eth0 up
+ifconfig br0 20.1.1.144 netmask 255.255.255.0
+iw dev mesh0 mesh join alan_mesh_test
+
+
+
+
+channel 161 (5805 MHz), width: 80 MHz, center1: 5775 MHz
+
+iw phy phy1 interface add mesh0 type mesh
+iw dev mesh0 set freq 5805 80 5775
+ifconfig mesh0 hw ether 00:11:22:33:44:55
+brctl addbr br0
+brctl addif br0 eth0
+brctl addif br0 mesh0
+ifconfig mesh0 up
+ifconfig eth0 up
+ifconfig br0 20.1.1.133 netmask 255.255.255.0
+iw dev mesh0 mesh join alan_mesh_test
+
+echo 0 > /sys/kernel/debug/ieee80211/phy1/ath10k/green_ap

@@ -1,0 +1,425 @@
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+Failed to get index of interface or phy index: ath00.
+Failed to get index of interface or phy index: ath10.
+Failed to get index of interface or phy index: ath00.
+spCScollect() failed in sendStats()
+Error when getting HW addr of ath00!
+hostapd connection establish failed
+Failed to get index of interface or phy index: ath10.
+spCScollect() failed in sendStats()
+Error when getting HW addr of ath10!
+hostapd connection establish failed
+/bin/sh: 2: Too many open files
+
+ sp_get_status_json_info 139:  [curl http://127.0.0.1:8888/sapi/client-rates?timeRange=0 -o /tmp/.tmp_sta_stats.json > /dev/null 2>&1] (256)
+
+ sp_get_status_json_info 148:  [rm -rf /tmp/.tmp_sta_stats.json] (0)
+Error when getting HW addr of br0!
+
+ spSaveLogFile 158:  [cp /var/log/kernel /storage/log/splogCurr.txt] (0)
+version=3, type=4, device=255
+<<< Received  (SPCS_TYPE_CMD) (32) from PRO.
+ spScpHandler RECEIVED SP_SSCP_AUTOCHANNEL_CMD
+
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+Failed to get index of interface or phy index: ath00.
+Failed to get index of interface or phy index: ath10.
+version=3, type=4, device=255
+<<< Received  (SPCS_TYPE_CMD) (32) from PRO.
+ spScpHandler RECEIVED SP_SSCP_AUTOCHANNEL_CMD
+
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+Failed to get index of interface or phy index: ath00.
+Failed to get index of interface or phy index: ath10.
+Failed to get index of interface or phy index: ath00.
+spCScollect() failed in sendStats()
+Error when getting HW addr of ath00!
+hostapd connection establish failed
+Failed to get index of interface or phy index: ath10.
+spCScollect() failed in sendStats()
+Error when getting HW addr of ath10!
+hostapd connection establish failed
+/bin/sh: 2: Too many open files
+
+ sp_get_status_json_info 139:  [curl http://127.0.0.1:8888/sapi/client-rates?timeRange=0 -o /tmp/.tmp_sta_stats.json > /dev/null 2>&1] (256)
+
+ sp_get_status_json_info 148:  [rm -rf /tmp/.tmp_sta_stats.json] (0)
+Error when getting HW addr of br0!
+version=3, type=4, device=255
+<<< Received  (SPCS_TYPE_CMD) (32) from PRO.
+ spScpHandler RECEIVED SP_SSCP_AUTOCHANNEL_CMD
+
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+Failed to get index of interface or phy index: ath00.
+Failed to get index of interface or phy index: ath10.
+
+ spSaveLogFile 158:  [cp /var/log/kernel /storage/log/splogCurr.txt] (0)
+version=3, type=4, device=255
+<<< Received  (SPCS_TYPE_CMD) (32) from PRO.
+ spScpHandler RECEIVED SP_SSCP_AUTOCHANNEL_CMD
+
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+Failed to get index of interface or phy index: ath00.
+Failed to get index of interface or phy index: ath10.
+version=3, type=4, device=255
+<<< Received  (SPCS_TYPE_CMD) (32) from PRO.
+ spScpHandler RECEIVED SP_SSCP_AUTOCHANNEL_CMD
+
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+Failed to get index of interface or phy index: ath00.
+
+
+
+
+
+
+
+
+
+
+
+~ # error: on line 1: '[' or '{' expected near '<'
+version=3, type=4, device=255
+<<< Received  (SPCS_TYPE_CMD) (32) from PRO.
+ spScpHandler RECEIVED SP_SSCP_AUTOCHANNEL_CMD
+
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+spScpSendAutochannelMsgToPeer unit:0 chNum:149 chNumSec:0
+
+spScpSendAutochannelMsgToPeer unit:1 chNum:4 chNumSec:0
+
+error: on line 1: '[' or '{' expected near '<'
+version=3, type=4, device=255
+<<< Received  (SPCS_TYPE_CMD) (32) from PRO.
+ spScpHandler RECEIVED SP_SSCP_AUTOCHANNEL_CMD
+
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+spScpSendAutochannelMsgToPeer unit:0 chNum:149 chNumSec:0
+
+spScpSendAutochannelMsgToPeer unit:1 chNum:4 chNumSec:0
+
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to get index of interface or phy index: ath00.
+spCScollect() failed in sendStats()
+Error when getting HW addr of ath00!
+hostapd connection establish failed
+Failed to get index of interface or phy index: ath10.
+spCScollect() failed in sendStats()
+Error when getting HW addr of ath10!
+hostapd connection establish failed
+/bin/sh: 2: Too many open files
+
+ sp_get_status_json_info 139:  [curl http://127.0.0.1:8888/sapi/client-rates?timeRange=0 -o /tmp/.tmp_sta_stats.json > /dev/null 2>&1] (256)
+
+ sp_get_status_json_info 148:  [rm -rf /tmp/.tmp_sta_stats.json] (0)
+Error when getting HW addr of br0!
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+ spSaveLogFile 158:  [cp /var/log/kernel /storage/log/splogCurr.txt] (0)
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+ spSaveLogFile 158:  [cp /var/log/kernel /storage/log/splogCurr.txt] (0)
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+version=3, type=4, device=255
+<<< Received  (SPCS_TYPE_CMD) (32) from PRO.
+ spScpHandler RECEIVED SP_SSCP_AUTOCHANNEL_CMD
+
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+Failed to get index of interface or phy index: ath00.
+Failed to get index of interface or phy index: ath10.
+
+~ # Failed to open /sys/class/gpio/gpio1/value
+
+~ # 
+~ # 
+~ # Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+~ # Failed to open /sys/class/gpio/gpio1/value
+
+~ # 
+~ # Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+ls Failed to open /sys/class/gpio/gpio1/value
+~ # ls /sys/Failed to open /sys/class/gpio/gpio1/value
+~ # ls /sys/class/Failed to open /sys/class/gpio/gpio1/value
+
+bdi/          i2c-dev/      misc/         ptp/          tty/
+devcoredump/  ieee80211/    mtd/          rtc/          watchdog/
+firmware/     leds/         net/          scsi_device/
+gpio/         mdio_bus/     pci_bus/      scsi_disk/
+i2c-adapter/  mem/          pps/          scsi_host/
+~ # ls /sys/class/Failed to open /sys/class/gpio/gpio1/value
+
+bdi/          i2c-dev/      misc/         ptp/          tty/
+devcoredump/  ieee80211/    mtd/          rtc/          watchdog/
+firmware/     leds/         net/          scsi_device/
+gpio/         mdio_bus/     pci_bus/      scsi_disk/
+i2c-adapter/  mem/          pps/          scsi_host/
+~ # ls /sys/class/gFailed to open /sys/class/gpio/gpio1/value
+pi
+ spSaveLogFile 158:  [cp /var/log/kernel /storage/log/splogCurr.txt] (0)
+~ # ls /sys/class/gpio/Failed to open /sys/class/gpio/gpio1/value
+
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/Failed to open /sys/class/gpio/gpio1/value
+
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/Failed to open /sys/class/gpio/gpio1/value
+
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/Failed to open /sys/class/gpio/gpio1/value
+
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/Failed to open /sys/class/gpio/gpio1/value
+
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/Failed to open /sys/class/gpio/gpio1/value
+
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/Failed to open /sys/class/gpio/gpio1/value
+vFailed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+ls: /sys/class/gpio/v: No such file or directory
+~ # Failed to open /sys/class/gpio/gpio1/value
+~ # ls /sys/class/gpio/vFailed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+export     gpio1      gpio6      gpio9      gpiochip0  unexport
+~ # Failed to open /sys/class/gpio/gpio1/value
+
+ spSaveLogFile 158:  [cp /var/log/kernel /storage/log/splogCurr.txt] (0)
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+~ # ls /sys/class/gpioFailed to open /sys/class/gpio/gpio1/value
+~ # ls /sys/class/gpio/1Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/
+export      gpio1/      gpio6/      gpio9/      gpiochip0/  unexport
+~ # ls /sys/class/gpio/Failed to open /sys/class/gpio/gpio1/value
+gFailed to open /sys/class/gpio/gpio1/value
+piFailed to open /sys/class/gpio/gpio1/value
+~ # ls /sys/class/gpio/gpio
+gpio1/      gpio6/      gpio9/      gpiochip0/
+~ # ls /sys/class/gpio/gpioFailed to open /sys/class/gpio/gpio1/value
+
+gpio1/      gpio6/      gpio9/      gpiochip0/
+~ # ls /sys/class/gpio/gpio1/Failed to open /sys/class/gpio/gpio1/value
+
+active_low  device      subsystem   uevent      value
+~ # Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+^C
+~ # version=3, type=4, device=255
+<<< Received  (SPCS_TYPE_CMD) (32) from PRO.
+ spScpHandler RECEIVED SP_SSCP_AUTOCHANNEL_CMD
+
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+Failed to get index of interface or phy index: ath00.
+Failed to get index of interface or phy index: ath10.
+Failed to open /sys/class/gpio/gpio1/value
+catFailed to open /sys/class/gpio/gpio1/value
+ 
+ spSaveLogFile 158:  [cp /var/log/kernel /storage/log/splogCurr.txt] (0)
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+/sys/class/gpio/gpio1/value
+1
+~ # Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+~ # Failed to open /sys/class/gpio/gpio1/value
+lFailed to open /sys/class/gpio/gpio1/value
+s Failed to open /sys/class/gpio/gpio1/value
+/sys/class/gpio/gpio1/value
+/sys/class/gpio/gpio1/value
+~ # Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+~ # Failed to open /sys/class/gpio/gpio1/value
+llFailed to open /sys/class/gpio/gpio1/value
+ 
+-sh: ll: not found
+~ # Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+ll Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+^C
+~ # Failed to open /sys/class/gpio/gpio1/value
+ls Failed to open /sys/class/gpio/gpio1/value
+/sys/class/gpio/gpio1/value
+/sys/class/gpio/gpio1/value
+~ # Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+~ # Failed to open /sys/class/gpio/gpio1/value
+lFailed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+ spSaveLogFile 158:  [cp /var/log/kernel /storage/log/splogCurr.txt] (0)
+lsFailed to open /sys/class/gpio/gpio1/value
+ /sys/class/gpio/gpio1/valueFailed to open /sys/class/gpio/gpio1/value
+
+/sys/class/gpio/gpio1/value
+~ # Failed to open /sys/class/gpio/gpio1/value
+lFailed to open /sys/class/gpio/gpio1/value
+s Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+ spSaveLogFile 158:  [cp /var/log/kernel /storage/log/splogCurr.txt] (0)
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+version=3, type=4, device=255
+<<< Received  (SPCS_TYPE_CMD) (32) from PRO.
+ spScpHandler RECEIVED SP_SSCP_AUTOCHANNEL_CMD
+
+>>> Send (SP_SSCP_AUTOCHANNEL_EVENT) to PRO.
+
+Failed to get index of interface or phy index: ath00.
+Failed to get index of interface or phy index: ath10.
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+
+ spSaveLogFile 158:  [cp /var/log/kernel /storage/log/splogCurr.txt] (0)
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+Failed to open /sys/class/gpio/gpio1/value
+

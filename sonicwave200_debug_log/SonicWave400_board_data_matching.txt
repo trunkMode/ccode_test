@@ -1,0 +1,18 @@
+SonicWave400w old sdk board data matched
+
+======================AU ===============================
+[BD INFO]: country = AU, unit 1, ant_idx[5g] 6, ant_idx[2g] 3, radio_unit 3, rd 0xff
+
+ol_transfer_bin_file: Board Data File download to address=0xc0000 file name=QCA9984/hw.1/boardData_QCA9984_CUS240_2G_v1_ant_p124-10_CA_AU_outdoor_004.bin
+ol_transfer_bin_file 3882: downloading file 3, Download data len 12064
+Board extended Data download address: 0x0
+
+[BD INFO]: country = AU, unit 0, ant_idx[5g] 6, ant_idx[2g] 3, radio_unit 3, rd 0xff
+
+ol_transfer_bin_file: Board Data File download to address=0xc0000 file name=QCA9984/hw.1/boardData_QCA9984_CUS238_5G_v1_ant_p254-09_CA_AU_outdoor_003.bin
+ol_transfer_bin_file 3882: downloading file 3, Download data len 12064
+Board extended Data download address: 0x0
+
+
+
+
