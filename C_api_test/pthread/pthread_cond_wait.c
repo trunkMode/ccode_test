@@ -13,33 +13,32 @@ void thread_cond_wait(void *arg)
 {
     printf("0x%x\n", (int)pthread_self());
     pthread_detach(pthread_self());
-    sleep(5);
-#if 0
+//    sleep(5);
+#if 1
     pthread_mutex_lock(&mutex);
     while (1) {
         printf("------------------------\n");
         printf("%s: start to wait cond!\n", __func__);
         pthread_cond_wait(&cond, &mutex);
-        
-        printf("%s: got a cond ready and do 10s task !\n\n", __func__);
+
+        printf("%s: got a cond ready and do 5s task !\n\n", __func__);
         sleep(2);
-        printf("%s: finish 10s task\n", __func__);
+        printf("%s: finish 5s task\n", __func__);
     }
 #endif
 }
 
-//void thread_cond_signal(void *arg)
-void thread_cond_signal()
+void thread_cond_signal(void *arg)
 {
     int i = 0;
     pthread_detach(pthread_self());
-    sleep(10);
-#if 0
+    sleep(2);
+#if 1
     while (i++ < 10) {
         printf("****************\n");
         printf("%s: start to signal cond ready in the next 1s \n", __func__);
         sleep(1);
-        
+
         //pthread_mutex_lock(&mutex);
         printf("%s: send cond signal\n", __func__);
         pthread_cond_signal(&cond);

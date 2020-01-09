@@ -1,5 +1,11 @@
 #include <unistd.h>
 
+int test(char *p) {
+    int i;
+    for (i = 0; i < 20000; i++)
+        printf("p = 0x%x\n", p[i]);
+    return 0;
+}
 int main()
 {
 	char ssid[10][32];
