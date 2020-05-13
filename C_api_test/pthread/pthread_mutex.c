@@ -4,13 +4,30 @@
 
 int debug_lock = 1;
 pthread_mutex_t test_lock;
+pthread_mutexattr_t test_lock_attr;
 
-#define PTHREAD_MUTEX_INIT()                            \
-{                                                       \
-    if (pthread_mutex_init(&test_lock, NULL)) {         \
-        printf("Failed to init  test_lock.\n");         \
-        return -1;                                      \
-    }                                                   \
+#define PTHREAD_MUTEX_INIT()                                \
+{                                                           \
+    const char *__str = NULL;                               \
+    do {                                                    \
+        const char *__str = NULL;                           \
+        if (pthread_mutexattr_init(&test_lock_attr)) {      \
+            __str = "Failed to init lock attr.";            \
+            break;                                          \
+        }                                                   \
+        if (pthread_mutexattr_settype(&test_lock_attr,      \
+                PTHREAD_MUTEX_RECURSIVE_NP)) {              \
+            __str = "Failed to set type for lock attr.";    \
+            break;                                          \
+        }                                                   \
+        if (pthread_mutex_init(&test_lock, &test_lock_attr)) {         \
+            __str = "Failed to init test lock.";            \
+            break;                                          \
+        }                                                   \
+    } while(0);                                             \
+    if (__str) {                                            \
+        printf("%s\n", __str);                              \
+    }                                                       \
 }
 
 #define PTHREAD_MUTEX_LOCK()                                            \
@@ -48,10 +65,15 @@ void *thread_read_a(void *arg)
     pthread_detach(pthread_self());
 
     while (1) {
- //       usleep(1000*10);
         PTHREAD_MUTEX_LOCK();
+        printf("%s %d: mutex lock 1\n", __func__, __LINE__);
+        PTHREAD_MUTEX_LOCK();
+        printf("%s %d: mutex lock 2\n", __func__, __LINE__);
         sleep(2);
         PTHREAD_MUTEX_UNLOCK();
+        printf("%s %d: mutex unlock 2\n", __func__, __LINE__);
+        PTHREAD_MUTEX_UNLOCK();
+        printf("%s %d: mutex unlock 1\n", __func__, __LINE__);
     }
     return NULL;
 }
@@ -63,7 +85,7 @@ void *thread_read_b(void *arg)
     while (1) {
 //        usleep(1000*10);
         PTHREAD_MUTEX_LOCK();
-        sleep(1);
+        sleep(5);
         PTHREAD_MUTEX_UNLOCK();
     }
     return NULL;
@@ -96,11 +118,12 @@ int main()
         printf("Failed to create thread B\n");
         return -1;
     }
-
+#if 0
     if (pthread_create(&tid, NULL, thread_write_c, NULL)) {
         printf("Failed to create thread C\n");
         return -1;
     }
+#endif
 
     sleep(30);
 }
