@@ -7,24 +7,21 @@
 #include <pthread.h>
 
 
-
-#define UNIX_DOMAIN_PATH    "/tmp/unix_server"
+#define UNIX_DOMAIN_PATH    "/home/alan/codeTest/ccode_test/socket/unix_socket/unix_server"
 #define DEBUG(FMAT,ARGS...) printf("[client]%s %d:"FMAT"\n", __func__, __LINE__, ## ARGS)
 
-pthread_t tid_unix_sk[4];
+pthread_t tid_unix_sk[1];
 void thread(void *arg);
 int count = 0;
 int main()
 {
     int i;
-    
+
     for (i = 0; i < sizeof(tid_unix_sk)/sizeof(pthread_t); i++) {
-	sleep(1);
         pthread_create(&tid_unix_sk[i], NULL, thread, i);
     }
-    sleep(1);
+
     for (i = 0; i < sizeof(tid_unix_sk)/sizeof(pthread_t); i++) {
-	sleep(1);
         pthread_join(tid_unix_sk[i], NULL);
     }
 }
@@ -32,50 +29,58 @@ int main()
 void thread(void *arg)
 {
     int i = (int)arg;
-    int skfd;
-    char buf[1024*1024];
-    socklen_t sock_len;
+    int skfd = -1, cnt;
+    /*note: if the buf is set to 1024*1024, the sendto() will fail due to too long message error.
+     * the buf is longer than socket buf? */
+    char buf[4*1024];
+    socklen_t srv_sock_len, local_sock_len;
     struct sockaddr_un  local;
     struct sockaddr_un  server;
     struct sockaddr_un  from;
 
-    memset(&server, 0x00, sizeof(server));
-    server.sun_family = AF_UNIX;
-    snprintf(server.sun_path, sizeof(server.sun_path), "%s", UNIX_DOMAIN_PATH);
-
+    /* create socket */
     if ((skfd = socket(AF_UNIX, SOCK_DGRAM, 0)) < 0) {
-        DEBUG("Failed to create socket\n");
+        perror("Failed to create socket\n");
         return -1;
     }
 
+    /* bind a local addr */
     memset(&local, 0x00, sizeof(local));
     local.sun_family = AF_UNIX;
     snprintf(local.sun_path, sizeof(local.sun_path), "%s-%d", UNIX_DOMAIN_PATH, i);
+    local_sock_len = offsetof(struct sockaddr_un, sun_path) + strlen(local.sun_path);
     unlink(local.sun_path);
 
-    if (bind(skfd, (struct sockaddr *)&local, sizeof(local)) < 0) {
-	DEBUG("Failed to bind socket to unix path (%s)!\n", local.sun_path);
-	perror("error:");
-    } else {
-	break;
+    if (bind(skfd, (struct sockaddr *)&local, local_sock_len) < 0) {
+        DEBUG("Failed to bind socket to unix path (%s)!\n", local.sun_path);
+        perror("error:");
+        goto error;
     }
 
-    /* connect */
-    if (connect(skfd, &server, sizeof(server)) < 0) {
-	printf("Failed to connect sever\n");
-	return -1;
-    }
+    /* sever addr */
+    memset(&server, 0x00, sizeof(server));
+    server.sun_family = AF_UNIX;
+    snprintf(server.sun_path, sizeof(server.sun_path), "%s", UNIX_DOMAIN_PATH);
+#if 0
+    srv_sock_len = offsetof(struct sockaddr_un, sun_path) + strlen(server.sun_path);
+#else
+    srv_sock_len = sizeof(server);
+#endif
 
     while (1) {
-        sock_len = sizeof(from);
+        //sock_len = sizeof(from);
         if (i < 3) {
             /* thread(0 ~ 2) send msg */
-            if (sendto(skfd, buf, sizeof(buf) - 1, 0, (struct sockaddr *) &server, sizeof(server)) < 0) {
-                DEBUG("Thread[%d] Sent msg server!\n", i);
+            cnt = sendto(skfd, buf, sizeof(buf) - 1, 0, (struct sockaddr *)&server, srv_sock_len);
+            if (cnt < 0) {
+                DEBUG("Thread[%d] Failed to Sent msg server!\n", i);
+                perror("error:");
+            } else {
+                DEBUG("Thread[%d] Send %d bytes message to server\n", i, cnt);
             }
         } else {
             /* thread(3) recv msg */
-            if (recvfrom(skfd, buf, sizeof(buf) - 1, 0, (struct sockaddr *)&from, &sock_len) < 0) {
+            if (recvfrom(skfd, buf, sizeof(buf) - 1, 0, (struct sockaddr *)&from, &local_sock_len) < 0) {
                 DEBUG("Failed to recvfrom error!\n");
                 return -1;
             } else {  
@@ -93,7 +98,12 @@ void thread(void *arg)
             DEBUG("Sent back connect!\n");
         }
 #endif
-        sleep(5);
+        sleep(2);
     }
+
+error:
+    if (skfd > 0)
+        close(skfd);
+    return -1;
 }
 

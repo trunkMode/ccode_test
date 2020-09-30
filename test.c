@@ -10,6 +10,10 @@ int main()
 {
 	char ssid[10][32];
 	int unit, bss;
+    char *p = malloc(100);
+    const char *q = q;
+//    *q = 0x88;
+    free(q);
 
 	unit = bss = 8;
 	int ret = sscanf("tf.1", "%*[^0-9]%d.%d", &unit, &bss);

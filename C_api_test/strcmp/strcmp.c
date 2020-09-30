@@ -15,13 +15,18 @@ int main()
 #if 0
 	strncpy_test();
 #endif
-#if 1
+#if 0
 	if (strcmp(NULL, "xx", strlen("xx")) == 0) {
 		printf("xxxx\n");
 	} else {
 		printf("yyyy\n");
 	}
 #endif
+    if (strcmp("", "hello")) {
+        printf("not equal\n");
+    } else {
+        printf("equal\n");
+    }
 }
 
 

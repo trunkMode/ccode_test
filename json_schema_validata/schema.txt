@@ -1,0 +1,2382 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "type": "object",
+    "properties": {
+        "fairNet": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "direction": {
+                        "type": "string",
+                        "enum": [
+                            "FAIRNET_DIR_BOTH",
+                            "FAIRNET_DIR_DOWN",
+                            "FAIRNET_DIR_UP"
+                        ]
+                    },
+                    "allSta": {
+                        "type": "boolean"
+                    },
+                    "ssid": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "maxRate": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 4294967295
+                    },
+                    "minRate": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 4294967295
+                    },
+                    "sta": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "startIp": {
+                                    "type": "string",
+                                    "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                },
+                                "endIp": {
+                                    "type": "string",
+                                    "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "version": {
+            "type": "number"
+        },
+        "certExpiredTime": {
+            "type": "number"
+        },
+        "scanRadio": {
+            "type": "object",
+            "properties": {
+                "capture": {
+                    "type": "object",
+                    "properties": {
+                        "captureParam": {
+                            "type": "number"
+                        },
+                        "srcMacFilter": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^(([0-9a-fA-F]{2}:){5}([0-9a-fA-F]{2}))|(([0-9a-fA-F]{2}-){5}([0-9a-fA-F]{2}))$"
+                            }
+                        },
+                        "dstMacFilter": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^(([0-9a-fA-F]{2}:){5}([0-9a-fA-F]{2}))|(([0-9a-fA-F]{2}-){5}([0-9a-fA-F]{2}))$"
+                            }
+                        },
+                        "bssidFilter": {
+                            "type": "string",
+                            "pattern": "(^[ ]*$)|^((([0-9a-fA-F]{2}:){5}([0-9a-fA-F]{2}))|(([0-9a-fA-F]{2}-){5}([0-9a-fA-F]{2})))$"
+                        },
+                        "ssidFilter": {
+                            "type": "string",
+                            "maxLength": 32
+                        },
+                        "radioMode": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 7
+                        },
+                        "radioBand": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 3
+                        },
+                        "channel": {
+                            "type": "object",
+                            "properties": {
+                                "auto": {
+                                    "type": "boolean"
+                                },
+                                "outdoor": {
+                                    "type": "boolean"
+                                },
+                                "primary": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 4294967295
+                                },
+                                "secondary": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 4294967295
+                                }
+                            }
+                        }
+                    }
+                },
+                "settingMode": {
+                    "type": "number"
+                }
+            }
+        },
+        "radio": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "radioBand": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 3
+                    },
+                    "vlanEnable": {
+                        "type": "boolean"
+                    },
+                    "compressionProc": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 3
+                    },
+                    "ablot": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 4294967295
+                    },
+                    "shortPreamble": {
+                        "type": "boolean"
+                    },
+                    "burstSeqThreshold": {
+                        "type": "number",
+                        "minimum": 2,
+                        "maximum": 255
+                    },
+                    "swTxRetries": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 15
+                    },
+                    "shortGuardInterval": {
+                        "type": "boolean"
+                    },
+                    "quietDuration": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1000
+                    },
+                    "quietAckCtsAllow": {
+                        "type": "boolean"
+                    },
+                    "wep": {
+                        "type": "object",
+                        "properties": {
+                            "keyNumber": {
+                                "type": "number"
+                            },
+                            "keyMethod": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                            },
+                            "key": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "maxLength": 32
+                                }
+                            },
+                            "keySource": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 2
+                            }
+                        }
+                    },
+                    "compressionWinSize": {
+                        "type": "number",
+                        "minimum": 256,
+                        "maximum": 4096
+                    },
+                    "htWepTkip": {
+                        "type": "boolean"
+                    },
+                    "enableVHT": {
+                        "type": "boolean"
+                    },
+                    "vap": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "uuid": {
+                                    "type": "string"
+                                },
+                                "ssid": {
+                                    "type": "string",
+                                    "maxLength": 32
+                                },
+                                "bssid": {
+                                    "type": "string",
+                                    "maxLength": 12
+                                },
+                                "ssidSuppress": {
+                                    "type": "boolean"
+                                },
+                                "l2Isolation": {
+                                    "type": "boolean"
+                                },
+                                "maxClients": {
+                                    "type": "number",
+                                    "minimum": 1,
+                                    "maximum": 272
+                                },
+                                "wdsAp": {
+                                    "type": "boolean"
+                                },
+                                "sslvpnAllow": {
+                                    "type": "boolean"
+                                },
+                                "ieee80211rEnable": {
+                                    "type": "boolean"
+                                },
+                                "ftOverDsEnable": {
+                                    "type": "boolean"
+                                },
+                                "mixModeEnable": {
+                                    "type": "boolean"
+                                },
+                                "neighReportEnable": {
+                                    "type": "boolean"
+                                },
+                                "bssTransMgmtEnable": {
+                                    "type": "boolean"
+                                },
+                                "wnmSleepEnable": {
+                                    "type": "boolean"
+                                },
+                                "vapBsteerDisable": {
+                                    "type": "boolean"
+                                },
+                                "auth": {
+                                    "type": "object",
+                                    "properties": {
+                                        "authType": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 15
+                                        },
+                                        "wpaRadSrvBalanceType": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 3
+                                        },
+                                        "encryption": {
+                                            "type": "boolean"
+                                        },
+                                        "defaultWepKey": {
+                                            "type": "number",
+                                            "minimum": 0
+                                        },
+                                        "passphrase": {
+                                            "type": "string",
+                                            "maxLength": 64
+                                        },
+                                        "cipher": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 9
+                                        },
+                                        "wpaMfp": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 2
+                                        },
+                                        "groupKeyUpdateInterval": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 4294967295
+                                        },
+                                        "groupDisableForceRekey": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                },
+                                "acl": {
+                                    "type": "object",
+                                    "properties": {
+                                        "entry": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "uuid": {
+                                                        "type": "string"
+                                                    },
+                                                    "action": {
+                                                        "type": "number",
+                                                        "minimum": 0,
+                                                        "maximum": 16
+                                                    },
+                                                    "mac": {
+                                                        "type": "string",
+                                                        "pattern": "^(([0-9a-fA-F]{2}:){5}([0-9a-fA-F]{2}))|(([0-9a-fA-F]{2}-){5}([0-9a-fA-F]{2}))$"
+                                                    },
+                                                    "used": {
+                                                        "type": "boolean"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "mode": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 2
+                                        },
+                                        "useStatus": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 3
+                                        },
+                                        "remoteAcl": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                },
+                                "vlanPvid": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 4094
+                                },
+                                "radius": {
+                                    "type": "object",
+                                    "properties": {
+                                        "retryInterval": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 60
+                                        },
+                                        "retryTimes": {
+                                            "type": "number",
+                                            "minimum": 1,
+                                            "maximum": 10
+                                        },
+                                        "server": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "ip": {
+                                                        "type": "string",
+                                                        "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                                    },
+                                                    "secret": {
+                                                        "type": "string",
+                                                        "maxLength": 128
+                                                    },
+                                                    "port": {
+                                                        "type": "number",
+                                                        "minimum": 0,
+                                                        "maximum": 65535
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "radAcct": {
+                                    "type": "object",
+                                    "properties": {
+                                        "nasId": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 3
+                                        },
+                                        "nasIpAddr": {
+                                            "type": "string",
+                                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                        },
+                                        "server": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "ip": {
+                                                        "type": "string",
+                                                        "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                                    },
+                                                    "secret": {
+                                                        "type": "string",
+                                                        "maxLength": 128
+                                                    },
+                                                    "port": {
+                                                        "type": "number",
+                                                        "minimum": 0,
+                                                        "maximum": 65535
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "userPriority": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 7
+                                },
+                                "intraForwarding": {
+                                    "type": "boolean"
+                                },
+                                "active": {
+                                    "type": "boolean"
+                                },
+                                "schedActive": {
+                                    "type": "boolean"
+                                },
+                                "bypassFw": {
+                                    "type": "boolean"
+                                },
+                                "dynamicVlan": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enableDynamicVlan": {
+                                            "type": "boolean"
+                                        },
+                                        "vlanNum": {
+                                            "type": "number",
+                                            "maximum": 8
+                                        },
+                                        "vlanIdList": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "number",
+                                                "minimum": 1,
+                                                "maximum": 4094
+                                            }
+                                        }
+                                    }
+                                },
+                                "cfs": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        },
+                                        "viewOnly": {
+                                            "type": "boolean"
+                                        },
+                                        "category": {
+                                            "type": "array",
+                                            "maxItems": 64,
+                                            "items": {
+                                                "type": "number",
+                                                "minimum": 1,
+                                                "maximum": 64
+                                            }
+                                        },
+                                        "wlist": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "maxLength": 1024
+                                            }
+                                        },
+                                        "blist": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "maxLength": 1024
+                                            }
+                                        }
+                                    }
+                                },
+                                "catp": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        },
+                                        "blockUntilVerdict": {
+                                            "type": "boolean"
+                                        },
+                                        "fileMaxSize": {
+                                            "type": "integer",
+                                            "minimum": 1,
+                                            "maximum": 10240
+                                        },
+                                        "protocols": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "ftp",
+                                                    "http",
+                                                    "nfs",
+                                                    "smb",
+                                                    "smtp"
+                                                ]
+                                            },
+                                            "minItems": 1,
+                                            "uniqueItems": true
+                                        },
+                                        "fileTypes": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "archive",
+                                                    "executable",
+                                                    "office",
+                                                    "officex",
+                                                    "pdf"
+                                                ]
+                                            },
+                                            "minItems": 1,
+                                            "uniqueItems": true
+                                        },
+                                        "excludeMD5": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "minLength": 32,
+                                                "maxLength": 32
+                                            },
+                                            "maxItems": 100,
+                                            "uniqueItems": true
+                                        }
+                                    }
+                                },
+                                "cav": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        },
+                                        "fileMaxSize": {
+                                            "type": "integer",
+                                            "minimum": 1,
+                                            "maximum": 10240
+                                        },
+                                        "protocols": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "ftp",
+                                                    "http",
+                                                    "nfs",
+                                                    "smb",
+                                                    "smtp"
+                                                ]
+                                            },
+                                            "minItems": 1,
+                                            "uniqueItems": true
+                                        },
+                                        "fileTypes": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "archive",
+                                                    "executable",
+                                                    "office",
+                                                    "officex",
+                                                    "pdf"
+                                                ]
+                                            },
+                                            "minItems": 1,
+                                            "uniqueItems": true
+                                        },
+                                        "excludeMD5": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "minLength": 32,
+                                                "maxLength": 32
+                                            },
+                                            "maxItems": 100,
+                                            "uniqueItems": true
+                                        }
+                                    }
+                                },
+                                "appPolicy": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        },
+                                        "appRules": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "app": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "name": {
+                                                                    "type": "string"
+                                                                },
+                                                                "cat": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "appop": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "block",
+                                                            "alert",
+                                                            "bwm"
+                                                        ]
+                                                    },
+                                                    "bwm": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "direction": {
+                                                                    "type": "string",
+                                                                    "enum": [
+                                                                        "FAIRNET_DIR_BOTH",
+                                                                        "FAIRNET_DIR_DOWN",
+                                                                        "FAIRNET_DIR_UP"
+                                                                    ]
+                                                                },
+                                                                "minRate": {
+                                                                    "type": "integer",
+                                                                    "minimum": 0,
+                                                                    "maximum": 4294967295
+                                                                },
+                                                                "maxRate": {
+                                                                    "type": "integer",
+                                                                    "minimum": 0,
+                                                                    "maximum": 4294967295
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "dns": {
+                                    "type": "object",
+                                    "properties": {
+                                        "proxy": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                },
+                                "geoip": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        },
+                                        "blockUnknownCountries": {
+                                            "type": "boolean"
+                                        },
+                                        "monitorOnly": {
+                                            "type": "boolean"
+                                        },
+                                        "countryList": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "maxLength": 2
+                                            },
+                                            "uniqueItems": true
+                                        },
+                                        "excludedIPs": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                            }
+                                        },
+                                        "excludedNetworks": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "botnet": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        },
+                                        "excludedIPs": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                            }
+                                        },
+                                        "excludedNetworks": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "appdet": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        },
+                                        "appcntrl": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "appname": {
+                                                        "type": "string",
+                                                        "maxLength": 32
+                                                    },
+                                                    "catname": {
+                                                        "type": "string",
+                                                        "maxLength": 32
+                                                    },
+                                                    "appop": {
+                                                        "type": "integer",
+                                                        "minimum": 0,
+                                                        "maximum": 3
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "schedule": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        },
+                                        "mode": {
+                                            "type": "string",
+                                            "enum": [
+                                                "Recurring",
+                                                "Once",
+                                                "Mixed"
+                                            ]
+                                        },
+                                        "recurring_list": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "weekdays": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "integer",
+                                                            "minimum": 0,
+                                                            "maximum": 6
+                                                        }
+                                                    },
+                                                    "from_hour": {
+                                                        "type": "integer"
+                                                    },
+                                                    "from_min": {
+                                                        "type": "integer"
+                                                    },
+                                                    "to_hour": {
+                                                        "type": "integer"
+                                                    },
+                                                    "to_min": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "once_setting": {
+                                            "type": "object",
+                                            "properties": {
+                                                "start_year": {
+                                                    "type": "number"
+                                                },
+                                                "start_month": {
+                                                    "type": "number"
+                                                },
+                                                "start_day": {
+                                                    "type": "number"
+                                                },
+                                                "start_hour": {
+                                                    "type": "number"
+                                                },
+                                                "start_min": {
+                                                    "type": "number"
+                                                },
+                                                "end_year": {
+                                                    "type": "number"
+                                                },
+                                                "end_month": {
+                                                    "type": "number"
+                                                },
+                                                "end_day": {
+                                                    "type": "number"
+                                                },
+                                                "end_hour": {
+                                                    "type": "number"
+                                                },
+                                                "end_min": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "guest": {
+                                    "type": "object",
+                                    "properties": {
+                                        "mode": {
+                                            "type": "integer"
+                                        },
+                                        "lhm": {
+                                            "type": "object",
+                                            "properties": {
+                                                "servers": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "server": {
+                                                                "type": "string"
+                                                            },
+                                                            "loginPage": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "messageAuth": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "authMethod": {
+                                                            "type": "string"
+                                                        },
+                                                        "hmacPsk": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                },
+                                                "custom_bfa": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "social": {
+                                            "type": "object",
+                                            "properties": {
+                                                "facebook": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "enable": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "appId": {
+                                                            "type": "string"
+                                                        },
+                                                        "appSecret": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                },
+                                                "google": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "enable": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "clientId": {
+                                                            "type": "string"
+                                                        },
+                                                        "clientSecret": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                },
+                                                "twitter": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "enable": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "consumerKey": {
+                                                            "type": "string"
+                                                        },
+                                                        "consumerSecretKey": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                },
+                                                "linkedin": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "enable": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "clientId": {
+                                                            "type": "string"
+                                                        },
+                                                        "clientSecret": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                },
+                                                "instagram": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "enable": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "clientId": {
+                                                            "type": "string"
+                                                        },
+                                                        "clientSecret": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                },
+                                                "weChat": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "enable": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "forceFollow": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "shopId": {
+                                                            "type": "string"
+                                                        },
+                                                        "appId": {
+                                                            "type": "string"
+                                                        },
+                                                        "secretKey": {
+                                                            "type": "string"
+                                                        },
+                                                        "appSecret": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                },
+                                                "sessLifetime": {
+                                                    "type": "integer"
+                                                },
+                                                "idleTimeout": {
+                                                    "type": "integer"
+                                                },
+                                                "redirectUrl": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "clickThrough": {
+                                            "type": "object",
+                                            "properties": {
+                                                "sessLifetime": {
+                                                    "type": "integer"
+                                                },
+                                                "idleTimeout": {
+                                                    "type": "integer"
+                                                },
+                                                "redirectUrl": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "customPage": {
+                                            "type": "object",
+                                            "properties": {
+                                                "gsType": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "simple-login",
+                                                        "social-login",
+                                                        "local-login"
+                                                    ]
+                                                },
+                                                "social": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "google": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "enable": {
+                                                                    "type": "boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "facebook": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "enable": {
+                                                                    "type": "boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "twitter": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "enable": {
+                                                                    "type": "boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "linkedin": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "enable": {
+                                                                    "type": "boolean"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "portalUrl": {
+                                                    "type": "string"
+                                                },
+                                                "apiGateway": {
+                                                    "type": "string"
+                                                },
+                                                "sessLifetime": {
+                                                    "type": "integer"
+                                                },
+                                                "idleTimeout": {
+                                                    "type": "integer"
+                                                },
+                                                "redirectUrl": {
+                                                    "type": "string"
+                                                },
+                                                "custom_bfa": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "signOn": {
+                                            "type": "object",
+                                            "properties": {
+                                                "mode": {
+                                                    "type": "integer"
+                                                },
+                                                "sessLifetime": {
+                                                    "type": "integer"
+                                                },
+                                                "idleTimeout": {
+                                                    "type": "integer"
+                                                },
+                                                "redirectUrl": {
+                                                    "type": "string"
+                                                },
+                                                "apiGateway": {
+                                                    "type": "string"
+                                                },
+                                                "ldap": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "servers": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "host": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "port": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "admin": {
+                                                            "type": "string"
+                                                        },
+                                                        "password": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                },
+                                                "ad": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "servers": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "host": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "port": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "admin": {
+                                                            "type": "string"
+                                                        },
+                                                        "password": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                },
+                                                "otp": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "email": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "sms": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                },
+                                                "radius": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "servers": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "ip": {
+                                                                        "type": "string",
+                                                                        "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                                                    },
+                                                                    "port": {
+                                                                        "type": "integer",
+                                                                        "minimum": 0,
+                                                                        "maximum": 65535
+                                                                    },
+                                                                    "secret": {
+                                                                        "type": "string",
+                                                                        "maxLength": 128
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "gav": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enable": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "burstTime": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1023
+                    },
+                    "radioMode": {
+                        "type": "number",
+                        "minimum": -1,
+                        "maximum": 7
+                    },
+                    "channel": {
+                        "type": "object",
+                        "properties": {
+                            "outdoor": {
+                                "type": "boolean"
+                            },
+                            "primary": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 4294967295
+                            },
+                            "secondary": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 4294967295
+                            }
+                        }
+                    },
+                    "swRetry": {
+                        "type": "boolean"
+                    },
+                    "enable": {
+                        "type": "boolean"
+                    },
+                    "freqSpec": {
+                        "type": "number"
+                    },
+                    "vapEnabled": {
+                        "type": "boolean"
+                    },
+                    "aggregation": {
+                        "type": "boolean"
+                    },
+                    "calibrationPeriod": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 4294967295
+                    },
+                    "opMode": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 3
+                    },
+                    "mimo": {
+                        "type": "boolean"
+                    },
+                    "airtimeFairness": {
+                        "type": "boolean"
+                    },
+                    "LocaldcsMode": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 2
+                    },
+                    "advance": {
+                        "type": "object",
+                        "properties": {
+                            "rtsThreshold": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 2346
+                            },
+                            "maxAssociations": {
+                                "type": "number",
+                                "minimum": 1,
+                                "maximum": 272
+                            },
+                            "antenna": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 2
+                            },
+                            "fragThreshold": {
+                                "type": "number",
+                                "minimum": 256,
+                                "maximum": 2346
+                            },
+                            "dtim": {
+                                "type": "number",
+                                "minimum": 1,
+                                "maximum": 255
+                            },
+                            "beaconInterval": {
+                                "type": "number",
+                                "minimum": 20,
+                                "maximum": 1000
+                            },
+                            "rate": {
+                                "type": "string",
+                                "pattern": "^(best|1|2|5.5|6|9|11|12|18|24|36|48|54|72|96|108)$"
+                            },
+                            "inActiveTimeout": {
+                                "type": "number",
+                                "minimum": 60,
+                                "maximum": 36000
+                            }
+                        }
+                    },
+                    "quietOffset": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1000
+                    },
+                    "basic11b": {
+                        "type": "boolean"
+                    },
+                    "hwTxRetries": {
+                        "type": "number",
+                        "minimum": 1,
+                        "maximum": 15
+                    },
+                    "greenApEnable": {
+                        "type": "boolean"
+                    },
+                    "acl": {
+                        "type": "object",
+                        "properties": {
+                            "entry": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "uuid": {
+                                            "type": "string"
+                                        },
+                                        "action": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 16
+                                        },
+                                        "mac": {
+                                            "type": "string",
+                                            "pattern": "^(([0-9a-fA-F]{2}:){5}([0-9a-fA-F]{2}))|(([0-9a-fA-F]{2}-){5}([0-9a-fA-F]{2}))$"
+                                        },
+                                        "used": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            },
+                            "mode": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 2
+                            }
+                        }
+                    },
+                    "txPower": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 5
+                    },
+                    "mesh": {
+                        "type": "object",
+                        "properties": {
+                            "ssid": {
+                                "type": "string",
+                                "maxLength": 32
+                            },
+                            "enable": {
+                                "type": "boolean"
+                            },
+                            "psk": {
+                                "type": "string",
+                                "maxLength": 32
+                            },
+                            "rssithresh": {
+                                "type": "number",
+                                "minimum": -95,
+                                "maximum": -60
+                            },
+                            "confByApp": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "wme": {
+                        "type": "object",
+                        "properties": {
+                            "enable": {
+                                "type": "boolean"
+                            },
+                            "param": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "dscpVal": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 4294967295
+                                        },
+                                        "acm": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 1
+                                        },
+                                        "ackPolicy": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 1
+                                        },
+                                        "logCwMax": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 15
+                                        },
+                                        "logCwMin": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 15
+                                        },
+                                        "txOpLimit": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 65535
+                                        },
+                                        "aifs": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 15
+                                        }
+                                    }
+                                }
+                            },
+                            "bssParam": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "logCwMin": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 15
+                                        },
+                                        "txOpLimit": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 65535
+                                        },
+                                        "logCwMax": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 15
+                                        },
+                                        "acm": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 1
+                                        },
+                                        "aifs": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 15
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "greenApTimeout": {
+                        "type": "number",
+                        "minimum": 20,
+                        "maximum": 65535
+                    },
+                    "rssiEnabled": {
+                        "type": "boolean"
+                    },
+                    "rssiThreshold": {
+                        "type": "number",
+                        "minimum": -95,
+                        "maximum": -45
+                    },
+                    "_11g": {
+                        "type": "object",
+                        "properties": {
+                            "beaconRate": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 8
+                            },
+                            "ctsmode": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 2
+                            },
+                            "basic11g": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 3
+                            },
+                            "shortSlotTime": {
+                                "type": "boolean"
+                            },
+                            "ctstype": {
+                                "type": "number",
+                                "minimum": 0,
+                                "maximum": 1
+                            },
+                            "ctsrate": {
+                                "type": "number",
+                                "minimum": 1,
+                                "maximum": 5
+                            },
+                            "gDraft5": {
+                                "type": "boolean"
+                            },
+                            "gOverlap": {
+                                "type": "boolean"
+                            },
+                            "gOnly": {
+                                "type": "boolean"
+                            },
+                            "optimize": {
+                                "type": "number",
+                                "minimum": 1,
+                                "maximum": 2
+                            }
+                        }
+                    },
+                    "enableCoexist": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        },
+        "localRadius": {
+            "type": "object",
+            "properties": {
+                "server": {
+                    "type": "object",
+                    "properties": {
+                        "secret": {
+                            "type": "string",
+                            "maxLength": 128
+                        },
+                        "port": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 65535
+                        }
+                    }
+                }
+            }
+        },
+        "system": {
+            "type": "object",
+            "properties": {
+                "countryCode": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9]{2,3}$"
+                },
+                "snapEnable": {
+                    "type": "boolean"
+                },
+                "sshEnable": {
+                    "type": "boolean"
+                },
+                "krackDetectEn": {
+                    "type": "boolean"
+                },
+                "attackKrackMitmEn": {
+                    "type": "boolean"
+                },
+                "sensorMode": {
+                    "type": "boolean"
+                },
+                "standAloneEnable": {
+                    "type": "boolean"
+                },
+                "ledEnable": {
+                    "type": "boolean"
+                },
+                "poeOutEnable": {
+                    "type": "boolean"
+                },
+                "RFManagement": {
+                    "type": "boolean"
+                },
+                "RFMMeasureInt": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 4294967295
+                },
+                "ssidIsolation": {
+                    "type": "boolean"
+                },
+                "enableFwDowngrade": {
+                    "type": "boolean"
+                },
+                "autoLogoutTime": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 35000
+                },
+                "managementMode": {
+                    "type": "string",
+                    "pattern": "^(L2|L3|SSLVPN)$"
+                },
+                "wpaOnly": {
+                    "type": "boolean"
+                },
+                "userPassword": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "dfs": {
+                    "type": "object",
+                    "properties": {
+                        "enable": {
+                            "type": "boolean"
+                        },
+                        "testMode": {
+                            "type": "object",
+                            "properties": {
+                                "showDfsTestMode": {
+                                    "type": "boolean"
+                                },
+                                "enable": {
+                                    "type": "boolean"
+                                },
+                                "disableChannelAvailCheck": {
+                                    "type": "boolean"
+                                },
+                                "disable30Min": {
+                                    "type": "boolean"
+                                }
+                            }
+                        },
+                        "showDfsChannel": {
+                            "type": "boolean"
+                        },
+                        "weatherRadarChannelEnable": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "enableStandaloneRadioCfg": {
+                    "type": "boolean"
+                },
+                "systemMode": {
+                    "type": "string",
+                    "pattern": "^(BRIDGE|ROUTER)$"
+                },
+                "sdp": {
+                    "type": "object",
+                    "properties": {
+                        "limitAutoChannelSel": {
+                            "type": "boolean"
+                        },
+                        "dscpEnable": {
+                            "type": "boolean"
+                        },
+                        "eraseOldCrashLog": {
+                            "type": "boolean"
+                        },
+                        "checkSum": {
+                            "type": "string",
+                            "maxLength": 33
+                        },
+                        "aclCheckSum": {
+                            "type": "string",
+                            "maxLength": 33
+                        },
+                        "sdpDisable": {
+                            "type": "boolean"
+                        },
+                        "spState": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100
+                        },
+                        "advInterval": {
+                            "type": "number",
+                            "minimum": 5,
+                            "maximum": 3600
+                        },
+                        "advKeepAliveDisable": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "antennaMode": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "advancedHighThroughput": {
+                    "type": "boolean"
+                },
+                "userLogout": {
+                    "type": "boolean"
+                },
+                "enableWebManagement": {
+                    "type": "boolean"
+                },
+                "userName": {
+                    "type": "string",
+                    "maxLength": 32
+                },
+                "noiseLevel": {
+                    "type": "number"
+                },
+                "systemName": {
+                    "type": "string",
+                    "maxLength": 144
+                },
+                "eapolVersion": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "bandSteeringMode": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 3
+                },
+                "enableOnLanDetect": {
+                    "type": "boolean"
+                },
+                "ble": {
+                    "type": "object",
+                    "properties": {
+                        "advEnable": {
+                            "type": "boolean"
+                        },
+                        "beaconEnable": {
+                            "type": "boolean"
+                        },
+                        "beaconUuid": {
+                            "type": "string"
+                        },
+                        "beaconMajor": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 65535
+                        },
+                        "beaconMinor": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 65535
+                        }
+                    }
+                },
+                "flb": {
+                    "type": "object",
+                    "properties": {
+                        "mode": {
+                            "type": "string",
+                            "pattern": "^(Failover|Load Balancing)$"
+                        }
+                    }
+                }
+            }
+        },
+        "network": {
+            "type": "object",
+            "properties": {
+                "interface": {
+                    "type": "object",
+                    "properties": {
+                        "lan": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "mode": {
+                                        "type": "number",
+                                        "minimum": 0,
+                                        "maximum": 1
+                                    },
+                                    "ip": {
+                                        "type": "string",
+                                        "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                    },
+                                    "mask": {
+                                        "type": "string",
+                                        "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                    },
+                                    "gateway": {
+                                        "type": "string",
+                                        "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                    },
+                                    "dns": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                        }
+                                    },
+                                    "dhcp": {
+                                        "type": "object",
+                                        "properties": {
+                                            "enable": {
+                                                "type": "boolean"
+                                            },
+                                            "entries": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "scopeStart": {
+                                                            "type": "string",
+                                                            "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                        },
+                                                        "scopeEnd": {
+                                                            "type": "string",
+                                                            "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                        },
+                                                        "gateway": {
+                                                            "type": "string",
+                                                            "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                        },
+                                                        "dns": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string",
+                                                                "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                                            }
+                                                        },
+                                                        "leaseTime": {
+                                                            "type": "number",
+                                                            "minimum": 0,
+                                                            "maximum": 9999
+                                                        },
+                                                        "inheritLanDns": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "wlan": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "viface": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "uuid": {
+                                                    "type": "string"
+                                                },
+                                                "ip": {
+                                                    "type": "string",
+                                                    "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                },
+                                                "mask": {
+                                                    "type": "string",
+                                                    "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                },
+                                                "dhcp": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "enable": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "entries": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "scopeStart": {
+                                                                        "type": "string",
+                                                                        "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                                    },
+                                                                    "scopeEnd": {
+                                                                        "type": "string",
+                                                                        "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                                    },
+                                                                    "gateway": {
+                                                                        "type": "string",
+                                                                        "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                                    },
+                                                                    "dns": {
+                                                                        "type": "array",
+                                                                        "items": {
+                                                                            "type": "string",
+                                                                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                                                        }
+                                                                    },
+                                                                    "leaseTime": {
+                                                                        "type": "number",
+                                                                        "minimum": 0,
+                                                                        "maximum": 9999
+                                                                    },
+                                                                    "inheritLanDns": {
+                                                                        "type": "boolean"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "lan2": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "uuid": {
+                                        "type": "string"
+                                    },
+                                    "ip": {
+                                        "type": "string",
+                                        "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                    },
+                                    "mask": {
+                                        "type": "string",
+                                        "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                    },
+                                    "dhcp": {
+                                        "type": "object",
+                                        "properties": {
+                                            "enable": {
+                                                "type": "boolean"
+                                            },
+                                            "entries": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "scopeStart": {
+                                                            "type": "string",
+                                                            "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                        },
+                                                        "scopeEnd": {
+                                                            "type": "string",
+                                                            "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                        },
+                                                        "gateway": {
+                                                            "type": "string",
+                                                            "pattern": "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+                                                        },
+                                                        "dns": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string",
+                                                                "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                                            }
+                                                        },
+                                                        "leaseTime": {
+                                                            "type": "number",
+                                                            "minimum": 0,
+                                                            "maximum": 9999
+                                                        },
+                                                        "inheritLanDns": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "sslvpn": {
+                    "type": "object",
+                    "properties": {
+                        "server": {
+                            "type": "string",
+                            "maxLength": 256
+                        },
+                        "user": {
+                            "type": "string",
+                            "maxLength": 64
+                        },
+                        "password": {
+                            "type": "string",
+                            "maxLength": 64
+                        },
+                        "domain": {
+                            "type": "string",
+                            "maxLength": 64
+                        },
+                        "team": {
+                            "type": "string",
+                            "maxLength": 64
+                        },
+                        "vpnType": {
+                            "type": "string",
+                            "enum": [
+                                "NX_VPN",
+                                "CT_VPN"
+                            ]
+                        },
+                        "ip": {
+                            "type": "string",
+                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                        },
+                        "mask": {
+                            "type": "string",
+                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                        },
+                        "gateway": {
+                            "type": "string",
+                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                        },
+                        "autoReconnect": {
+                            "type": "boolean"
+                        },
+                        "l3MgmtEnable": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "l3": {
+                    "type": "object",
+                    "properties": {
+                        "enableAcIp": {
+                            "type": "boolean"
+                        },
+                        "acIp": {
+                            "type": "string",
+                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                        },
+                        "disableDhcp": {
+                            "type": "boolean"
+                        },
+                        "ip": {
+                            "type": "string",
+                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                        },
+                        "mask": {
+                            "type": "string",
+                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                        },
+                        "gateway": {
+                            "type": "string",
+                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                        }
+                    }
+                },
+                "wwan": {
+                    "type": "object",
+                    "properties": {
+                        "enable": {
+                            "type": "boolean"
+                        },
+                        "vlanId": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 4094
+                        },
+                        "dupEnable": {
+                            "type": "boolean"
+                        },
+                        "vlanIp": {
+                            "type": "string",
+                            "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                        },
+                        "country": {
+                            "type": "string",
+                            "maxLength": 64
+                        },
+                        "provider": {
+                            "type": "string",
+                            "maxLength": 64
+                        },
+                        "plan": {
+                            "type": "string",
+                            "maxLength": 64
+                        },
+                        "apn": {
+                            "type": "string",
+                            "maxLength": 64
+                        },
+                        "connType": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 2
+                        },
+                        "phone": {
+                            "type": "string",
+                            "maxLength": 48
+                        },
+                        "user": {
+                            "type": "string",
+                            "maxLength": 256
+                        },
+                        "pwd": {
+                            "type": "string",
+                            "maxLength": 256
+                        }
+                    }
+                },
+                "switch": {
+                    "type": "object",
+                    "properties": {
+                        "portConfig": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "portName": {
+                                        "type": "string"
+                                    },
+                                    "portEnable": {
+                                        "type": "boolean"
+                                    },
+                                    "port802dot1xAuth": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "wired802dot1x": {
+                    "type": "object",
+                    "properties": {
+                        "eapSetting": {
+                            "type": "object",
+                            "properties": {
+                                "retryInterval": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 60
+                                },
+                                "retryTimes": {
+                                    "type": "number",
+                                    "minimum": 1,
+                                    "maximum": 10
+                                },
+                                "nasId": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 3
+                                },
+                                "nasIpAddr": {
+                                    "type": "string",
+                                    "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                }
+                            }
+                        },
+                        "radius": {
+                            "type": "object",
+                            "properties": {
+                                "reauthPeriod": {
+                                    "type": "number",
+                                    "minimum": 0
+                                },
+                                "server": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "ip": {
+                                                "type": "string",
+                                                "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                            },
+                                            "secret": {
+                                                "type": "string",
+                                                "maxLength": 128
+                                            },
+                                            "port": {
+                                                "type": "number",
+                                                "minimum": 0,
+                                                "maximum": 65535
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "radAcct": {
+                            "type": "object",
+                            "properties": {
+                                "server": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "ip": {
+                                                "type": "string",
+                                                "pattern": "(^[ ]*$)|^(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)[.]){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$"
+                                            },
+                                            "secret": {
+                                                "type": "string",
+                                                "maxLength": 128
+                                            },
+                                            "port": {
+                                                "type": "number",
+                                                "minimum": 0,
+                                                "maximum": 65535
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "cloudMgmt": {
+            "type": "object",
+            "properties": {
+                "secret": {
+                    "type": "string",
+                    "maxLength": 32
+                },
+                "chicken": {
+                    "type": "object",
+                    "properties": {
+                        "version": {
+                            "type": "number",
+                            "minimum": -1,
+                            "maximum": 4294967295
+                        }
+                    }
+                },
+                "panda": {
+                    "type": "object",
+                    "properties": {
+                        "cpuUsage": {
+                            "type": "boolean"
+                        },
+                        "memUsage": {
+                            "type": "boolean"
+                        },
+                        "throughput24": {
+                            "type": "boolean"
+                        },
+                        "throughput5": {
+                            "type": "boolean"
+                        },
+                        "clientNum": {
+                            "type": "boolean"
+                        },
+                        "datapack": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "apiGateway": {
+                    "type": "object",
+                    "properties": {
+                        "raccoonUrl": {
+                            "type": "string",
+                            "maxLength": 1024
+                        },
+                        "chickenUrl": {
+                            "type": "string",
+                            "maxLength": 1024
+                        },
+                        "pandaUrl": {
+                            "type": "string",
+                            "maxLength": 1024
+                        },
+                        "tortoiseUrl": {
+                            "type": "string",
+                            "maxLength": 1024
+                        }
+                    }
+                },
+                "updateFirmware": {
+                    "type": "object",
+                    "properties": {
+                        "version": {
+                            "type": "string"
+                        },
+                        "is_auto": {
+                            "type": "boolean"
+                        },
+                        "retry_duration": {
+                            "type": "integer"
+                        },
+                        "schedule": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "tenantInfo": {
+                    "type": "object",
+                    "properties": {
+                        "tenantId": {
+                            "type": "string"
+                        },
+                        "zoneId": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "gbfa": {
+                    "type": "object",
+                    "properties": {
+                        "checksum": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "rrm": {
+            "type": "object",
+            "properties": {
+                "gdcsEnable": {
+                    "type": "boolean"
+                },
+                "grrmEnable": {
+                    "type": "boolean"
+                },
+                "staQualityThreshold": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 50
+                },
+                "radioQualityThreshold": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 50
+                }
+            }
+        },
+        "aclRules": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ssid": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "rules": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "srcMac": {
+                                    "type": "string"
+                                },
+                                "dstNet": {
+                                    "type": "string"
+                                },
+                                "proto": {
+                                    "type": "integer"
+                                },
+                                "dport": {
+                                    "type": "integer"
+                                },
+                                "action": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
