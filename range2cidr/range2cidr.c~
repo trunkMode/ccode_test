@@ -1,0 +1,150 @@
+#include <unistd.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+typedef struct {
+    uint32_t cidr;
+    uint32_t prefix;
+} cidr_t;
+
+typedef struct {
+    uint32_t start;
+    uint32_t end;
+} range_t;
+
+int range2cidr(cidr_t *cidr, size_t cidr_max, uint32_t start, uint32_t end, int max_prefix)
+{
+    uint32_t mask_map[32] = {
+        0xffffffff, 0xfffffffe, 0xfffffffc, 0xfffffff8, 0xfffffff0,
+        0xffffffe0, 0xffffffc0, 0xffffff80, 0xffffff00, 0xfffffe00,
+        0xfffff800, 0xfffff000, 0xffffe000, 0xffff8000, 0xffff0000,
+        0xfffe0000, 0xfff80000, 0xfff00000, 0xffe00000, 0xff800000,
+        0xff000000, 0xfe000000, 0xf8000000, 0xf0000000, 0xe0000000,
+        0x80000000, 0x00000000,
+    };
+    int i = 0, j, idx = 0;
+    uint32_t s = start, e, value = start;
+
+    memset(cidr, 0x00, sizeof(cidr_t) * cidr_max);
+    s = start;
+    while (s <= end) {
+        for (i = 0; i < max_prefix; i++) {
+            if (s & (1 << i)) {
+                break;
+            }
+        }
+
+        if (0 == i) {
+            cidr[idx].cidr = s;
+            cidr[idx].prefix = max_prefix;
+            idx++;
+            s++;
+        } else {
+            for (j = i; j >= 0; j--) {
+                value = s + pow(2,j) - 1;
+                if (value >= s && value <= end) {
+                    cidr[idx].cidr = s & mask_map[j];
+                    cidr[idx].prefix = max_prefix - j;
+                    idx++;
+                    s = value + 1;
+                    break;
+                }
+            }
+        }
+    }
+
+
+    printf("============= \n");
+    for (i = 0; i < idx; i++) {
+        printf("%d/%d, \n", cidr[i].cidr, cidr[i].prefix);
+    }
+    return idx;
+}
+
+int range_sort_merge(range_t *range, int cnt)
+{
+    uint32_t tmp, merge_cnt = 0;
+    range_t *tmp_range = NULL;
+    int i, j, min_index = 0;
+
+    for (i = 0; i < cnt - 1; i++) {
+        min_index = i;
+        for (j = i + 1; j < cnt; j++) {
+            if (range[j].start < range[min_index].start) {
+                min_index = j;
+            }
+        }
+
+        if (min_index != i) {
+            tmp = range[min_index].start;
+            range[min_index].start = range[i].start;
+            range[i].start = tmp;
+
+            tmp = range[min_index].end;
+            range[min_index].end = range[i].end;
+            range[i].end = tmp;
+        }
+    }
+
+    /* prepare mem */
+    tmp_range = malloc(sizeof(*tmp_range) * cnt);
+    if (!tmp_range) {
+        return -1;
+    }
+
+    memset(tmp_range, 0x00, sizeof(*tmp_range) *cnt);
+    tmp_range[0] = range[0];
+    for (i = 1, j = 0; i < cnt; i++) {
+        if (range[i].start == 0 && range[i].end == 0)
+            continue;
+        if (is_range_overlap(range[i].start, range[i].end,
+                    tmp_range[j].start, tmp_range[j].end) ||
+                is_range_adjacent(range[i].start, range[i].end,
+                    tmp_range[j].start, tmp_range[j].end)) { 
+            tmp_range[j].start = MIN(tmp_range[j].start, range[i].start);
+            tmp_range[j].end = MAX(tmp_range[j].end, range[i].end);
+        } else {
+            tmp_range[++j] = range[i];
+        }
+    }
+    memcpy(range, tmp_range, sizeof(*range) *cnt);
+
+    for (i = 0; i < cnt; i++) {
+        if (range[i].start && range[i].end)
+            merge_cnt++;
+    }
+
+    /* free mem */
+    free(tmp_range);
+    return merge_cnt;
+}
+int cidr2range(int max_prefix, cidr_t *cidr, int cidr_cnt, range_t *range, int range_cnt)
+{
+    int i;
+
+    printf("cidr:\n");
+    for (i = 0; i < cidr_cnt && i < range_cnt; i++) {
+        range[i].start = cidr[i].cidr;
+        range[i].end = pow(2, max_prefix - cidr[i].prefix) - 1 + range[i].start;
+        printf("%d/%d -> %d - %d\n", cidr[i].cidr, cidr[i].prefix, range[i].start, range[i].end);
+    }
+
+    
+    return 0;
+}
+
+int main()
+{
+    int cidr_cnt, range_cnt;
+    range_t range[32];
+    cidr_t cidr[32];
+
+    range2cidr(cidr, 32, 10, 10, 16);
+    range2cidr(cidr, 32, 11, 11, 16);
+    cidr_cnt = range2cidr(cidr, 32, 1, 100, 32);
+
+    cidr2range(32, cidr, cidr_cnt, range, 32);
+    return 0;
+}

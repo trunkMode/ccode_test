@@ -1,0 +1,5 @@
+signed data:
+c2 6e f8 c4 cd f2 91 b2 c1 6f 61 7a e7 da 0e b0 7a bb a0 89 76 61 57 8e 1c 00 e7 3e cb c9 6c c0 
+decrypted and signed data: (102)
+30 64 02 30 1a cd 19 34 5a 11 1c fe 40 7e 1a 8a 0e 0f 8a 0e f1 4a 11 2b 2e 89 99 bd 90 99 b6 20 c4 c0 3a 60 6d 7b 9c d9 b2 37 ac e9 92 e7 9a eb 45 17 b9 33 02
+30 7a f7 50 38 1a 78 a9 81 34 4a 15 7d 82 73 a7 f6 47 4a f1 f8 ca ed 53 98 e6 e8 d1 3e 81 33 ba 3d bf cb 03 4f fb f2 f1 e8 f7 4c 2e 0a df aa a5 7a

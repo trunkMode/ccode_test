@@ -1,0 +1,290 @@
+Error: MIO_BOOT_ERR[ADR_ERR]
+ath10k_pci 0001:02:00.0: firmware crashed! (guid n/a)
+ath10k_pci 0001:02:00.0: qca9984/qca9994 hw1.0 target 0x01000000 chip_id 0x00000000 sub 168c:cafe
+ath10k_pci 0001:02:00.0: kconfig debug 1 debugfs 1 tracing 1 dfs 1 testmode 1
+ath10k_pci 0001:02:00.0: firmware ver 10.4-3.4-00082 api 5 features no-p2p,mfp,peer-flow-ctrl,btcoex-param,allows-mesh-bcast crc32 f301de65
+ath10k_pci 0001:02:00.0: board_file api 2 bmi_id 0:3 crc32 751efba1
+ath10k_pci 0001:02:00.0: htt-ver 2.2 wmi-op 6 htt-op 4 cal otp max-sta 512 raw 0 hwcrypto 1
+ath10k_pci 0001:02:00.0: failed to get memcpy hi address for firmware address 4: -16
+ath10k_pci 0001:02:00.0: failed to read firmware dump area: -16
+ath10k_pci 0001:02:00.0: Copy Engine register dump:
+ath10k_pci 0001:02:00.0: [00]: 0x0004a000   4   4   3   3
+ath10k_pci 0001:02:00.0: [01]: 0x0004a400   8   8  43  44
+ath10k_pci 0001:02:00.0: [02]: 0x0004a800  33  33  32  33
+ath10k_pci 0001:02:00.0: [03]: 0x0004ac00  18  18  18  18
+ath10k_pci 0001:02:00.0: [04]: 0x0004b000   4   4  44   4
+ath10k_pci 0001:02:00.0: [05]: 0x0004b400  15  15 398 399
+ath10k_pci 0001:02:00.0: [06]: 0x0004b800   2   2   2   2
+ath10k_pci 0001:02:00.0: [07]: 0x0004bc00   0   1   0   1
+ath10k_pci 0001:02:00.0: [08]: 0x0004c000   0   0 127   0
+ath10k_pci 0001:02:00.0: [09]: 0x0004c400   1   1   1   1
+ath10k_pci 0001:02:00.0: [10]: 0x0004c800   0   0   0   0
+ath10k_pci 0001:02:00.0: [11]: 0x0004cc00   0   0   0   0
+ath10k_pci 0001:02:00.0: failed to set erp slot for vdev 0: -143
+ath10k_pci 0001:02:00.0: failed to set preamble for vdev 0: -143
+br0: port 3(ath00) entered blocking state
+br0: port 3(ath00) entered forwarding state
+ath10k_pci 0001:02:00.0: failed to read hi_board_data address: -28
+ieee80211 wifi0: Hardware restart was requested
+ath10k_pci 0001:02:00.0: failed to set wmm params: -143
+ath10k_pci 0001:02:00.0: Failed to get pcie state addr: -16
+ath10k_pci 0001:02:00.0: failed to setup init config: -16
+ath10k_pci 0001:02:00.0: Could not init hif: -16
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 179 at /home/Build/lzhou/git_repos_project/wireless_team_git_project/SonicWaveSDK/OS/SonicWave_ath10k/.build_dir/SonicWave400/SonicWave400_fw/linux/compat-wireless-2017-10-06/net/mac80211/util.c:1863 ieee80211_reconfig+0x98/0x17a8 [mac80211]
+Hardware became unavailable during restart.
+Modules linked in: iptable_mangle ath10k_pci ath10k_core ath mac80211 cfg80211 compat xt_tcpudp iptable_filter ip_tables x_tables
+CPU: 0 PID: 179 Comm: kworker/0:1 Not tainted 4.9.58 #79
+Workqueue: events_freezable ieee80211_alloc_hw_nm [mac80211]
+Stack : 0000000000000004 ffffffff813728a0 0000000000000000 ffffffff80800000
+        0000000000000000 0000000000000000 ffffffff81374cd2 ffffffff801c4cfc
+        0000000000000000 ffffffff801c595c 0000000000000000 0000000000000000
+        0000000000000000 0000000000000000 ffffffff80790000 8000000003cb84c0
+        ffffffff806df930 ffffffffc0236800 0000000000000009 0000000000000747
+        0000000000000000 8000000002023940 8000000003cb84c0 ffffffff80226d34
+        00000000000000b3 800000000f66fad8 0000000000000000 ffffffff8019b9f8
+        8000000003cb84c0 800000000f66f9f0 00000000000006d5 ffffffff803f075c
+        0000000000000000 0000000000000000 735f667265657a61 0000000000000349
+        0000000000000000 ffffffff8015ed40 ffffffffc01f0848 8000000001dda400
+        ...
+Call Trace:
+[<ffffffff8015ed40>] show_stack+0x58/0x90
+[<ffffffff803f075c>] dump_stack+0x8c/0xc0
+[<ffffffff8017d828>] __warn+0xe8/0x120
+[<ffffffff8017d89c>] warn_slowpath_fmt+0x3c/0x48
+[<ffffffffc0236800>] ieee80211_reconfig+0x98/0x17a8 [mac80211]
+[<ffffffffc01f0940>] ieee80211_alloc_hw_nm+0x820/0x850 [mac80211]
+[<ffffffff80199cb8>] process_one_work+0x2c0/0x568
+[<ffffffff8019a290>] worker_thread+0x330/0x5b0
+[<ffffffff8019fb48>] kthread+0xe0/0xf8
+[<ffffffff80158ef0>] ret_from_kernel_thread+0x14/0x1c
+---[ end trace 7edb0d5100b09f6d ]---
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 179 at /home/Build/lzhou/git_repos_project/wireless_team_git_project/SonicWaveSDK/OS/SonicWave_ath10k/.build_dir/SonicWave400/SonicWave400_fw/linux/compat-wireless-2017-10-06/net/mac80211/driver-ops.h:18 ieee80211_nan_func_match+0x318c/0x3f20 [mac80211]
+ath00:  Failed check-sdata-in-driver check, flags: 0x1
+Modules linked in: iptable_mangle ath10k_pci ath10k_core ath mac80211 cfg80211 compat xt_tcpudp iptable_filter ip_tables x_tables
+CPU: 0 PID: 179 Comm: kworker/0:1 Tainted: G        W       4.9.58 #79
+Workqueue: events_freezable ieee80211_alloc_hw_nm [mac80211]
+Stack : 0000000000000004 ffffffff813728a0 0000000000000000 ffffffff80800000
+        0000000000000000 0000000000000000 ffffffff81374cd2 ffffffff801c4cfc
+        0000000000000000 ffffffff801c595c 0000000000000000 0000000000000000
+        0000000000000000 0000000000000000 ffffffff80790000 8000000003cb84c0
+        ffffffff806df930 ffffffffc021a9a4 0000000000000009 0000000000000012
+        ffffffff805f3b80 8000000009f8cf00 8000000008166798 ffffffff80226d34
+        00000000000000b3 800000000f66f7c8 ffffffff805f3b80 ffffffff8019b9f8
+        8000000008166798 800000000f66f6e0 0000000000000793 ffffffff803f075c
+        0000000000000000 0000000000000000 735f667265657a61 0000000000000366
+        0000000000000000 ffffffff8015ed40 ffffffffc01f0848 8000000001dda400
+        ...
+Call Trace:
+[<ffffffff8015ed40>] show_stack+0x58/0x90
+[<ffffffff803f075c>] dump_stack+0x8c/0xc0
+[<ffffffff8017d828>] __warn+0xe8/0x120
+[<ffffffff8017d89c>] warn_slowpath_fmt+0x3c/0x48
+[<ffffffffc021a9a4>] ieee80211_nan_func_match+0x318c/0x3f20 [mac80211]
+---[ end trace 7edb0d5100b09f6e ]---
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 179 at /home/Build/lzhou/git_repos_project/wireless_team_git_project/SonicWaveSDK/OS/SonicWave_ath10k/.build_dir/SonicWave400/SonicWave400_fw/linux/compat-wireless-2017-10-06/net/mac80211/driver-ops.h:18 ieee80211_nan_func_match+0x3214/0x3f20 [mac80211]
+ath00:  Failed check-sdata-in-driver check, flags: 0x1
+Modules linked in: iptable_mangle ath10k_pci ath10k_core ath mac80211 cfg80211 compat xt_tcpudp iptable_filter ip_tables x_tables
+CPU: 0 PID: 179 Comm: kworker/0:1 Tainted: G        W       4.9.58 #79
+Workqueue: events_freezable ieee80211_alloc_hw_nm [mac80211]
+Stack : 0000000000000004 ffffffff813728a0 0000000000000000 ffffffff80800000
+        0000000000000000 0000000000000000 ffffffff81374cd2 ffffffff801c4cfc
+        0000000000000000 ffffffff801c595c 0000000000000000 0000000000000000
+        0000000000000000 0000000000000000 ffffffff80790000 8000000003cb84c0
+        ffffffff806df930 ffffffffc021aa2c 0000000000000009 0000000000000012
+        ffffffff805f3b80 8000000009f8cf00 8000000008166798 ffffffff80226d34
+        00000000000000b3 800000000f66f7c8 ffffffff805f3b80 ffffffff8019b9f8
+        8000000008166798 800000000f66f6e0 0000000000000847 ffffffff803f075c
+        0000000000000000 0000000000000000 735f667265657a61 000000000000037e
+        0000000000000000 ffffffff8015ed40 ffffffffc01f0848 8000000001dda400
+        ...
+Call Trace:
+[<ffffffff8015ed40>] show_stack+0x58/0x90
+[<ffffffff803f075c>] dump_stack+0x8c/0xc0
+[<ffffffff8017d828>] __warn+0xe8/0x120
+[<ffffffff8017d89c>] warn_slowpath_fmt+0x3c/0x48
+[<ffffffffc021aa2c>] ieee80211_nan_func_match+0x3214/0x3f20 [mac80211]
+---[ end trace 7edb0d5100b09f6f ]---
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 179 at /home/Build/lzhou/git_repos_project/wireless_team_git_project/SonicWaveSDK/OS/SonicWave_ath10k/.build_dir/SonicWave400/SonicWave400_fw/linux/compat-wireless-2017-10-06/net/mac80211/driver-ops.h:18 ieee80211_recalc_smps_chanctx+0x8e0/0x1070 [mac80211]
+ath00:  Failed check-sdata-in-driver check, flags: 0x1
+Modules linked in: iptable_mangle ath10k_pci ath10k_core ath mac80211 cfg80211 compat xt_tcpudp iptable_filter ip_tables x_tables
+CPU: 0 PID: 179 Comm: kworker/0:1 Tainted: G        W       4.9.58 #79
+Workqueue: events_freezable ieee80211_alloc_hw_nm [mac80211]
+Stack : 0000000000000004 ffffffff813728a0 0000000000000000 ffffffff80800000
+        0000000000000000 0000000000000000 ffffffff81374cd2 ffffffff801c4cfc
+        0000000000000000 ffffffff801c595c 0000000000000000 0000000000000000
+        0000000000000000 0000000000000000 ffffffff80790000 8000000003cb84c0
+        ffffffff806df930 ffffffffc023cfb0 0000000000000009 0000000000000012
+        ffffffff805f3b80 8000000009f8cf00 8000000008166798 ffffffff80226d34
+        00000000000000b3 800000000f66f748 ffffffff805f3b80 ffffffff8019b9f8
+        8000000008166798 800000000f66f660 00000000000008fb ffffffff803f075c
+        0000000000000000 0000000000000000 735f667265657a61 0000000000000396
+        0000000000000000 ffffffff8015ed40 ffffffffc01f0848 8000000001dda400
+        ...
+Call Trace:
+[<ffffffff8015ed40>] show_stack+0x58/0x90
+[<ffffffff803f075c>] dump_stack+0x8c/0xc0
+[<ffffffff8017d828>] __warn+0xe8/0x120
+[<ffffffff8017d89c>] warn_slowpath_fmt+0x3c/0x48
+[<ffffffffc023cfb0>] ieee80211_recalc_smps_chanctx+0x8e0/0x1070 [mac80211]
+---[ end trace 7edb0d5100b09f70 ]---
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 179 at /home/Build/lzhou/git_repos_project/wireless_team_git_project/SonicWaveSDK/OS/SonicWave_ath10k/.build_dir/SonicWave400/SonicWave400_fw/linux/compat-wireless-2017-10-06/net/mac80211/driver-ops.h:18 ieee80211_recalc_smps_chanctx+0xd24/0x1070 [mac80211]
+ath00:  Failed check-sdata-in-driver check, flags: 0x1
+Modules linked in: iptable_mangle ath10k_pci ath10k_core ath mac80211 cfg80211 compat xt_tcpudp iptable_filter ip_tables x_tables
+CPU: 0 PID: 179 Comm: kworker/0:1 Tainted: G        W       4.9.58 #79
+Workqueue: events_freezable ieee80211_alloc_hw_nm [mac80211]
+Stack : 0000000000000004 ffffffff813728a0 0000000000000000 ffffffff80800000
+        0000000000000000 0000000000000000 ffffffff81374cd2 ffffffff801c4cfc
+        0000000000000000 ffffffff801c595c 0000000000000000 0000000000000000
+        0000000000000000 0000000000000000 ffffffff80790000 8000000003cb84c0
+        ffffffff806df930 ffffffffc023d3f4 0000000000000009 0000000000000012
+        ffffffff805f3b80 8000000009f8cf00 8000000008166798 ffffffff80226d34
+        00000000000000b3 800000000f66f748 ffffffff805f3b80 ffffffff8019b9f8
+        8000000008166798 800000000f66f660 00000000000009af ffffffff803f075c
+        0000000000000000 0000000000000000 735f667265657a61 00000000000003ae
+        0000000000000000 ffffffff8015ed40 ffffffffc01f0848 8000000001dda400
+        ...
+Call Trace:
+[<ffffffff8015ed40>] show_stack+0x58/0x90
+[<ffffffff803f075c>] dump_stack+0x8c/0xc0
+[<ffffffff8017d828>] __warn+0xe8/0x120
+[<ffffffff8017d89c>] warn_slowpath_fmt+0x3c/0x48
+[<ffffffffc023d3f4>] ieee80211_recalc_smps_chanctx+0xd24/0x1070 [mac80211]
+---[ end trace 7edb0d5100b09f71 ]---
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 179 at /home/Build/lzhou/git_repos_project/wireless_team_git_project/SonicWaveSDK/OS/SonicWave_ath10k/.build_dir/SonicWave400/SonicWave400_fw/linux/compat-wireless-2017-10-06/net/mac80211/driver-ops.h:868 ieee80211_iter_chan_contexts_atomic+0x4b4/0xb90 [mac80211]
+Modules linked in: iptable_mangle ath10k_pci ath10k_core ath mac80211 cfg80211 compat xt_tcpudp iptable_filter ip_tables x_tables
+CPU: 0 PID: 179 Comm: kworker/0:1 Tainted: G        W       4.9.58 #79
+Workqueue: events_freezable ieee80211_alloc_hw_nm [mac80211]
+Stack : 0000000000000004 ffffffff813728a0 0000000000000000 ffffffff80800000
+        0000000000000000 0000000000000000 ffffffff81374cd2 ffffffff801c4cfc
+        0000000000000000 ffffffff801c595c 0000000000000000 0000000000000000
+        0000000000000000 0000000000000000 ffffffff80790000 8000000003cb84c0
+        ffffffff806df930 ffffffffc023b394 0000000000000009 0000000000000364
+        ffffffff805f3b80 8000000009f8cf00 8000000008166798 ffffffff80226d34
+        00000000000000b3 800000000f66f798 ffffffff805f3b80 ffffffff8019b9f8
+        8000000008166798 800000000f66f6b0 0000000000000a61 ffffffff803f075c
+        0000000000000000 0000000000000000 735f667265657a61 00000000000003c5
+        0000000000000000 ffffffff8015ed40 ffffffffc01f0848 8000000001dda400
+        ...
+Call Trace:
+[<ffffffff8015ed40>] show_stack+0x58/0x90
+[<ffffffff803f075c>] dump_stack+0x8c/0xc0
+[<ffffffff8017d828>] __warn+0xe8/0x120
+[<ffffffffc023b394>] ieee80211_iter_chan_contexts_atomic+0x4b4/0xb90 [mac80211]
+---[ end trace 7edb0d5100b09f72 ]---
+ath10k_pci 0001:02:00.0: failed to flush transmit queue (skip 1 ar-state 0): 500
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 179 at /home/Build/lzhou/git_repos_project/wireless_team_git_project/SonicWaveSDK/OS/SonicWave_ath10k/.build_dir/SonicWave400/SonicWave400_fw/linux/compat-wireless-2017-10-06/net/mac80211/driver-ops.h:18 ieee80211_add_virtual_monitor+0xc34/0xd40 [mac80211]
+ath00:  Failed check-sdata-in-driver check, flags: 0x1
+Modules linked in: iptable_mangle ath10k_pci ath10k_core ath mac80211 cfg80211 compat xt_tcpudp iptable_filter ip_tables x_tables
+CPU: 0 PID: 179 Comm: kworker/0:1 Tainted: G        W       4.9.58 #79
+Workqueue: events_freezable ieee80211_alloc_hw_nm [mac80211]
+Stack : 0000000000000004 ffffffff813728a0 0000000000000000 ffffffff80800000
+        0000000000000000 0000000000000000 ffffffff81374cd2 ffffffff801c4cfc
+        0000000000000000 ffffffff801c595c 0000000000000000 0000000000000000
+        0000000000000000 0000000000000000 ffffffff80790000 8000000003cb84c0
+        ffffffff806df930 ffffffffc020fbb4 0000000000000009 0000000000000012
+        8000000008167060 8000000000aa15c0 8000000000aa0e00 ffffffff80226d34
+        00000000000000b3 800000000f66f938 8000000008167060 ffffffff8019b9f8
+        8000000000aa0e00 800000000f66f850 0000000000000b15 ffffffff803f075c
+        0000000000000000 0000000000000000 735f667265657a61 00000000000003dd
+        0000000000000000 ffffffff8015ed40 ffffffffc01f0848 8000000001dda400
+        ...
+Call Trace:
+[<ffffffff8015ed40>] show_stack+0x58/0x90
+[<ffffffff803f075c>] dump_stack+0x8c/0xc0
+[<ffffffff8017d828>] __warn+0xe8/0x120
+[<ffffffff8017d89c>] warn_slowpath_fmt+0x3c/0x48
+[<ffffffffc020fbb4>] ieee80211_add_virtual_monitor+0xc34/0xd40 [mac80211]
+---[ end trace 7edb0d5100b09f73 ]---
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 179 at /home/Build/lzhou/git_repos_project/wireless_team_git_project/SonicWaveSDK/OS/SonicWave_ath10k/.build_dir/SonicWave400/SonicWave400_fw/linux/compat-wireless-2017-10-06/net/mac80211/driver-ops.c:39 ieee80211_add_virtual_monitor+0xc78/0xd40 [mac80211]
+Modules linked in: iptable_mangle ath10k_pci ath10k_core ath mac80211 cfg80211 compat xt_tcpudp iptable_filter ip_tables x_tables
+CPU: 0 PID: 179 Comm: kworker/0:1 Tainted: G        W       4.9.58 #79
+Workqueue: events_freezable ieee80211_alloc_hw_nm [mac80211]
+Stack : 0000000000000004 ffffffff813728a0 0000000000000000 ffffffff80800000
+        0000000000000000 0000000000000000 ffffffff81374cd2 ffffffff801c4cfc
+        0000000000000000 ffffffff801c595c 0000000000000000 0000000000000000
+        0000000000000000 0000000000000000 ffffffff80790000 8000000003cb84c0
+        ffffffff806df930 ffffffffc020fbf8 0000000000000009 0000000000000027
+        8000000008167060 8000000000aa15c0 8000000000aa0e00 ffffffff80226d34
+        00000000000000b3 800000000f66f988 8000000008167060 ffffffff8019b9f8
+        8000000000aa0e00 800000000f66f8a0 0000000000000bc7 ffffffff803f075c
+        0000000000000000 0000000000000000 735f667265657a61 00000000000003f4
+        0000000000000000 ffffffff8015ed40 ffffffffc01f0848 8000000001dda400
+        ...
+Call Trace:
+[<ffffffff8015ed40>] show_stack+0x58/0x90
+[<ffffffff803f075c>] dump_stack+0x8c/0xc0
+[<ffffffff8017d828>] __warn+0xe8/0x120
+[<ffffffffc020fbf8>] ieee80211_add_virtual_monitor+0xc78/0xd40 [mac80211]
+---[ end trace 7edb0d5100b09f74 ]---
+br0: port 3(ath00) entered disabled state
+Can't acquire (-1) - The interface went down!
+
+~ # 
+~ # 
+ spSaveLogFile 158:  [cp /var/log/message /storage/log/spMessageCurr.txt] (0)
+
+~ # 
+~ # ath10k_pci 0000:01:00.0: failed to receive scan abortion completion: timed out
+ath10k_pci 0000:01:00.0: failed to stop scan: -145
+ath10k_pci 0000:01:00.0: failed to start hw scan: -145
+ath10k_pci 0000:01:00.0: failed to submit AP/IBSS self-peer removal on vdev 0: -11
+ath10k_pci 0000:01:00.0: failed to delete WMI vdev 0: -11
+
+ spSaveLogFile 158:  [cp /var/log/message /storage/log/spMessageCurr.txt] (0)
+
+~ # 
+~ # ath10k_pci 0000:01:00.0: failed to remove AP self-peer on vdev 0: -145
+ath10k_pci 0000:01:00.0: found vif peer 18:b1:69:7b:71:70 entry on vdev 0 after it was supposedly removed
+ath10k_pci 0000:01:00.0: removing stale peer 18:b1:69:7b:71:70 from vdev_id 0
+Data bus error, epc == ffffffff80427890, ra == ffffffffc03c2ebc
+Oops[#1]:
+CPU: 3 PID: 957 Comm: hostapd Tainted: G        W       4.9.58 #79
+task: 800000000de49600 task.stack: 800000000b870000
+$ 0   : 0000000000000000 0000000014109ce1 ffffffff80427890 ffffffff805ff3d0
+$ 4   : 80011b00f0040030 0000000000040030 0000000000040030 0000000000040034
+$ 8   : 0000000000200000 8000000008700008 8000000000a91c00 0000000000000005
+$12   : 000000000004bc00 0000000000000007 ffffffff80294100 0000000000000001
+$16   : 8000000000a91c00 0000000000040030 ffffffff80107620 0000000000000000
+$20   : 0000000000000004 0000000000000004 8000000000a91c00 800000000b7d0000
+$24   : 0000000000000040 ffffffffc03c0080                                  
+$28   : 800000000b870000 800000000b87f960 8000000000a98488 ffffffffc03c2ebc
+Hi    : 0000000000000000
+Lo    : 10f5f533bfc00000
+epc   : ffffffff80427890 ioread32+0x0/0x30
+ra    : ffffffffc03c2ebc ath10k_pci_hif_exchange_bmi_msg+0x12e4/0x19b0 [ath10k_pci]
+Status: 14109ce3	KX SX UX KERNEL EXL IE 
+Cause : 40808c1c (ExcCode 07)
+PrId  : 000d9602 (Cavium Octeon III)
+Modules linked in: iptable_mangle ath10k_pci ath10k_core ath mac80211 cfg80211 compat xt_tcpudp iptable_filter ip_tables x_tables
+Process hostapd (pid: 957, threadinfo=800000000b870000, task=800000000de49600, tls=000000fff5469010)
+Stack : 800000000d5903c0 0000000000000000 ffffffff80107620 0000000000000854
+        8000000000a98690 ffffffffc03c00ac 0000000000000004 ffffffffc03c0d20
+        0000000000400854 ffffffffc03c0718 ffffffffc03c7460 ffffffffc03c0000
+        800000000b87fa5c 0000000000000004 8000000001e66e48 000000000b7d0000
+        000000000b7d0000 8000000001e66d00 8000000000a91c00 8000000000a91c00
+        8000000000a92b78 8000000000a92b60 ffffffff805f5988 ffffffff805f59c0
+        0000000000000100 ffffffff80280bd8 8000000000a90e00 ffffffffc033079c
+        0000000000000000 0000000ffffffff1 8000000000a96c58 ffffffff80800000
+        8000000000a91c00 ffffffffc03351dc 8000000000a91c00 ffffffffc03395c0
+        ffffffff805186b8 8000000000a92b88 8000000000a91c00 ffffffffc032eec8
+        ...
+Call Trace:
+[<ffffffff80427890>] ioread32+0x0/0x30
+[<ffffffffc03c2ebc>] ath10k_pci_hif_exchange_bmi_msg+0x12e4/0x19b0 [ath10k_pci]
+[<ffffffff80280bd8>] kfree+0x0/0x2a0
+Code: 03e00008  a4a40000  00000000 <8c820000> 7c833a02  3c048060  6484f3d0  0064182d  90630000 
+
+---[ end trace 7edb0d5100b09f75 ]---
+iw dev
+Kernel panic - not syncing: Fatal exception in interrupt
+Rebooting in 5 seconds..
+
+

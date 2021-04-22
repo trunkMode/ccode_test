@@ -1,0 +1,241 @@
+%YAML 1.1
+---
+af-packet:
+  - interface: ath00    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath00
+    buffer-size: 32768
+
+  - interface: tapSec_ath00    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath00
+    buffer-size: 32768
+
+
+  - interface: ath01    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath01
+    buffer-size: 32768
+
+  - interface: tapSec_ath01    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath01
+    buffer-size: 32768
+
+
+  - interface: ath02    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath02
+    buffer-size: 32768
+
+  - interface: tapSec_ath02    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath02
+    buffer-size: 32768
+
+
+  - interface: ath03    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath03
+    buffer-size: 32768
+
+  - interface: tapSec_ath03    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath03
+    buffer-size: 32768
+
+
+  - interface: ath04    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath04
+    buffer-size: 32768
+
+  - interface: tapSec_ath04    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath04
+    buffer-size: 32768
+
+
+  - interface: ath05    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath05
+    buffer-size: 32768
+
+  - interface: tapSec_ath05    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath05
+    buffer-size: 32768
+
+
+  - interface: ath06    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath06
+    buffer-size: 32768
+
+  - interface: tapSec_ath06    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath06
+    buffer-size: 32768
+
+
+  - interface: ath10    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath10
+    buffer-size: 32768
+
+  - interface: tapSec_ath10    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath10
+    buffer-size: 32768
+
+
+  - interface: ath11    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath11
+    buffer-size: 32768
+
+  - interface: tapSec_ath11    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath11
+    buffer-size: 32768
+
+
+  - interface: ath12    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath12
+    buffer-size: 32768
+
+  - interface: tapSec_ath12    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath12
+    buffer-size: 32768
+
+
+  - interface: ath13    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath13
+    buffer-size: 32768
+
+  - interface: tapSec_ath13    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath13
+    buffer-size: 32768
+
+
+  - interface: ath14    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath14
+    buffer-size: 32768
+
+  - interface: tapSec_ath14    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath14
+    buffer-size: 32768
+
+
+  - interface: ath15    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath15
+    buffer-size: 32768
+
+  - interface: tapSec_ath15    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath15
+    buffer-size: 32768
+
+
+  - interface: ath16    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: tapSec_ath16
+    buffer-size: 32768
+
+  - interface: tapSec_ath16    threads: auto
+    cluster-id: 98
+    defrag: yes
+    cluster-type: cluster_flow
+    copy-mode: ips
+    copy-iface: ath16
+    buffer-size: 32768
+
+

@@ -1,0 +1,3 @@
+user=lzhou
+passwd=123test
+domain=svxxxxxxo

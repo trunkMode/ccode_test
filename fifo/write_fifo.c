@@ -6,8 +6,8 @@ int main()
 	int ret,fd;
 	int buf[11] = {0};
 
-//	if (mkfifo(FIFO_PATH, 0666) < 0)
-//		printf("failed to create fifo\n");
+	if (mkfifo(FIFO_PATH, 0666) < 0)
+		printf("failed to create fifo\n");
 
 	//fd = open(FIFO_PATH, O_RDWR);
 	fd = open(FIFO_PATH, O_WRONLY);

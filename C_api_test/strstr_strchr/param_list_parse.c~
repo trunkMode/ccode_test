@@ -1,0 +1,34 @@
+static int ath10k_parse_param_list(const char *param_list, const char *key, char *value_buf, int buf_len)
+{
+    //strstr(const char *s1, const char *s2)
+    //char *strchr(const char *s, int c)
+    int ret = -1, k_len = 0; 
+    char *dst = value_buf;
+    const char *param_sep = ';', *kv_sep = '='; 
+    const char *sep, *sep_kv, *list = param_list;
+
+    if (!key || !param_list || !value_buf)
+        return ret; 
+
+    while ((sep = strchr(list, param_sep)))
+        sep_kv = strchr(sep + 1, kv_sep);
+        if (!sep_kv)
+            break;
+
+        k_len = (sep_kv - (sep + 1)); 
+        if (strlen(key) == k_len &&
+            !memcmp(sep + 1, key, k_len)) {
+            sep_kv++;
+
+            k_len = 0; 
+            dst = value_buf;
+            while (*sep_kv != '\0' || *sep_kv != param_sep) {
+                k_len++;
+                if (k_len >= (buf_len - 1)) {
+                    k_len = buf_len  - 1; 
+                    break;
+                }    
+                *dst++ = *sep_kv++;
+            }    
+            value_buf[k_len] = '\0';
+

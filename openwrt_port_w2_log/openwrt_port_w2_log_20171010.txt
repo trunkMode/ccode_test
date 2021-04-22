@@ -1,0 +1,1361 @@
+root@OpenWrt:/# 
+root@OpenWrt:/# dmesg
+[    4.521890] [<ffffffff801b0c18>] dump_stack_print_info+0x80/0xd0
+[    4.527885] [<ffffffff80154494>] show_stack+0x50/0x84
+[    4.532914] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    4.537951] [<ffffffff803b6f4c>] pci_create_root_bus+0x304/0x49c
+[    4.543939] [<ffffffff8024deac>] __kmalloc+0x18c/0x3cc
+[    4.549060] [<ffffffff808cf2a4>] repair_env_string+0x0/0x9c
+[    4.554613] [<ffffffff803b7a64>] pci_scan_root_bus_msi+0x54/0xc8
+[    4.560608] [<ffffffff8048fb74>] pcibios_scanbus+0xa4/0x14c
+[    4.566162] [<ffffffff808fe69c>] pcibios_init+0x68/0xa0
+[    4.571366] [<ffffffff808fe634>] pcibios_init+0x0/0xa0
+[    4.576493] [<ffffffff8010f654>] do_one_initcall+0x198/0x1c0
+[    4.582131] [<ffffffff808cfe14>] kernel_init_freeable+0x178/0x234
+[    4.588205] [<ffffffff8010775c>] kernel_init+0x14/0x118
+[    4.593411] [<ffffffff80107748>] kernel_init+0x0/0x118
+[    4.598534] [<ffffffff80100958>] ret_from_kernel_thread+0x14/0x1c
+[    4.604611] 
+[    4.606110] pci_bus 0000:00: root bus resource [mem 0x1000000000000]
+[    4.612423] pci_bus 0000:00: root bus resource [io  0x0000]
+[    4.617986] pci_bus 0000:00: root bus resource [??? 0x00000000 flags 0x0]
+[    4.624752] pci_bus 0000:00: No busn resource found for root bus, will use [bus 00-ff]
+[    4.632656] pci_bus 0000:00: scanning bus
+[    4.632663] pci_scan_child_bus: scanning bus
+[    4.637056] pci_bus 0000:00: fixups for bus
+[    4.637067] pci_bus 0000:00: bus scan returning with max=00
+[    4.637081] pci_bus 0000:00: busn_res: [bus 00-ff] end is updated to 00
+[    4.637263] PCI host bridge to bus 0000:01
+[    4.641185] ### PCI IO resource #######
+[    4.645026] ioport_resource.start = 0x0
+[    4.648824] ioport_resource.end = 0x5ffffffff
+[    4.653164] ioport_resource.name = PCI IO
+[    4.657164] ioport_resource.flags = 0x100
+[    4.661150] iomem_resource.start = 0x0
+[    4.664882] iomem_resource.end = 0xffffffffffffffff
+[    4.669750] iomem_resource.name = PCI mem
+[    4.673736] iomem_resource.flags = 0x200
+[    4.677642] busn_resource.start = 0x0
+[    4.681294] busn_resource.end = 0xff
+[    4.684846] busn_resource.name = PCI busn
+[    4.688839] busn_resource.flags = 0x1000
+[    4.692757] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.14SonicWall #833
+[    4.699602] Stack : 00000000000001e8 0000000000000006 ffffffff80711948 ffffffff81ad0000
+[    4.699602] 	  0000000000000001 0000000000000000 0000000000000004 ffffffff81ab6b32
+[    4.699602] 	  0000000000000000 000000000000003e 0000000000000000 0000000000000000
+[    4.699602] 	  800000004eccbb88 ffffffff801afe28 ffffffff80759c78 0000000000000000
+[    4.699602] 	  0000000000000000 ffffffff80880000 ffffffff801ad634 ffffffff80880000
+[    4.699602] 	  ffffffff8081759f ffffffff80704128 800000004ecc0000 0000000000000000
+[    4.699602] 	  0000000000000001 ffffffff810c2960 800000004e4e9a58 ffffffff80fa0000
+[    4.699602] 	  800000004eccbd20 800000004eccba70 0000000000000001 ffffffff80384e90
+[    4.699602] 	  ffffffff801ad634 ffffffff801b0c18 0000000000000001 ffffffff80704128
+[    4.699602] 	  0000000000000000 ffffffff80154494 0000000000000000 0000000000000000
+[    4.699602] 	  ...
+[    4.764528] Call Trace:
+[    4.766971] [<ffffffff801afe28>] vprintk_emit+0x4f4/0x560
+[    4.772345] [<ffffffff801ad634>] printk+0x5c/0x68
+[    4.777035] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    4.782065] [<ffffffff801ad634>] printk+0x5c/0x68
+[    4.786754] [<ffffffff801b0c18>] dump_stack_print_info+0x80/0xd0
+[    4.792746] [<ffffffff80154494>] show_stack+0x50/0x84
+[    4.797778] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    4.802814] [<ffffffff803b6f4c>] pci_create_root_bus+0x304/0x49c
+[    4.808802] [<ffffffff8024deac>] __kmalloc+0x18c/0x3cc
+[    4.813923] [<ffffffff808cf2a4>] repair_env_string+0x0/0x9c
+[    4.819477] [<ffffffff803b7a64>] pci_scan_root_bus_msi+0x54/0xc8
+[    4.825469] [<ffffffff8048fb74>] pcibios_scanbus+0xa4/0x14c
+[    4.831025] [<ffffffff808fe69c>] pcibios_init+0x68/0xa0
+[    4.836229] [<ffffffff808fe634>] pcibios_init+0x0/0xa0
+[    4.841354] [<ffffffff8010f654>] do_one_initcall+0x198/0x1c0
+[    4.846994] [<ffffffff808cfe14>] kernel_init_freeable+0x178/0x234
+[    4.853068] [<ffffffff8010775c>] kernel_init+0x14/0x118
+[    4.858275] [<ffffffff80107748>] kernel_init+0x0/0x118
+[    4.863397] [<ffffffff80100958>] ret_from_kernel_thread+0x14/0x1c
+[    4.869474] 
+[    4.870974] pci_bus 0000:01: root bus resource [mem 0x11b00f0000000-0x11b0fffffffff] (bus address [0xf0000000-0xfffffffff])
+[    4.882068] pci_bus 0000:01: root bus resource [io  0x1000-0xffffffff]
+[    4.888571] pci_bus 0000:01: root bus resource [??? 0x00000000 flags 0x0]
+[    4.895351] pci_bus 0000:01: No busn resource found for root bus, will use [bus 01-ff]
+[    4.903240] pci_bus 0000:01: scanning bus
+[    4.903247] pci_scan_child_bus: scanning bus
+[    4.907605] pci 0000:01:00.0: [168c:0046] type 00 class 0x028000
+[    4.982771] pci 0000:01:00.0: reg 0x10: [mem 0x00000000-0x001fffff 64bit]
+[    5.133160] pci 0000:01:00.0: PME# supported from D0 D3hot D3cold
+[    5.148235] pci 0000:01:00.0: PME# disabled
+[    5.148696] pci_bus 0000:01: fixups for bus
+[    5.148709] pci_bus 0000:01: bus scan returning with max=01
+[    5.148724] pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 01
+[    5.148738] assign_requested_resources_sorted 309: dev_res->start = 0x0
+[    5.155179] assign_requested_resources_sorted 310: dev_res->end = 0x1fffff
+[    5.162056] assign_requested_resources_sorted 311: dev_res->name = 0000:01:00.0
+[    5.169327] assign_requested_resources_sorted 312: dev_res->flags = 0x140204
+[    5.176368] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.14SonicWall #833
+[    5.183213] Stack : 0000000000000210 0000000000000006 ffffffff80711948 ffffffff81ad0000
+[    5.183213] 	  0000000000000001 0000000000000000 0000000000000004 ffffffff81ab6b32
+[    5.183213] 	  0000000000000000 000000000000003e 0000000000000000 0000000000000000
+[    5.183213] 	  800000004eccbaf8 ffffffff801afe28 ffffffff80759c78 0000000000000000
+[    5.183213] 	  0000000000000000 ffffffff80880000 ffffffff801ad634 ffffffff80880000
+[    5.183213] 	  ffffffff8081759f ffffffff80704128 800000004ecc0000 0000000000000000
+[    5.183213] 	  0000000000000001 ffffffff810c2960 0000000000000000 800000004e4e9428
+[    5.183213] 	  0000000000000000 800000004eccb9e0 0000000000000000 ffffffff80384e90
+[    5.183213] 	  0000000000000000 ffffffff801b0c18 0000000000000001 ffffffff80704128
+[    5.183213] 	  0000000000000000 ffffffff80154494 0000000000000000 0000000000000000
+[    5.183213] 	  ...
+[    5.248139] Call Trace:
+[    5.250580] [<ffffffff80154494>] show_stack+0x50/0x84
+[    5.255612] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    5.260646] [<ffffffff803c02f8>] pci_assign_resource+0x44/0x268
+[    5.266547] [<ffffffff803c1228>] assign_requested_resources_sorted+0xe8/0x158
+[    5.273664] [<ffffffff803c19ac>] __assign_resources_sorted+0x330/0x4b0
+[    5.280174] [<ffffffff803c2804>] __pci_bus_assign_resources+0x78/0x218
+[    5.286686] [<ffffffff8048fbfc>] pcibios_scanbus+0x12c/0x14c
+[    5.292330] [<ffffffff808fe69c>] pcibios_init+0x68/0xa0
+[    5.297537] [<ffffffff8010f654>] do_one_initcall+0x198/0x1c0
+[    5.303176] [<ffffffff808cfe14>] kernel_init_freeable+0x178/0x234
+[    5.309250] [<ffffffff8010775c>] kernel_init+0x14/0x118
+[    5.314459] [<ffffffff80100958>] ret_from_kernel_thread+0x14/0x1c
+[    5.320531] 
+[    5.322024] pci_assign_resource 307 ----resno = 0----------
+[    5.327566]  __pci_assign_resource 229: ret = -12
+[    5.332267] pci 0000:01:00.0: BAR 0: assigned [mem 0x11b00f0000000-0x11b00f01fffff 64bit]
+[    5.400658] PCI host bridge to bus 0001:02
+[    5.404582] ### PCI IO resource #######
+[    5.408401] ioport_resource.start = 0x0
+[    5.412240] ioport_resource.end = 0x5ffffffff
+[    5.416560] ioport_resource.name = PCI IO
+[    5.420553] ioport_resource.flags = 0x100
+[    5.424552] iomem_resource.start = 0x0
+[    5.428278] iomem_resource.end = 0xffffffffffffffff
+[    5.433139] iomem_resource.name = PCI mem
+[    5.437138] iomem_resource.flags = 0x200
+[    5.441037] busn_resource.start = 0x0
+[    5.444683] busn_resource.end = 0xff
+[    5.448249] busn_resource.name = PCI busn
+[    5.452235] busn_resource.flags = 0x1000
+[    5.456146] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.14SonicWall #833
+[    5.462998] Stack : 0000000000000231 0000000000000006 ffffffff80711948 ffffffff81ad0000
+[    5.462998] 	  0000000000000001 0000000000000000 0000000000000004 ffffffff81ab6b32
+[    5.462998] 	  0000000000000000 000000000000003e 0000000000000000 0000000000000000
+[    5.462998] 	  800000004eccbb88 ffffffff801afe28 ffffffff80759c78 0000000000000000
+[    5.462998] 	  0000000000000000 ffffffff80880000 ffffffff801ad634 ffffffff80880000
+[    5.462998] 	  ffffffff8081759f ffffffff80704128 800000004ecc0000 0000000000000000
+[    5.462998] 	  0000000000000001 ffffffff810c2960 800000004e4ea258 ffffffff80fa0000
+[    5.462998] 	  800000004eccbd20 800000004eccba70 0000000000000001 ffffffff80384e90
+[    5.462998] 	  ffffffff801ad634 ffffffff801b0c18 0000000000000001 ffffffff80704128
+[    5.462998] 	  0000000000000000 ffffffff80154494 0000000000000000 0000000000000000
+[    5.462998] 	  ...
+[    5.527924] Call Trace:
+[    5.530366] [<ffffffff801afe28>] vprintk_emit+0x4f4/0x560
+[    5.535741] [<ffffffff801ad634>] printk+0x5c/0x68
+[    5.540431] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    5.545461] [<ffffffff801ad634>] printk+0x5c/0x68
+[    5.550149] [<ffffffff801b0c18>] dump_stack_print_info+0x80/0xd0
+[    5.556142] [<ffffffff80154494>] show_stack+0x50/0x84
+[    5.561174] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    5.566210] [<ffffffff803b6f4c>] pci_create_root_bus+0x304/0x49c
+[    5.572198] [<ffffffff803f0598>] __device_attach+0xd0/0xf0
+[    5.577665] [<ffffffff808cf2a4>] repair_env_string+0x0/0x9c
+[    5.583221] [<ffffffff8024deac>] __kmalloc+0x18c/0x3cc
+[    5.588341] [<ffffffff808cf2a4>] repair_env_string+0x0/0x9c
+[    5.593896] [<ffffffff803b7a64>] pci_scan_root_bus_msi+0x54/0xc8
+[    5.599888] [<ffffffff8048fb74>] pcibios_scanbus+0xa4/0x14c
+[    5.605444] [<ffffffff808fe69c>] pcibios_init+0x68/0xa0
+[    5.610649] [<ffffffff808fe634>] pcibios_init+0x0/0xa0
+[    5.615773] [<ffffffff8010f654>] do_one_initcall+0x198/0x1c0
+[    5.621413] [<ffffffff808cfe14>] kernel_init_freeable+0x178/0x234
+[    5.627488] [<ffffffff8010775c>] kernel_init+0x14/0x118
+[    5.632694] [<ffffffff80107748>] kernel_init+0x0/0x118
+[    5.637817] [<ffffffff80100958>] ret_from_kernel_thread+0x14/0x1c
+[    5.643894] 
+[    5.645394] pci_bus 0001:02: root bus resource [mem 0x11c00f0000000-0x11c0fffffffff] (bus address [0xf0000000-0xfffffffff])
+[    5.656490] pci_bus 0001:02: root bus resource [io  0x100100000-0x100200000] (bus address [0x0000-0x100000])
+[    5.666289] pci_bus 0001:02: root bus resource [??? 0x00000000 flags 0x0]
+[    5.673069] pci_bus 0001:02: No busn resource found for root bus, will use [bus 02-ff]
+[    5.680959] pci_bus 0001:02: scanning bus
+[    5.680965] pci_scan_child_bus: scanning bus
+[    5.685272] pci 0001:02:00.0: [168c:0046] type 00 class 0x028000
+[    5.760419] pci 0001:02:00.0: reg 0x10: [mem 0x00000000-0x001fffff 64bit]
+[    5.910719] pci 0001:02:00.0: PME# supported from D0 D3hot D3cold
+[    5.925750] pci 0001:02:00.0: PME# disabled
+[    5.926153] pci_bus 0001:02: fixups for bus
+[    5.926165] pci_bus 0001:02: bus scan returning with max=02
+[    5.926180] pci_bus 0001:02: busn_res: [bus 02-ff] end is updated to 02
+[    5.926192] assign_requested_resources_sorted 309: dev_res->start = 0x0
+[    5.932633] assign_requested_resources_sorted 310: dev_res->end = 0x1fffff
+[    5.939510] assign_requested_resources_sorted 311: dev_res->name = 0001:02:00.0
+[    5.946781] assign_requested_resources_sorted 312: dev_res->flags = 0x140204
+[    5.953822] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.14SonicWall #833
+[    5.960667] Stack : 000000000000025b 0000000000000006 ffffffff80711948 ffffffff81ad0000
+[    5.960667] 	  0000000000000001 0000000000000000 0000000000000004 ffffffff81ab6b32
+[    5.960667] 	  0000000000000000 000000000000003e 0000000000000000 0000000000000000
+[    5.960667] 	  800000004eccbaf8 ffffffff801afe28 ffffffff80759c78 0000000000000000
+[    5.960667] 	  0000000000000000 ffffffff80880000 ffffffff801ad634 ffffffff80880000
+[    5.960667] 	  ffffffff8081759f ffffffff80704128 800000004ecc0000 0000000000000000
+[    5.960667] 	  0000000000000001 ffffffff810c2960 0000000000000000 800000004e4e9c28
+[    5.960667] 	  0000000000000000 800000004eccb9e0 0000000000000000 ffffffff80384e90
+[    5.960667] 	  0000000000000000 ffffffff801b0c18 0000000000000001 ffffffff80704128
+[    5.960667] 	  0000000000000000 ffffffff80154494 0000000000000000 0000000000000000
+[    5.960667] 	  ...
+[    6.025594] Call Trace:
+[    6.028033] [<ffffffff80154494>] show_stack+0x50/0x84
+[    6.033066] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    6.038099] [<ffffffff803c02f8>] pci_assign_resource+0x44/0x268
+[    6.044000] [<ffffffff803c1228>] assign_requested_resources_sorted+0xe8/0x158
+[    6.051118] [<ffffffff803c19ac>] __assign_resources_sorted+0x330/0x4b0
+[    6.057628] [<ffffffff803c2804>] __pci_bus_assign_resources+0x78/0x218
+[    6.064140] [<ffffffff8048fbfc>] pcibios_scanbus+0x12c/0x14c
+[    6.069784] [<ffffffff808fe69c>] pcibios_init+0x68/0xa0
+[    6.074990] [<ffffffff8010f654>] do_one_initcall+0x198/0x1c0
+[    6.080630] [<ffffffff808cfe14>] kernel_init_freeable+0x178/0x234
+[    6.086704] [<ffffffff8010775c>] kernel_init+0x14/0x118
+[    6.091913] [<ffffffff80100958>] ret_from_kernel_thread+0x14/0x1c
+[    6.097985] 
+[    6.099478] pci_assign_resource 307 ----resno = 0----------
+[    6.105019]  __pci_assign_resource 229: ret = -12
+[    6.109721] pci 0001:02:00.0: BAR 0: assigned [mem 0x11c00f0000000-0x11c00f01fffff 64bit]
+[    6.178107] PCI host bridge to bus 0002:03
+[    6.182029] ### PCI IO resource #######
+[    6.185849] ioport_resource.start = 0x0
+[    6.189686] ioport_resource.end = 0x5ffffffff
+[    6.194008] ioport_resource.name = PCI IO
+[    6.198001] ioport_resource.flags = 0x100
+[    6.202008] iomem_resource.start = 0x0
+[    6.205726] iomem_resource.end = 0xffffffffffffffff
+[    6.210587] iomem_resource.name = PCI mem
+[    6.214587] iomem_resource.flags = 0x200
+[    6.218485] busn_resource.start = 0x0
+[    6.222131] busn_resource.end = 0xff
+[    6.225697] busn_resource.name = PCI busn
+[    6.229683] busn_resource.flags = 0x1000
+[    6.233594] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.14SonicWall #833
+[    6.240446] Stack : 000000000000027c 0000000000000006 ffffffff80711948 ffffffff81ad0000
+[    6.240446] 	  0000000000000001 0000000000000000 0000000000000004 ffffffff81ab6b32
+[    6.240446] 	  0000000000000000 000000000000003e 0000000000000000 0000000000000000
+[    6.240446] 	  800000004eccbb88 ffffffff801afe28 ffffffff80759c78 0000000000000000
+[    6.240446] 	  0000000000000000 ffffffff80880000 ffffffff801ad634 ffffffff80880000
+[    6.240446] 	  ffffffff8081759f ffffffff80704128 800000004ecc0000 0000000000000000
+[    6.240446] 	  0000000000000001 ffffffff810c2960 800000004e4eaa58 ffffffff80fa0000
+[    6.240446] 	  800000004eccbd20 800000004eccba70 0000000000000001 ffffffff80384e90
+[    6.240446] 	  ffffffff801ad634 ffffffff801b0c18 0000000000000001 ffffffff80704128
+[    6.240446] 	  0000000000000000 ffffffff80154494 0000000000000000 0000000000000000
+[    6.240446] 	  ...
+[    6.305372] Call Trace:
+[    6.307813] [<ffffffff801afe28>] vprintk_emit+0x4f4/0x560
+[    6.313189] [<ffffffff801ad634>] printk+0x5c/0x68
+[    6.317879] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    6.322909] [<ffffffff801ad634>] printk+0x5c/0x68
+[    6.327597] [<ffffffff801b0c18>] dump_stack_print_info+0x80/0xd0
+[    6.333589] [<ffffffff80154494>] show_stack+0x50/0x84
+[    6.338622] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    6.343657] [<ffffffff803b6f4c>] pci_create_root_bus+0x304/0x49c
+[    6.349645] [<ffffffff803f0598>] __device_attach+0xd0/0xf0
+[    6.355113] [<ffffffff808cf2a4>] repair_env_string+0x0/0x9c
+[    6.360668] [<ffffffff8024deac>] __kmalloc+0x18c/0x3cc
+[    6.365789] [<ffffffff808cf2a4>] repair_env_string+0x0/0x9c
+[    6.371344] [<ffffffff803b7a64>] pci_scan_root_bus_msi+0x54/0xc8
+[    6.377336] [<ffffffff8048fb74>] pcibios_scanbus+0xa4/0x14c
+[    6.382892] [<ffffffff808fe69c>] pcibios_init+0x68/0xa0
+[    6.388097] [<ffffffff808fe634>] pcibios_init+0x0/0xa0
+[    6.393221] [<ffffffff8010f654>] do_one_initcall+0x198/0x1c0
+[    6.398861] [<ffffffff808cfe14>] kernel_init_freeable+0x178/0x234
+[    6.404936] [<ffffffff8010775c>] kernel_init+0x14/0x118
+[    6.410143] [<ffffffff80107748>] kernel_init+0x0/0x118
+[    6.415265] [<ffffffff80100958>] ret_from_kernel_thread+0x14/0x1c
+[    6.421342] 
+[    6.422840] pci_bus 0002:03: root bus resource [mem 0x11d00f0000000-0x11d0fffffffff] (bus address [0xf0000000-0xfffffffff])
+[    6.433938] pci_bus 0002:03: root bus resource [io  0x200100000-0x200200000] (bus address [0x0000-0x100000])
+[    6.443737] pci_bus 0002:03: root bus resource [??? 0x00000000 flags 0x0]
+[    6.450517] pci_bus 0002:03: No busn resource found for root bus, will use [bus 03-ff]
+[    6.458407] pci_bus 0002:03: scanning bus
+[    6.458413] pci_scan_child_bus: scanning bus
+[    6.462726] pci 0002:03:00.0: [168c:0050] type 00 class 0x028000
+[    6.537883] pci 0002:03:00.0: reg 0x10: [mem 0x00000000-0x001fffff 64bit]
+[    6.688081] pci 0002:03:00.0: reg 0x30: [mem 0x00000000-0x0000ffff pref]
+[    6.688222] pci 0002:03:00.0: supports D1
+[    6.688232] pci 0002:03:00.0: PME# supported from D0 D1 D3hot
+[    6.703262] pci 0002:03:00.0: PME# disabled
+[    6.703670] pci_bus 0002:03: fixups for bus
+[    6.703681] pci_bus 0002:03: bus scan returning with max=03
+[    6.703696] pci_bus 0002:03: busn_res: [bus 03-ff] end is updated to 03
+[    6.703709] assign_requested_resources_sorted 309: dev_res->start = 0x0
+[    6.710150] assign_requested_resources_sorted 310: dev_res->end = 0x1fffff
+[    6.717027] assign_requested_resources_sorted 311: dev_res->name = 0002:03:00.0
+[    6.724298] assign_requested_resources_sorted 312: dev_res->flags = 0x140204
+[    6.731339] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.14SonicWall #833
+[    6.738184] Stack : 00000000000002a8 0000000000000006 ffffffff80711948 ffffffff81ad0000
+[    6.738184] 	  0000000000000001 0000000000000000 0000000000000004 ffffffff81ab6b32
+[    6.738184] 	  0000000000000000 000000000000003e 0000000000000000 0000000000000000
+[    6.738184] 	  800000004eccbaf8 ffffffff801afe28 ffffffff80759c78 0000000000000000
+[    6.738184] 	  0000000000000000 ffffffff80880000 ffffffff801ad634 ffffffff80880000
+[    6.738184] 	  ffffffff8081759f ffffffff80704128 800000004ecc0000 0000000000000000
+[    6.738184] 	  0000000000000001 ffffffff810c2960 0000000000000000 800000004e4ea428
+[    6.738184] 	  0000000000000000 800000004eccb9e0 0000000000000000 ffffffff80384e90
+[    6.738184] 	  0000000000000000 ffffffff801b0c18 0000000000000001 ffffffff80704128
+[    6.738184] 	  0000000000000000 ffffffff80154494 0000000000000000 0000000000000000
+[    6.738184] 	  ...
+[    6.803110] Call Trace:
+[    6.805550] [<ffffffff80154494>] show_stack+0x50/0x84
+[    6.810583] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    6.815616] [<ffffffff803c02f8>] pci_assign_resource+0x44/0x268
+[    6.821518] [<ffffffff803c1228>] assign_requested_resources_sorted+0xe8/0x158
+[    6.828635] [<ffffffff803c19ac>] __assign_resources_sorted+0x330/0x4b0
+[    6.835145] [<ffffffff803c2804>] __pci_bus_assign_resources+0x78/0x218
+[    6.841657] [<ffffffff8048fbfc>] pcibios_scanbus+0x12c/0x14c
+[    6.847300] [<ffffffff808fe69c>] pcibios_init+0x68/0xa0
+[    6.852507] [<ffffffff8010f654>] do_one_initcall+0x198/0x1c0
+[    6.858147] [<ffffffff808cfe14>] kernel_init_freeable+0x178/0x234
+[    6.864222] [<ffffffff8010775c>] kernel_init+0x14/0x118
+[    6.869430] [<ffffffff80100958>] ret_from_kernel_thread+0x14/0x1c
+[    6.875502] 
+[    6.876995] pci_assign_resource 307 ----resno = 0----------
+[    6.882536]  __pci_assign_resource 229: ret = -12
+[    6.887246] pci 0002:03:00.0: BAR 0: assigned [mem 0x11d00f0000000-0x11d00f01fffff 64bit]
+[    6.955448] assign_requested_resources_sorted 309: dev_res->start = 0x0
+[    6.961889] assign_requested_resources_sorted 310: dev_res->end = 0xffff
+[    6.968580] assign_requested_resources_sorted 311: dev_res->name = 0002:03:00.0
+[    6.975864] assign_requested_resources_sorted 312: dev_res->flags = 0x46200
+[    6.982817] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 4.4.14SonicWall #833
+[    6.989663] Stack : 00000000000002bf 0000000000000006 ffffffff80711948 ffffffff81ad0000
+[    6.989663] 	  0000000000000001 0000000000000000 0000000000000004 ffffffff81ab6b32
+[    6.989663] 	  0000000000000000 000000000000003e 0000000000000000 0000000000000000
+[    6.989663] 	  800000004eccbaf8 ffffffff801afe28 ffffffff80759c78 0000000000000000
+[    6.989663] 	  0000000000000000 ffffffff80880000 ffffffff801ad634 ffffffff80880000
+[    6.989663] 	  ffffffff8081759f ffffffff80704128 800000004ecc0000 0000000000000000
+[    6.989663] 	  0000000000000001 ffffffff810c2960 0000000000000000 800000004e4ea428
+[    6.989663] 	  0000000000000000 800000004eccb9e0 0000000000000000 ffffffff80384e90
+[    6.989663] 	  0000000000000000 ffffffff801b0c18 0000000000000001 ffffffff80704128
+[    6.989663] 	  0000000000000000 ffffffff80154494 0000000000000000 0000000000000000
+[    6.989663] 	  ...
+[    7.054589] Call Trace:
+[    7.057027] [<ffffffff80154494>] show_stack+0x50/0x84
+[    7.062061] [<ffffffff80384e90>] dump_stack+0x8c/0xc4
+[    7.067095] [<ffffffff803c02f8>] pci_assign_resource+0x44/0x268
+[    7.072997] [<ffffffff803c1228>] assign_requested_resources_sorted+0xe8/0x158
+[    7.080114] [<ffffffff803c19ac>] __assign_resources_sorted+0x330/0x4b0
+[    7.086624] [<ffffffff803c2804>] __pci_bus_assign_resources+0x78/0x218
+[    7.093136] [<ffffffff8048fbfc>] pcibios_scanbus+0x12c/0x14c
+[    7.098778] [<ffffffff808fe69c>] pcibios_init+0x68/0xa0
+[    7.103986] [<ffffffff8010f654>] do_one_initcall+0x198/0x1c0
+[    7.109626] [<ffffffff808cfe14>] kernel_init_freeable+0x178/0x234
+[    7.115700] [<ffffffff8010775c>] kernel_init+0x14/0x118
+[    7.120909] [<ffffffff80100958>] ret_from_kernel_thread+0x14/0x1c
+[    7.126981] 
+[    7.128474] pci_assign_resource 307 ----resno = 6----------
+[    7.134014]  __pci_assign_resource 229: ret = -12
+[    7.138715] pci 0002:03:00.0: BAR 6: assigned [mem 0x11d00f0200000-0x11d00f020ffff pref]
+[    7.146805] pci 0000:01:00.0: fixup irq: got 109
+[    7.146815] pci 0000:01:00.0: assigning IRQ 109
+[    7.161857] pci 0001:02:00.0: fixup irq: got 109
+[    7.161867] pci 0001:02:00.0: assigning IRQ 109
+[    7.176903] pci 0002:03:00.0: fixup irq: got 109
+[    7.176913] pci 0002:03:00.0: assigning IRQ 109
+[    7.193379] [Alan debug] doing fs, parsing ARGS: 'bootoctlinux 0x20000000 snwl_irv=0x560004 prodcode=0x5430 uboot_version=8.2.0.0-7o numcores=4 console=ttyS0,115200 mtdparts=phys_mapped_flash:2048K(u-boot),256k(bootenv),256k(sysinfo)ro,128k(ART)ro,1024k(log),10240k(safemode),24576k(firmware),27008k(config);octeon_nand0:512M(data)'
+[    7.222785] clocksource: Switched to clocksource OCTEON_CVMCOUNT
+[    7.265285] NET: Registered protocol family 2
+[    7.270443] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+[    7.277462] TCP bind hash table entries: 8192 (order: 7, 524288 bytes)
+[    7.284977] TCP: Hash tables configured (established 8192 bind 8192)
+[    7.291342] UDP hash table entries: 512 (order: 4, 81920 bytes)
+[    7.297281] UDP-Lite hash table entries: 512 (order: 4, 81920 bytes)
+[    7.304047] NET: Registered protocol family 1
+[    7.308317] PCI: CLS 0 bytes, default 128
+[    7.811784] [Alan debug] doing device, parsing ARGS: 'bootoctlinux 0x20000000 snwl_irv=0x560004 prodcode=0x5430 uboot_version=8.2.0.0-7o numcores=4 console=ttyS0,115200 mtdparts=phys_mapped_flash:2048K(u-boot),256k(bootenv),256k(sysinfo)ro,128k(ART)ro,1024k(log),10240k(safemode),24576k(firmware),27008k(config);octeon_nand0:512M(data)'
+[    7.848797] octeon_pci_console: Initialized.
+[    7.853166] /proc/octeon_perf: Octeon performance counter interface loaded
+[    7.861685] bus: 'platform': driver_probe_device: matched device alarmtimer with driver alarmtimer
+[    7.871198] futex hash table entries: 1024 (order: 5, 131072 bytes)
+[    7.878698] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[    7.899419] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    7.906153] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    7.918369] io scheduler noop registered
+[    7.922131] io scheduler deadline registered (default)
+[    7.927345] bus: 'platform': driver_probe_device: matched device 1070000000800.gpio-controller with driver octeon_gpio
+[    7.938358] octeon_gpio 1070000000800.gpio-controller: OCTEON GPIO driver probed.
+[    7.945964] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[    7.951565] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    7.958274] Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+[    7.965252] bus: 'platform': driver_probe_device: matched device serial8250 with driver serial8250
+[    7.974223] bus: 'platform': driver_probe_device: matched device 1180000000800.serial with driver dw-apb-uart
+[    7.985396] console [ttyS0] disabled
+[    7.988887] 1180000000800.serial: ttyS0 at MMIO 0x1180000000800 (irq = 34, base_baud = 25000000) is a OCTEON
+[    7.998714] console [ttyS0] enabled
+[    8.005573] bootconsole [early0] disabled
+[    8.013866] bus: 'platform': driver_probe_device: matched device 1180000000c00.serial with driver dw-apb-uart
+[    8.024146] 1180000000c00.serial: ttyS1 at MMIO 0x1180000000c00 (irq = 35, base_baud = 25000000) is a OCTEON
+[    8.034748] bus: 'platform': driver_probe_device: matched device octeon_rng with driver octeon_rng
+[    8.043954] octeon_rng octeon_rng: Octeon Random Number Generator
+[    8.051392] bus: 'platform': driver_probe_device: matched device 1070000001000.spi with driver spi-octeon
+[    8.062370] spi-octeon 1070000001000.spi: OCTEON SPI bus driver
+[    8.069258] libphy: Fixed MDIO Bus: probed
+[    8.073449] bus: 'platform': driver_probe_device: matched device 1180000001800.mdio with driver mdio-octeon
+[    8.083368] libphy: mdio-octeon: probed
+[    8.087856] mdio-octeon 1180000001800.mdio: Version 1.1
+[    8.093130] bus: 'platform': driver_probe_device: matched device 1180000001900.mdio with driver mdio-octeon
+[    8.103043] libphy: mdio-octeon: probed
+[    8.107866] bus: 'mdio_bus': driver_probe_device: matched device 8001180000001900:00 with driver Aquantia AQR105S
+[    8.118295] mdio-octeon 1180000001900.mdio: Version 1.1
+[    8.124154] bus: 'platform': driver_probe_device: matched device 11800a0000000.pip with driver octeon_ethernet
+[    8.134206] octeon-ethernet 2.0
+[    8.137350] cvm_oct_get_port_status 775: num_interfaces = 5
+[    8.142934] cvm_oct_get_port_status 781: num_ports = 1
+[    8.148085] cvm_oct_get_port_status 781: num_ports = 0
+[    8.153233] cvm_oct_get_port_status 781: num_ports = 4
+[    8.158373] cvm_oct_get_port_status 781: num_ports = 4
+[    8.163524] cvm_oct_get_port_status 781: num_ports = 1
+[    8.171774] Interface 0 has 1 ports (SGMII)
+[    8.176058] Interface 2 has 4 ports (NPI)
+[    8.180080] Interface 3 has 4 ports (LOOP)
+[    8.184200] Interface 4 has 1 ports (AGL)
+[    8.201893] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    8.208460] ehci-pci: EHCI PCI platform driver
+[    8.213035] ehci-platform: EHCI generic platform driver
+[    8.218504] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    8.224746] ohci-platform: OHCI generic platform driver
+[    8.230306] usbcore: registered new interface driver usb-storage
+[    8.236343] i2c /dev entries driver
+[    8.239944] bus: 'platform': driver_probe_device: matched device 1180000001000.i2c with driver i2c-octeon
+[    8.250145] i2c-dev: adapter [OCTEON adapter] registered as minor 0
+[    8.250266] i2c i2c-0: adapter [OCTEON adapter] registered
+[    8.250299] i2c i2c-0: of_i2c: walking child nodes
+[    8.250313] i2c i2c-0: of_i2c: register /soc@0/i2c@1180000001000/rtc@68
+[    8.250443] i2c 0-0068: uevent
+[    8.250474] i2c i2c-0: client [ds1374] registered with bus id 0-0068
+[    8.250486] i2c i2c-0: of_i2c: register /soc@0/i2c@1180000001000/tmp@4c
+[    8.250594] i2c 0-004c: uevent
+[    8.250623] i2c i2c-0: client [tmp421] registered with bus id 0-004c
+[    8.250635] i2c i2c-0: of_i2c: register /soc@0/i2c@1180000001000/tlv-eeprom@56
+[    8.250743] i2c 0-0056: uevent
+[    8.250772] i2c i2c-0: client [24c256] registered with bus id 0-0056
+[    8.250789] i2c-octeon 1180000001000.i2c: version 2.5
+[    8.255883] bus: 'platform': driver_probe_device: matched device 1180000001200.i2c with driver i2c-octeon
+[    8.265848] i2c-dev: adapter [OCTEON adapter] registered as minor 1
+[    8.265900] i2c i2c-1: adapter [OCTEON adapter] registered
+[    8.265931] i2c i2c-1: of_i2c: walking child nodes
+[    8.265947] i2c-octeon 1180000001200.i2c: version 2.5
+[    8.271160] octeon_wdt: Initial granularity 5 Sec
+[    8.276428] bus: 'platform': driver_probe_device: matched device octeon_pc_edac with driver octeon_pc_edac
+[    8.286616] EDAC DEVICE0: Giving out device to module octeon-cpu controller cache: DEV octeon_pc_edac (INTERRUPT)
+[    8.297056] bus: 'platform': driver_probe_device: matched device octeon_l2c_edac with driver octeon_l2c_edac
+[    8.307082] EDAC DEVICE1: Giving out device to module octeon-l2c controller octeon_l2c_err: DEV octeon_l2c_edac (POLLED)
+[    8.318112] bus: 'platform': driver_probe_device: matched device octeon_lmc_edac.0 with driver octeon_lmc_edac
+[    8.328159] octeon_lmc_edac octeon_lmc_edac.0: Disabled (ECC not enabled)
+[    8.336901] NET: Registered protocol family 10
+[    8.344861] NET: Registered protocol family 17
+[    8.349541] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.
+[    8.362184] 8021q: 802.1Q VLAN Support v1.8
+[    8.366550] [Alan debug] doing late, parsing ARGS: 'bootoctlinux 0x20000000 snwl_irv=0x560004 prodcode=0x5430 uboot_version=8.2.0.0-7o numcores=4 console=ttyS0,115200 mtdparts=phys_mapped_flash:2048K(u-boot),256k(bootenv),256k(sysinfo)ro,128k(ART)ro,1024k(log),10240k(safemode),24576k(firmware),27008k(config);octeon_nand0:512M(data)'
+[    8.396192] L2 lock: TLB refill 256 bytes
+[    8.400211] L2 lock: General exception 128 bytes
+[    8.404841] L2 lock: low-level interrupt 128 bytes
+[    8.409634] L2 lock: interrupt 640 bytes
+[    8.413578] L2 lock: memcpy 1152 bytes
+[    8.417469] bus: 'platform': driver_probe_device: matched device 1bc00000.nor with driver octeon-of-flash
+[    8.427079] Bootbus flash: Setting flash for 64MB flash at 0x1bc00000
+[    8.433528] do_map_probe 62 *** 
+[    8.436759] do_map_probe 64 *** 
+[    8.439989] do_map_probe 69 *** 
+[    8.443227] do_map_probe 72 *** 
+[    8.446456] mtd_do_chip_probe 25: ***
+[    8.450119] genprobe_ident_chips 68: ***
+[    8.454051] cfi_qry_mode_on 245 *** 
+[    8.457704] cfi_qry_mode_on 247 *** 
+[    8.461345] cfi_qry_mode_on 245 *** 
+[    8.464934] cfi_qry_mode_on 247 *** 
+[    8.468624] phys_mapped_flash: Found 1 x16 devices at 0x0 in 8-bit bank. Manufacturer ID 0x000089 Chip ID 0x00007e
+[    8.478979] genprobe_ident_chips 77: ***
+[    8.482910] genprobe_ident_chips 128: ***
+[    8.486921] genprobe_ident_chips 137: ***
+[    8.490932] genprobe_ident_chips 145: ***
+[    8.494952] mtd_do_chip_probe 28: ***
+[    8.498616] mtd_do_chip_probe 34: ***
+[    8.502283] Amd/Fujitsu Extended Query Table at 0x0040
+[    8.507430] cfi_qry_mode_on 245 *** 
+[    8.511008] cfi_qry_mode_on 247 *** 
+[    8.514643]   Amd/Fujitsu Extended Query version 1.3.
+[    8.519699] number of CFI chips: 1
+[    8.523111] do_map_probe 74 *** 
+[    8.526339] do_map_probe 81 *** 
+[    8.529591] 8 cmdlinepart partitions found on MTD device phys_mapped_flash
+[    8.536485] Creating 8 MTD partitions on "phys_mapped_flash":
+[    8.542236] 0x000000000000-0x000000200000 : "u-boot"
+[    8.549178] 0x000000200000-0x000000240000 : "bootenv"
+[    8.555621] 0x000000240000-0x000000280000 : "sysinfo"
+[    8.562002] 0x000000280000-0x0000002a0000 : "ART"
+[    8.568081] 0x0000002a0000-0x0000003a0000 : "log"
+[    8.574146] 0x0000003a0000-0x000000da0000 : "safemode"
+[    8.580585] 0x000000da0000-0x0000025a0000 : "firmware"
+[    8.587157] 0x0000025a0000-0x000004000000 : "config"
+[    8.593735] bus: 'platform': driver_probe_device: matched device 1070001000000.nand-flash-interface with driver octeon-nand
+[    8.605156] cvmx_nand_initialize: Setting timing parameter mode to 5
+[    8.611809] nand: device found, Manufacturer ID: 0x2c, Chip ID: 0xdc
+[    8.618186] nand: Micron NAND 512MiB 3,3V 8-bit
+[    8.622720] nand: 512 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64
+[    8.630315] Scanning device for bad blocks
+[    8.915494] 1 cmdlinepart partitions found on MTD device octeon_nand0
+[    8.921937] Creating 1 MTD partitions on "octeon_nand0":
+[    8.927263] 0x000000000000-0x000020000000 : "data"
+[    8.934029] Unknown board type! Failed to parse gpio configuration!
+[    8.941787] fdt: not creating '/sys/firmware/fdt': CRC check failed
+[    8.954211] Freeing unused kernel memory: 6980K (ffffffff808cf000 - ffffffff80fa0000)
+[    8.975498] init: Console is alive
+[    8.979356] init: - watchdog -
+[    8.993617] init: - preinit -
+[   11.434413] random: nonblocking pool is initialized
+[   11.572449] procd: - early -
+[   11.575480] procd: - watchdog -
+[   12.206370] procd: - ubus -
+[   12.260298] procd: - init -
+[   16.071016] cvm_oct_sgmii_open 95 ****
+[   16.074841] cvm_oct_phy_setup_device 584 *****
+[   16.079299] cvm_oct_phy_setup_device 587 *****
+[   16.083781] cvm_oct_phy_setup_device 591 *phy_node->name = ethernet-phy****
+[   16.090751] cvm_oct_phy_setup_device 592 *phy_node->type = <NULL>****
+[   16.097212] cvm_oct_phy_setup_device 593 *phy_node->full_name = /soc@0/mdio@1180000001900/ethernet-phy@0****
+[   16.107054] cvm_oct_phy_setup_device 609 *****
+[   16.111515] of_phy_connect 232*****
+[   16.115058] of_phy_connect 235*****
+[   16.118581] phy_connect_direct 474*****
+[   16.122442] phy_connect_direct 478*****
+[   16.126322] phy_connect_direct 480*****
+[   16.130193] phy_connect_direct 482 phydev->irq = 27*****
+[   16.136240] phy_connect_direct 485*****
+[   16.140098] of_phy_connect 239*****
+[   16.143615] cvm_oct_phy_setup_device 612 *****
+[   16.148068] cvm_oct_phy_setup_device 615 *****
+[   16.152698] cvm_oct_sgmii_open 99 ****
+[   16.156476] cvm_oct_sgmii_open 103 ****
+[   16.160321] cvm_oct_sgmii_open 106 ****
+[   16.610007] eth0: 100 Mbps Full duplex, port 0
+[   16.614501] cvm_oct_sgmii_open 112 ****
+[   16.618342] cvm_oct_sgmii_open 122 imode = 6****
+[   16.626153] device eth0 entered promiscuous mode
+[   16.634992] IPv6: ADDRCONF(NETDEV_UP): br-lan: link is not ready
+[   17.133364] br-lan: port 1(eth0) entered forwarding state
+[   17.138845] br-lan: port 1(eth0) entered forwarding state
+[   17.145669] IPv6: ADDRCONF(NETDEV_CHANGE): br-lan: link becomes ready
+[   19.132920] br-lan: port 1(eth0) entered forwarding state
+[   28.137729] 
+[   28.137729] do_page_fault(): sending SIGSEGV to insmod for invalid read access from 0000000000000000
+[   28.146910] epc = 00000001200024c0 in kmodloader[120000000+4000]
+[   28.152982] ra  = 0000000120002488 in kmodloader[120000000+4000]
+[   28.159022] 
+[   34.801625] Loading modules backported from Linux version wt-2016-05-12-0-g7a54796
+[   34.809232] Backport generated by backports.git backports-20160216-0-ge3c56e4
+[   51.201957] ath10k_pci_init 3266:#########
+[   51.206135] bus: 'pci': driver_probe_device: matched device 0000:01:00.0 with driver ath10k_pci
+[   51.214894] ath10k_pci_probe: PCI device id 0046:0046
+[   51.220378] ath10k_pci 0000:01:00.0: pci probe 168c:0046 168c:cafe
+[   51.220499] PCI: Enabling device 0000:01:00.0 (0000 -> 0002)
+[   51.406450] ath10k_pci 0000:01:00.0: enabling bus mastering
+[   51.421487] ath10k_pci 0000:01:00.0: boot pci_mem 0x80011b00f0000000
+[   51.421973] ath10k_pci 0000:01:00.0: pci irq legacy oper_irq_mode 1 irq_mode 0 reset_mode 0
+[   51.430386] ath10k_pci 0000:01:00.0: boot qca99x0 chip reset
+[   51.430396]  ath10k_pci_qca99x0_chip_reset 2468: ************
+[   51.436160] ath10k_pci 0000:01:00.0: boot cold reset
+[   51.462800] ath10k_pci 0000:01:00.0: boot cold reset complete
+[   51.462814]  ath10k_pci_qca99x0_chip_reset 2474: ************
+[   51.468565] ath10k_pci 0000:01:00.0: boot waiting target to initialise
+[   51.468579] ath10k_pci 0000:01:00.0: boot target indicator 2
+[   51.468595] ath10k_pci 0000:01:00.0: receive initialized event from target: 00000002
+[   51.476370] ath10k_pci 0000:01:00.0: boot target initialised
+[   51.476392]  ath10k_pci_qca99x0_chip_reset 2481: ************
+[   51.482146] ath10k_pci 0000:01:00.0: boot qca99x0 chip reset complete (cold)
+[   51.482401] ath10k_pci 0000:01:00.0: boot hif power up
+[   51.497473] ath10k_pci 0000:01:00.0: boot qca99x0 chip reset
+[   51.497483]  ath10k_pci_qca99x0_chip_reset 2468: ************
+[   51.503255] ath10k_pci 0000:01:00.0: boot cold reset
+[   51.532801] ath10k_pci 0000:01:00.0: boot cold reset complete
+[   51.532812]  ath10k_pci_qca99x0_chip_reset 2474: ************
+[   51.538565] ath10k_pci 0000:01:00.0: boot waiting target to initialise
+[   51.538579] ath10k_pci 0000:01:00.0: boot target indicator 2
+[   51.538595] ath10k_pci 0000:01:00.0: receive initialized event from target: 00000002
+[   51.546362] ath10k_pci 0000:01:00.0: boot target initialised
+[   51.546371]  ath10k_pci_qca99x0_chip_reset 2481: ************
+[   51.552123] ath10k_pci 0000:01:00.0: boot qca99x0 chip reset complete (cold)
+[   51.552155] ath10k_pci 0000:01:00.0: boot init ce src ring id 0 entries 16 base_addr 800000004ca68000
+[   51.552183] ath10k_pci 0000:01:00.0: boot ce dest ring id 1 entries 512 base_addr 800000004c9d8000
+[   51.552210] ath10k_pci 0000:01:00.0: boot ce dest ring id 2 entries 128 base_addr 800000004ca69000
+[   51.552240] ath10k_pci 0000:01:00.0: boot init ce src ring id 3 entries 32 base_addr 800000004ca6a000
+[   51.552284] ath10k_pci 0000:01:00.0: boot init ce src ring id 4 entries 8192 base_addr 800000004c080000
+[   51.552312] ath10k_pci 0000:01:00.0: boot ce dest ring id 5 entries 512 base_addr 800000004cba4000
+[   51.552342] ath10k_pci 0000:01:00.0: boot init ce src ring id 7 entries 2 base_addr 800000004ca6b000
+[   51.552368] ath10k_pci 0000:01:00.0: boot ce dest ring id 7 entries 2 base_addr 800000004ca6c000
+[   51.552395] ath10k_pci 0000:01:00.0: boot ce dest ring id 8 entries 128 base_addr 800000004ca6d000
+[   51.563688] ath10k_pci 0000:01:00.0: bmi get target info
+[   51.563776] ath10k_pci 0000:01:00.0: Hardware name qca9984/qca9994 hw1.0 version 0x1000000
+[   51.564075] ath10k_pci 0000:01:00.0: Direct firmware load for ath10k/pre-cal-pci-0000:01:00.0.bin failed with error -2
+[   51.574823] ath10k_pci 0000:01:00.0: Falling back to user helper
+[   51.592010] firmware ath10k!pre-cal-pci-0000:01:00.0.bin: firmware_loading_store: map pages failed
+[   51.601247] ath10k_pci 0000:01:00.0: boot fw request 'ath10k/pre-cal-pci-0000:01:00.0.bin': -11
+[   51.601411] ath10k_pci 0000:01:00.0: Direct firmware load for ath10k/cal-pci-0000:01:00.0.bin failed with error -2
+[   51.611815] ath10k_pci 0000:01:00.0: Falling back to user helper
+[   51.628597] firmware ath10k!cal-pci-0000:01:00.0.bin: firmware_loading_store: map pages failed
+[   51.637490] ath10k_pci 0000:01:00.0: boot fw request 'ath10k/cal-pci-0000:01:00.0.bin': -11
+[   51.637505] ath10k_pci 0000:01:00.0: trying fw api 5
+[   51.638615] ath10k_pci 0000:01:00.0: boot fw request 'ath10k/QCA9984/hw1.0/firmware-5.bin': 0
+[   51.638635] ath10k_pci 0000:01:00.0: found fw version 10.4-3.4-00082
+[   51.638647] ath10k_pci 0000:01:00.0: found fw timestamp 1490254088
+[   51.638659] ath10k_pci 0000:01:00.0: found otp image ie (9023 B)
+[   51.638667] ** found otp image ie (9023 B)
+[   51.642831] ath10k_pci 0000:01:00.0: found fw image ie (378574 B)
+[   51.642842] ath10k_pci 0000:01:00.0: found firmware features ie (3 B)
+[   51.642853] ath10k_pci 0000:01:00.0: Enabling feature bit: 3
+[   51.642864] ath10k_pci 0000:01:00.0: Enabling feature bit: 12
+[   51.642875] ath10k_pci 0000:01:00.0: Enabling feature bit: 13
+[   51.642886] ath10k_pci 0000:01:00.0: Enabling feature bit: 14
+[   51.642912] ath10k_pci 0000:01:00.0: Enabling feature bit: 16
+[   51.642933] ath10k_pci 0000:01:00.0: features
+[   51.642961] ath10k_pci 0000:01:00.0: 0000000
+[   51.642985] ath10k_pci 0000:01:00.0: found fw ie wmi op version 6
+[   51.643008] ath10k_pci 0000:01:00.0: found fw ie htt op version 4
+[   51.643020] ath10k_pci 0000:01:00.0: found fw code swap image ie (234352 B)
+[   51.643031] ath10k_pci 0000:01:00.0: using fw api 5
+[   51.643052] ath10k_pci 0000:01:00.0: qca9984/qca9994 hw1.0 target 0x01000000 chip_id 0x00000000 sub 168c:cafe
+[   51.653006] ath10k_pci 0000:01:00.0: kconfig debug 1 debugfs 1 tracing 1 dfs 1 testmode 1
+[   51.669672] ath10k_pci 0000:01:00.0: firmware ver 10.4-3.4-00082 api 5 features no-p2p,mfp,peer-flow-ctrl,btcoex-param,allows-mesh-bcast crc32 f301de65
+[   51.683258] ath10k_pci 0000:01:00.0: boot did not find a pre calibration file, try DT next: -11
+[   51.683271] ath10k_pci 0000:01:00.0: unable to load pre cal data from DT: -2
+[   51.683282] ath10k_pci 0000:01:00.0: could not load pre cal data: -2
+[   51.683295] ath10k_pci 0000:01:00.0: boot upload otp to 0x1234 len 9023 for board id
+[   51.683309] ath10k_pci 0000:01:00.0: bmi fast download address 0x1234 buffer 0xc000000000380038 length 9023
+[   51.683321] ath10k_pci 0000:01:00.0: bmi lz stream start address 0x1234
+[   51.683397] ath10k_bmi_lz_stream_start 416: ret = 0
+[   51.688289] ath10k_pci 0000:01:00.0: bmi lz data buffer 0xc000000000380038 length 9020
+[   51.717463] ath10k_pci 0000:01:00.0: bmi lz data buffer 0x800000004ecfbb98 length 4
+[   51.717759] ath10k_pci 0000:01:00.0: bmi lz stream start address 0x0
+[   51.717800] ath10k_bmi_lz_stream_start 416: ret = 0
+[   51.722686] ath10k_pci 0000:01:00.0: bmi execute address 0x1234 param 0x10
+[   53.115368] ath10k_pci 0000:01:00.0: bmi cmd took 140 jiffies hz 100 ret 0
+[   53.115388] ath10k_pci 0000:01:00.0: bmi execute result 0x1000
+[   53.115401] ath10k_pci 0000:01:00.0: boot get otp board id result 0x00001000 board_id 4 chip_id 0
+[   53.115419] ath10k_pci 0000:01:00.0: boot using board name 'bus=pci,bmi-chip-id=0,bmi-board-id=4'
+[   53.115428] ath10k_core_fetch_board_file 1131: trying to get board data using bd_api 2
+[   53.123582] ath10k_pci 0000:01:00.0: boot fw request 'ath10k/QCA9984/hw1.0/board-data-id4.bin': 0
+[   53.123596] ath10k_core_parse_bd_ie_board 928: *** board_ie_id = ATH10K_BD_IE_BOARD_NAME**********
+[   53.132566] ath10k_pci 0000:01:00.0: board name
+[   53.132579] ath10k_pci 0000:01:00.0: 0000000
+[   53.132590] ath10k_pci 0000:01:00.0: 0000001
+[   53.132601] ath10k_pci 0000:01:00.0: 0000002
+[   53.132611] ath10k_core_parse_bd_ie_board 932: board_ie_len = 36
+[   53.138671] ath10k_core_parse_bd_ie_board 933: strlen(boardname) = 36
+[   53.145132] ath10k_core_parse_bd_ie_board 934: boardname = bus=pci,bmi-chip-id=0,bmi-board-id=4
+[   53.153851] ath10k_pci 0000:01:00.0: boot found match for name 'bus=pci,bmi-chip-id=0,bmi-board-id=4'
+[   53.153860] ath10k_core_parse_bd_ie_board 948: *** board_ie_id = ATH10K_BD_IE_BOARD_DATA**********
+[   53.162836] ath10k_pci 0000:01:00.0: boot found board data for 'bus=pci,bmi-chip-id=0,bmi-board-id=4'
+[   53.162850] ath10k_pci 0000:01:00.0: using board api 2
+[   53.163033] ath10k_pci 0000:01:00.0: board_file api 2 bmi_id 0:4 crc32 81e79793
+[   53.171011] ath10k_core_start 1810: it is awake!
+[   53.175689] ath10k_pci 0000:01:00.0: bmi start
+[   53.175702] ath10k_pci 0000:01:00.0: bmi write address 0x400800 length 4
+[   53.175796] ath10k_init_configure_target 429: settings HTC version ########
+[   53.182786] ath10k_pci 0000:01:00.0: bmi read address 0x400810 length 4
+[   53.182875] ath10k_pci 0000:01:00.0: bmi write address 0x400810 length 4
+[   53.182901] ath10k_pci 0000:01:00.0: bmi write address 0x400844 length 4
+[   53.182953] ath10k_pci 0000:01:00.0: bmi write address 0x400904 length 4
+[   53.182999] ath10k_pci 0000:01:00.0: bmi write address 0x4008bc length 4
+[   53.183045] ath10k_pci 0000:01:00.0: boot did not find a pre calibration file, try DT next: -11
+[   53.183057] ath10k_pci 0000:01:00.0: unable to load pre cal data from DT: -2
+[   53.183068] ath10k_pci 0000:01:00.0: failed to load pre cal data: -2
+[   53.183080] ath10k_pci 0000:01:00.0: pre cal download procedure failed, try cal file: -2
+[   53.183103] ath10k_pci 0000:01:00.0: boot did not find a calibration file, try DT next: -11
+[   53.183123] ath10k_pci 0000:01:00.0: boot did not find DT entry, try OTP next: -2
+[   53.183136] ath10k_pci 0000:01:00.0: bmi read address 0x4008ac length 4
+[   53.183212] ath10k_pci 0000:01:00.0: boot push board extended data addr 0x0
+[   53.183224] ath10k_pci 0000:01:00.0: bmi read address 0x400854 length 4
+[   53.183286] ath10k_pci 0000:01:00.0: bmi write address 0xc0000 length 12064
+[   53.203416] ath10k_pci 0000:01:00.0: bmi write address 0x400858 length 4
+[   53.203604] ath10k_pci 0000:01:00.0: boot upload otp to 0x1234 len 9023
+[   53.203619] ath10k_pci 0000:01:00.0: bmi fast download address 0x1234 buffer 0xc000000000380038 length 9023
+[   53.203631] ath10k_pci 0000:01:00.0: bmi lz stream start address 0x1234
+[   53.203653] ath10k_bmi_lz_stream_start 416: ret = 0
+[   53.208538] ath10k_pci 0000:01:00.0: bmi lz data buffer 0xc000000000380038 length 9020
+[   53.237633] ath10k_pci 0000:01:00.0: bmi lz data buffer 0x800000004ecfbb38 length 4
+[   53.237928] ath10k_pci 0000:01:00.0: bmi lz stream start address 0x0
+[   53.237977] ath10k_bmi_lz_stream_start 416: ret = 0
+[   53.242873] ath10k_pci 0000:01:00.0: bmi execute address 0x1234 param 0x700
+[   54.644135] ath10k_pci 0000:01:00.0: bmi cmd took 140 jiffies hz 100 ret 0
+[   54.644154] ath10k_pci 0000:01:00.0: bmi execute result 0x0
+[   54.644165] ath10k_pci 0000:01:00.0: boot otp execute result 0
+[   54.644177] ath10k_pci 0000:01:00.0: boot using calibration mode otp
+[   54.644188] ath10k_pci 0000:01:00.0: boot found firmware code swap binary
+[   54.644200] ath10k_pci 0000:01:00.0: bmi write address 0x422b48 length 208
+[   54.644238] ath10k_pci 0000:01:00.0: boot uploading firmware image c000000000382380 len 378574
+[   54.644252] ath10k_pci 0000:01:00.0: bmi fast download address 0x1234 buffer 0xc000000000382380 length 378574
+[   54.644263] ath10k_pci 0000:01:00.0: bmi lz stream start address 0x1234
+[   54.644582] ath10k_bmi_lz_stream_start 416: ret = 0
+[   54.649467] ath10k_pci 0000:01:00.0: bmi lz data buffer 0xc000000000382380 length 378572
+[   55.860343] ath10k_pci 0000:01:00.0: bmi lz data buffer 0x800000004ecfbb78 length 4
+[   55.860675] ath10k_pci 0000:01:00.0: bmi lz stream start address 0x0
+[   55.860724] ath10k_bmi_lz_stream_start 416: ret = 0
+[   55.865623] ath10k_pci 0000:01:00.0: bmi write address 0x400814 length 4
+[   55.865656] ath10k_pci 0000:01:00.0: pci hif get default pipe
+[   55.865678] ath10k_pci 0000:01:00.0: pci hif map service
+[   55.865691] ath10k_pci 0000:01:00.0: bmi done
+[   55.865721] ath10k_pci 0000:01:00.0: htt tx max num pending tx 2500
+[   55.865842] ath10k_pci 0000:01:00.0: htt rx ring size 2048 fill_level 1023
+[   55.865854] ath10k_pci 0000:01:00.0: boot hif start
+[   55.871497] ath10k_pci 0000:01:00.0: pci rx ce pipe 1 len 20
+[   55.871519] ath10k_pci 0000:01:00.0: pci rx:
+[   55.871530] ath10k_pci 0000:01:00.0: pci rx:
+[   55.883548] ath10k_pci 0000:01:00.0: Target ready! transmit resources: 2 size:1792
+[   55.883562] ath10k_pci 0000:01:00.0: pci hif map service
+[   55.883576] ath10k_pci 0000:01:00.0: boot htc service 'Control' ul pipe 0 dl pipe 1 eid 0 ready
+[   55.883589] ath10k_pci 0000:01:00.0: boot htc service 'Control' eid 0 TX flow control disabled
+[   55.883601] ath10k_pci 0000:01:00.0: boot htc service HTT Data does not allocate target credits
+[   55.883616] ath10k_pci 0000:01:00.0: ath10k_htc_build_tx_ctrl_skb: skb 800000004c3b6400
+[   55.883826] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4bc0850c len 16 n_items 1
+[   55.883841] ath10k_pci 0000:01:00.0: pci tx 
+[   55.883889] ath10k_pci 0000:01:00.0: ath10k_htc_notify_tx_completion: ep 0 skb 800000004c3b6400
+[   55.883917] ath10k_pci 0000:01:00.0: pci rx ce pipe 1 len 20
+[   55.883929] ath10k_pci 0000:01:00.0: pci rx:
+[   55.883941] ath10k_pci 0000:01:00.0: pci rx:
+[   55.883983] ath10k_pci 0000:01:00.0: HTC Service HTT Data connect response: status: 0x0, assigned ep: 0x1
+[   55.883996] ath10k_pci 0000:01:00.0: pci hif map service
+[   55.884009] ath10k_pci 0000:01:00.0: boot htc service 'HTT Data' ul pipe 4 dl pipe 5 eid 1 ready
+[   55.884022] ath10k_pci 0000:01:00.0: boot htc service 'HTT Data' eid 1 TX flow control disabled
+[   55.884036] ath10k_pci 0000:01:00.0: ath10k_htc_build_tx_ctrl_skb: skb 800000004c3b6500
+[   55.884052] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4bc0818c len 16 n_items 1
+[   55.884064] ath10k_pci 0000:01:00.0: pci tx 
+[   55.884103] ath10k_pci 0000:01:00.0: ath10k_htc_notify_tx_completion: ep 0 skb 800000004c3b6500
+[   55.884125] ath10k_pci 0000:01:00.0: pci rx ce pipe 1 len 20
+[   55.884136] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884147] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884175] ath10k_pci 0000:01:00.0: HTC Service WMI connect response: status: 0x0, assigned ep: 0x2
+[   55.884186] ath10k_pci 0000:01:00.0: pci hif map service
+[   55.884199] ath10k_pci 0000:01:00.0: boot htc service 'WMI' ul pipe 3 dl pipe 2 eid 2 ready
+[   55.884221] ath10k_pci 0000:01:00.0: ath10k_htc_build_tx_ctrl_skb: skb 800000004c3b6600
+[   55.884233] ath10k_pci 0000:01:00.0: HTC is using TX credit flow control
+[   55.884247] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4bc17d0c len 20 n_items 1
+[   55.884259] ath10k_pci 0000:01:00.0: pci tx 
+[   55.884271] ath10k_pci 0000:01:00.0: pci tx 
+[   55.884308] ath10k_pci 0000:01:00.0: ath10k_htc_notify_tx_completion: ep 0 skb 800000004c3b6600
+[   55.884375] ath10k_pci 0000:01:00.0: pci rx ce pipe 2 len 284
+[   55.884386] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884397] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884408] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884419] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884430] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884441] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884452] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884462] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884473] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884484] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884495] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884506] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884517] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884527] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884538] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884549] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884560] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884571] ath10k_pci 0000:01:00.0: pci rx:
+[   55.884583] ath10k_pci 0000:01:00.0: htc rx completion ep 2 skb 800000004cb8a600
+[   55.884812] ath10k_pci 0000:01:00.0: wmi svc
+[   55.884829] ath10k_pci 0000:01:00.0: wmi svc
+[   55.884841] ath10k_pci 0000:01:00.0: wmi svc
+[   55.884852] ath10k_pci 0000:01:00.0: wmi svc
+[   55.884871] ath10k_pci 0000:01:00.0: wmi mem_req_id 1 num_units 0 num_unit_info 2 unit size 2216 actual units 529
+[   55.885418] ath10k_pci 0000:01:00.0: wmi mem_req_id 2 num_units 1 num_unit_info 12 unit size 256 actual units 52
+[   55.885442] ath10k_pci 0000:01:00.0: wmi mem_req_id 3 num_units 1 num_unit_info 12 unit size 1024 actual units 52
+[   55.885474] ath10k_pci 0000:01:00.0: wmi mem_req_id 4 num_units 1 num_unit_info 12 unit size 4096 actual units 52
+[   55.885554] ath10k_pci 0000:01:00.0: wmi mem_req_id 6 num_units 35 num_unit_info 0 unit size 3072 actual units 35
+[   55.885603] ath10k_pci 0000:01:00.0: wmi mem_req_id 7 num_units 1 num_unit_info 0 unit size 12288 actual units 1
+[   55.885623] ath10k_pci 0000:01:00.0: wmi mem_req_id 5 num_units 0 num_unit_info 2 unit size 1980 actual units 529
+[   55.885906] ath10k_pci 0000:01:00.0: wmi event service ready min_tx_power 0x0000003f max_tx_power 0x0000003f ht_cap 0x0000185b vht_cap 0x339b79b2 sw_ver0 0x01000000 sw_ver1 0x00000052 fw_build 0x00000000 phy_capab 0x00000002 num_rf_chains 0x00000004 eeprom_rd 0x00000000 num_mem_reqs 0x00000007
+[   55.885969] ath10k_pci 0000:01:00.0: firmware 10.4-3.4-00082 booted
+[   55.885987] ath10k_pci 0000:01:00.0: wmi ext resource config host type 1 firmware feature bitmap 00000012
+[   55.886005] ath10k_pci 0000:01:00.0: htc ep 2 consumed 1 credits (total 1)
+[   55.886022] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4bc17a80 len 20 n_items 1
+[   55.886035] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886047] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886067] ath10k_pci 0000:01:00.0: wmi chunk 0 len 1172264 requested, addr 0x4be00000
+[   55.886079] ath10k_pci 0000:01:00.0: wmi chunk 1 len 13312 requested, addr 0x4bc18000
+[   55.886089] ath10k_pci 0000:01:00.0: ath10k_htc_notify_tx_completion: ep 2 skb 800000004c3b6700
+[   55.886101] ath10k_pci 0000:01:00.0: wmi chunk 2 len 53248 requested, addr 0x4bc20000
+[   55.886114] ath10k_pci 0000:01:00.0: wmi chunk 3 len 212992 requested, addr 0x4bc40000
+[   55.886126] ath10k_pci 0000:01:00.0: wmi chunk 4 len 107520 requested, addr 0x4bc80000
+[   55.886131] ath10k_pci 0000:01:00.0: pci rx ce pipe 1 len 16
+[   55.886141] ath10k_pci 0000:01:00.0: pci rx:
+[   55.886150] ath10k_pci 0000:01:00.0: wmi chunk 5 len 12288 requested, addr 0x4bc1c000
+[   55.886159] ath10k_pci 0000:01:00.0: wmi chunk 6 len 1047420 requested, addr 0x4bd00000
+[   55.886166] ath10k_pci 0000:01:00.0: wmi init 10.4
+[   55.886175] ath10k_pci 0000:01:00.0: htc ep 2 consumed 1 credits (total 0)
+[   55.886189] ath10k_pci 0000:01:00.0: htc ep 2 got 1 credits (total 1)
+[   55.886204] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4bc17700 len 280 n_items 1
+[   55.886216] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886227] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886238] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886249] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886260] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886270] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886281] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886292] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886303] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886314] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886325] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886336] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886347] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886358] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886369] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886380] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886391] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886402] ath10k_pci 0000:01:00.0: pci tx 
+[   55.886493] ath10k_pci 0000:01:00.0: ath10k_htc_notify_tx_completion: ep 2 skb 800000004c3b6800
+[   55.960441] ath10k_pci 0000:01:00.0: pci rx ce pipe 5 len 28
+[   55.960458] ath10k_pci 0000:01:00.0: pci rx:
+[   55.960469] ath10k_pci 0000:01:00.0: pci rx:
+[   55.960483] ath10k_pci 0000:01:00.0: htt rx, msg_type: 0xF
+[   55.960497] ath10k_pci 0000:01:00.0: htt chan change freq 2412 phymode 11ng-ht20
+[   55.961880] ath10k_pci 0000:01:00.0: pci rx ce pipe 2 len 40
+[   55.961891] ath10k_pci 0000:01:00.0: pci rx:
+[   55.961902] ath10k_pci 0000:01:00.0: pci rx:
+[   55.961913] ath10k_pci 0000:01:00.0: pci rx:
+[   55.961926] ath10k_pci 0000:01:00.0: htc rx completion ep 2 skb 800000004cb8a700
+[   55.961943] ath10k_pci 0000:01:00.0: wmi event ready sw_version 16777216 abi_version 3 mac_addr 00:02:6f:12:34:56 status 0
+[   55.962003] ath10k_pci 0000:01:00.0: pci rx ce pipe 1 len 16
+[   55.962015] ath10k_pci 0000:01:00.0: pci rx:
+[   55.962029] ath10k_pci 0000:01:00.0: htc ep 2 got 1 credits (total 2)
+[   55.963671] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4ba7d600 len 12 n_items 1
+[   55.963692] ath10k_pci 0000:01:00.0: pci tx 
+[   55.963753] ath10k_pci 0000:01:00.0: pci rx ce pipe 5 len 12
+[   55.963767] ath10k_pci 0000:01:00.0: pci rx:
+[   55.963780] ath10k_pci 0000:01:00.0: htt rx, msg_type: 0x0
+[   55.963966] ath10k_pci 0000:01:00.0: htt target version 2.2
+[   55.963981] ath10k_pci 0000:01:00.0: htt frag desc bank cmd
+[   55.963997] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4ba7d380 len 56 n_items 1
+[   55.964009] ath10k_pci 0000:01:00.0: pci tx 
+[   55.964020] ath10k_pci 0000:01:00.0: pci tx 
+[   55.964031] ath10k_pci 0000:01:00.0: pci tx 
+[   55.964042] ath10k_pci 0000:01:00.0: pci tx 
+[   55.964059] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4ba7d100 len 48 n_items 1
+[   55.964071] ath10k_pci 0000:01:00.0: pci tx 
+[   55.964082] ath10k_pci 0000:01:00.0: pci tx 
+[   55.964093] ath10k_pci 0000:01:00.0: pci tx 
+[   55.964106] ath10k_pci 0000:01:00.0: htt h2t aggr cfg msg amsdu 3 ampdu 64
+[   55.964120] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4ba7ce80 len 11 n_items 1
+[   55.964132] ath10k_pci 0000:01:00.0: pci tx 
+[   55.964147] ath10k_pci 0000:01:00.0: wmi disable pktlog
+[   55.964163] ath10k_pci 0000:01:00.0: htc ep 2 consumed 1 credits (total 1)
+[   55.964179] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4ba7cc00 len 12 n_items 1
+[   55.964191] ath10k_pci 0000:01:00.0: pci tx 
+[   55.964210] ath10k_pci 0000:01:00.0: htt-ver 2.2 wmi-op 6 htt-op 4 cal otp max-sta 512 raw 0 hwcrypto 1
+[   55.964214] ath10k_pci 0000:01:00.0: pci rx ce pipe 5 len 16
+[   55.964221] ath10k_pci 0000:01:00.0: pci rx:
+[   55.964227] ath10k_pci 0000:01:00.0: htt rx, msg_type: 0x15
+[   55.964259] ath10k_pci 0000:01:00.0: ath10k_htc_notify_tx_completion: ep 2 skb 800000004ba0e700
+[   55.964338] ath10k_pci 0000:01:00.0: pci rx ce pipe 1 len 16
+[   55.964345] ath10k_pci 0000:01:00.0: pci rx:
+[   55.964354] ath10k_pci 0000:01:00.0: htc ep 2 got 1 credits (total 2)
+[   55.973660] ath10k_pci 0000:01:00.0: wmi disable pktlog
+[   55.973675] ath10k_pci 0000:01:00.0: htc ep 2 consumed 1 credits (total 1)
+[   55.973690] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4ba7c980 len 12 n_items 1
+[   55.973702] ath10k_pci 0000:01:00.0: pci tx 
+[   55.973719] ath10k_pci 0000:01:00.0: htc ep 2 consumed 1 credits (total 0)
+[   55.973734] ath10k_pci 0000:01:00.0: pci tx item 0 paddr 0x4ba7c700 len 16 n_items 1
+[   55.973746] ath10k_pci 0000:01:00.0: pci tx 
+[   55.973768] ath10k_pci 0000:01:00.0: pci rx ce pipe 1 len 16
+[   55.973782] ath10k_pci 0000:01:00.0: pci rx:
+[   55.973796] ath10k_pci 0000:01:00.0: htc ep 2 got 1 credits (total 1)
+[   55.973831] ath10k_pci 0000:01:00.0: ath10k_htc_notify_tx_completion: ep 2 skb 800000004ba0e800
+[   55.973845] ath10k_pci 0000:01:00.0: ath10k_htc_notify_tx_completion: ep 2 skb 800000004ba0e900
+[   55.973882] ath10k_pci 0000:01:00.0: pci rx ce pipe 1 len 16
+[   55.973893] ath10k_pci 0000:01:00.0: pci rx:
+[   55.973906] ath10k_pci 0000:01:00.0: htc ep 2 got 1 credits (total 2)
+[   55.973921] ath10k_pci 0000:01:00.0: pci rx ce pipe 1 len 12
+[   55.973932] ath10k_pci 0000:01:00.0: pci rx:
+[   55.973943] ath10k_pci 0000:01:00.0: boot suspend complete
+[   55.973982] ath10k_pci 0000:01:00.0: boot hif stop
+[   55.974063] ath10k_pci 0000:01:00.0: boot qca99x0 chip reset
+[   55.974083]  ath10k_pci_qca99x0_chip_reset 2468: ************
+[   55.979838] ath10k_pci 0000:01:00.0: boot cold reset
+[   56.002796] ath10k_pci 0000:01:00.0: boot cold reset complete
+[   56.002807]  ath10k_pci_qca99x0_chip_reset 2474: ************
+[   56.008558] ath10k_pci 0000:01:00.0: boot waiting target to initialise
+[   56.008571] ath10k_pci 0000:01:00.0: boot target indicator 2
+[   56.008585] ath10k_pci 0000:01:00.0: receive initialized event from target: 00000002
+[   56.016348] ath10k_pci 0000:01:00.0: boot target initialised
+[   56.016357]  ath10k_pci_qca99x0_chip_reset 2481: ************
+[   56.022107] ath10k_pci 0000:01:00.0: boot qca99x0 chip reset complete (cold)
+[   56.026712] ath10k_core_stop 2066: ar_pci->ps_awake = 1
+[   56.031952] ath10k_pci 0000:01:00.0: boot hif power down
+[   56.031974] ath: EEPROM regdomain: 0x0
+[   56.031981] ath: EEPROM indicates default country code should be used
+[   56.031988] ath: doing EEPROM country->regdmn map search
+[   56.031999] ath: country maps to regdmn code: 0x3a
+[   56.032007] ath: Country alpha2 being used: US
+[   56.032014] ath: Regpair used: 0x3a
+[   56.032680] ath10k_pci 0000:01:00.0: dfs region 0x0
+[   56.036456] ath10k_pci 0000:01:00.0: dfs region 0x1
+[   56.038114] bus: 'pci': driver_probe_device: matched device 0001:02:00.0 with driver ath10k_pci
+[   56.046922] ath10k_pci_probe: PCI device id 0046:0046
+[   56.052461] ath10k_pci 0001:02:00.0: pci probe 168c:0046 168c:cafe
+[   56.052587] PCI: Enabling device 0001:02:00.0 (0000 -> 0002)
+[   56.238539] ath10k_pci 0001:02:00.0: enabling bus mastering
+[   56.253578] ath10k_pci 0001:02:00.0: boot pci_mem 0x80011c00f0000000
+[   56.253810] ath10k_pci 0001:02:00.0: pci irq legacy oper_irq_mode 1 irq_mode 0 reset_mode 0
+[   56.262176] ath10k_pci 0001:02:00.0: boot qca99x0 chip reset
+[   56.262185]  ath10k_pci_qca99x0_chip_reset 2468: ************
+[   56.267966] ath10k_pci 0001:02:00.0: boot cold reset
+[   56.292802] ath10k_pci 0001:02:00.0: boot cold reset complete
+[   56.292815]  ath10k_pci_qca99x0_chip_reset 2474: ************
+[   56.298566] ath10k_pci 0001:02:00.0: boot waiting target to initialise
+[   56.298579] ath10k_pci 0001:02:00.0: boot target indicator 2
+[   56.298594] ath10k_pci 0001:02:00.0: receive initialized event from target: 00000002
+[   56.306360] ath10k_pci 0001:02:00.0: boot target initialised
+[   56.306369]  ath10k_pci_qca99x0_chip_reset 2481: ************
+[   56.312119] ath10k_pci 0001:02:00.0: boot qca99x0 chip reset complete (cold)
+[   56.312163] ath10k_pci 0001:02:00.0: boot hif power up
+[   56.327252] ath10k_pci 0001:02:00.0: boot qca99x0 chip reset
+[   56.327263]  ath10k_pci_qca99x0_chip_reset 2468: ************
+[   56.333038] ath10k_pci 0001:02:00.0: boot cold reset
+[   56.362810] ath10k_pci 0001:02:00.0: boot cold reset complete
+[   56.362821]  ath10k_pci_qca99x0_chip_reset 2474: ************
+[   56.368573] ath10k_pci 0001:02:00.0: boot waiting target to initialise
+[   56.368586] ath10k_pci 0001:02:00.0: boot target indicator 2
+[   56.368601] ath10k_pci 0001:02:00.0: receive initialized event from target: 00000002
+[   56.376368] ath10k_pci 0001:02:00.0: boot target initialised
+[   56.376377]  ath10k_pci_qca99x0_chip_reset 2481: ************
+[   56.382127] ath10k_pci 0001:02:00.0: boot qca99x0 chip reset complete (cold)
+[   56.382155] ath10k_pci 0001:02:00.0: boot init ce src ring id 0 entries 16 base_addr 800000004b836000
+[   56.382180] ath10k_pci 0001:02:00.0: boot ce dest ring id 1 entries 512 base_addr 800000004c0b8000
+[   56.382205] ath10k_pci 0001:02:00.0: boot ce dest ring id 2 entries 128 base_addr 800000004b837000
+[   56.382231] ath10k_pci 0001:02:00.0: boot init ce src ring id 3 entries 32 base_addr 800000004b838000
+[   56.382272] ath10k_pci 0001:02:00.0: boot init ce src ring id 4 entries 8192 base_addr 800000004baa0000
+[   56.382296] ath10k_pci 0001:02:00.0: boot ce dest ring id 5 entries 512 base_addr 800000004b862000
+[   56.382322] ath10k_pci 0001:02:00.0: boot init ce src ring id 7 entries 2 base_addr 800000004b839000
+[   56.382346] ath10k_pci 0001:02:00.0: boot ce dest ring id 7 entries 2 base_addr 800000004b83a000
+[   56.382370] ath10k_pci 0001:02:00.0: boot ce dest ring id 8 entries 128 base_addr 800000004b83b000
+[   56.393509] ath10k_pci 0001:02:00.0: bmi get target info
+[   56.393597] ath10k_pci 0001:02:00.0: Hardware name qca9984/qca9994 hw1.0 version 0x1000000
+[   56.393767] ath10k_pci 0001:02:00.0: Direct firmware load for ath10k/pre-cal-pci-0001:02:00.0.bin failed with error -2
+[   56.404502] ath10k_pci 0001:02:00.0: Falling back to user helper
+[   56.421200] firmware ath10k!pre-cal-pci-0001:02:00.0.bin: firmware_loading_store: map pages failed
+[   56.430442] ath10k_pci 0001:02:00.0: boot fw request 'ath10k/pre-cal-pci-0001:02:00.0.bin': -11
+[   56.430604] ath10k_pci 0001:02:00.0: Direct firmware load for ath10k/cal-pci-0001:02:00.0.bin failed with error -2
+[   56.441001] ath10k_pci 0001:02:00.0: Falling back to user helper
+[   56.457913] firmware ath10k!cal-pci-0001:02:00.0.bin: firmware_loading_store: map pages failed
+[   56.466805] ath10k_pci 0001:02:00.0: boot fw request 'ath10k/cal-pci-0001:02:00.0.bin': -11
+[   56.466821] ath10k_pci 0001:02:00.0: trying fw api 5
+[   56.466840] ath10k_pci 0001:02:00.0: boot fw request 'ath10k/QCA9984/hw1.0/firmware-5.bin': 0
+[   56.466854] ath10k_pci 0001:02:00.0: found fw version 10.4-3.4-00082
+[   56.466866] ath10k_pci 0001:02:00.0: found fw timestamp 1490254088
+[   56.466878] ath10k_pci 0001:02:00.0: found otp image ie (9023 B)
+[   56.466885] ** found otp image ie (9023 B)
+[   56.470988] ath10k_pci 0001:02:00.0: found fw image ie (378574 B)
+[   56.471000] ath10k_pci 0001:02:00.0: found firmware features ie (3 B)
+[   56.471011] ath10k_pci 0001:02:00.0: Enabling feature bit: 3
+[   56.471022] ath10k_pci 0001:02:00.0: Enabling feature bit: 12
+[   56.471032] ath10k_pci 0001:02:00.0: Enabling feature bit: 13
+[   56.471043] ath10k_pci 0001:02:00.0: Enabling feature bit: 14
+[   56.471054] ath10k_pci 0001:02:00.0: Enabling feature bit: 16
+[   56.471064] ath10k_pci 0001:02:00.0: features
+[   56.471077] ath10k_pci 0001:02:00.0: 0000000
+[   56.471089] ath10k_pci 0001:02:00.0: found fw ie wmi op version 6
+[   56.471100] ath10k_pci 0001:02:00.0: found fw ie htt op version 4
+[   56.471111] ath10k_pci 0001:02:00.0: found fw code swap image ie (234352 B)
+[   56.471122] ath10k_pci 0001:02:00.0: using fw api 5
+[   56.471142] ath10k_pci 0001:02:00.0: qca9984/qca9994 hw1.0 target 0x01000000 chip_id 0x00000000 sub 168c:cafe
+[   56.481094] ath10k_pci 0001:02:00.0: kconfig debug 1 debugfs 1 tracing 1 dfs 1 testmode 1
+[   56.497749] ath10k_pci 0001:02:00.0: firmware ver 10.4-3.4-00082 api 5 features no-p2p,mfp,peer-flow-ctrl,btcoex-param,allows-mesh-bcast crc32 f301de65
+[   56.511329] ath10k_pci 0001:02:00.0: boot did not find a pre calibration file, try DT next: -11
+[   56.511341] ath10k_pci 0001:02:00.0: unable to load pre cal data from DT: -2
+[   56.511352] ath10k_pci 0001:02:00.0: could not load pre cal data: -2
+[   56.511365] ath10k_pci 0001:02:00.0: boot upload otp to 0x1234 len 9023 for board id
+[   56.511379] ath10k_pci 0001:02:00.0: bmi fast download address 0x1234 buffer 0xc000000000380038 length 9023
+[   56.511391] ath10k_pci 0001:02:00.0: bmi lz stream start address 0x1234
+[   56.511431] ath10k_bmi_lz_stream_start 416: ret = 0
+[   56.516339] ath10k_pci 0001:02:00.0: bmi lz data buffer 0xc000000000380038 length 9020
+[   56.545181] ath10k_pci 0001:02:00.0: bmi lz data buffer 0x800000004ecfbb98 length 4
+[   56.545481] ath10k_pci 0001:02:00.0: bmi lz stream start address 0x0
+[   56.545525] ath10k_bmi_lz_stream_start 416: ret = 0
+[   56.550409] ath10k_pci 0001:02:00.0: bmi execute address 0x1234 param 0x10
+[   57.942587] ath10k_pci 0001:02:00.0: bmi cmd took 139 jiffies hz 100 ret 0
+[   57.942606] ath10k_pci 0001:02:00.0: bmi execute result 0xc00
+[   57.942620] ath10k_pci 0001:02:00.0: boot get otp board id result 0x00000c00 board_id 3 chip_id 0
+[   57.942638] ath10k_pci 0001:02:00.0: boot using board name 'bus=pci,bmi-chip-id=0,bmi-board-id=3'
+[   57.942647] ath10k_core_fetch_board_file 1131: trying to get board data using bd_api 2
+[   57.950802] ath10k_pci 0001:02:00.0: boot fw request 'ath10k/QCA9984/hw1.0/board-data-id3.bin': 0
+[   57.950816] ath10k_core_parse_bd_ie_board 928: *** board_ie_id = ATH10K_BD_IE_BOARD_NAME**********
+[   57.959822] ath10k_pci 0001:02:00.0: board name
+[   57.959836] ath10k_pci 0001:02:00.0: 0000000
+[   57.959847] ath10k_pci 0001:02:00.0: 0000001
+[   57.959858] ath10k_pci 0001:02:00.0: 0000002
+[   57.959868] ath10k_core_parse_bd_ie_board 932: board_ie_len = 36
+[   57.965891] ath10k_core_parse_bd_ie_board 933: strlen(boardname) = 36
+[   57.972334] ath10k_core_parse_bd_ie_board 934: boardname = bus=pci,bmi-chip-id=0,bmi-board-id=3
+[   57.981049] ath10k_pci 0001:02:00.0: boot found match for name 'bus=pci,bmi-chip-id=0,bmi-board-id=3'
+[   57.981059] ath10k_core_parse_bd_ie_board 948: *** board_ie_id = ATH10K_BD_IE_BOARD_DATA**********
+[   57.990033] ath10k_pci 0001:02:00.0: boot found board data for 'bus=pci,bmi-chip-id=0,bmi-board-id=3'
+[   57.990046] ath10k_pci 0001:02:00.0: using board api 2
+[   57.990230] ath10k_pci 0001:02:00.0: board_file api 2 bmi_id 0:3 crc32 1f1c5026
+[   57.998005] ath10k_core_start 1810: it is awake!
+[   58.002632] ath10k_pci 0001:02:00.0: bmi start
+[   58.002645] ath10k_pci 0001:02:00.0: bmi write address 0x400800 length 4
+[   58.002726] ath10k_init_configure_target 429: settings HTC version ########
+[   58.009719] ath10k_pci 0001:02:00.0: bmi read address 0x400810 length 4
+[   58.009803] ath10k_pci 0001:02:00.0: bmi write address 0x400810 length 4
+[   58.009827] ath10k_pci 0001:02:00.0: bmi write address 0x400844 length 4
+[   58.009882] ath10k_pci 0001:02:00.0: bmi write address 0x400904 length 4
+[   58.009924] ath10k_pci 0001:02:00.0: bmi write address 0x4008bc length 4
+[   58.009974] ath10k_pci 0001:02:00.0: boot did not find a pre calibration file, try DT next: -11
+[   58.009985] ath10k_pci 0001:02:00.0: unable to load pre cal data from DT: -2
+[   58.009997] ath10k_pci 0001:02:00.0: failed to load pre cal data: -2
+[   58.010009] ath10k_pci 0001:02:00.0: pre cal download procedure failed, try cal file: -2
+[   58.010021] ath10k_pci 0001:02:00.0: boot did not find a calibration file, try DT next: -11
+[   58.010032] ath10k_pci 0001:02:00.0: boot did not find DT entry, try OTP next: -2
+[   58.010045] ath10k_pci 0001:02:00.0: bmi read address 0x4008ac length 4
+[   58.010117] ath10k_pci 0001:02:00.0: boot push board extended data addr 0x0
+[   58.010129] ath10k_pci 0001:02:00.0: bmi read address 0x400854 length 4
+[   58.010193] ath10k_pci 0001:02:00.0: bmi write address 0xc0000 length 12064
+[   58.029368] ath10k_pci 0001:02:00.0: bmi write address 0x400858 length 4
+[   58.029561] ath10k_pci 0001:02:00.0: boot upload otp to 0x1234 len 9023
+[   58.029575] ath10k_pci 0001:02:00.0: bmi fast download address 0x1234 buffer 0xc000000000380038 length 9023
+[   58.029587] ath10k_pci 0001:02:00.0: bmi lz stream start address 0x1234
+[   58.029608] ath10k_bmi_lz_stream_start 416: ret = 0
+[   58.034512] ath10k_pci 0001:02:00.0: bmi lz data buffer 0xc000000000380038 length 9020
+[   58.063356] ath10k_pci 0001:02:00.0: bmi lz data buffer 0x800000004ecfbb38 length 4
+[   58.063653] ath10k_pci 0001:02:00.0: bmi lz stream start address 0x0
+[   58.063698] ath10k_bmi_lz_stream_start 416: ret = 0
+[   58.068582] ath10k_pci 0001:02:00.0: bmi execute address 0x1234 param 0x700
+[   59.469744] ath10k_pci 0001:02:00.0: bmi cmd took 140 jiffies hz 100 ret 0
+[   59.469761] ath10k_pci 0001:02:00.0: bmi execute result 0x0
+[   59.469772] ath10k_pci 0001:02:00.0: boot otp execute result 0
+[   59.469784] ath10k_pci 0001:02:00.0: boot using calibration mode otp
+[   59.469795] ath10k_pci 0001:02:00.0: boot found firmware code swap binary
+[   59.469807] ath10k_pci 0001:02:00.0: bmi write address 0x422b48 length 208
+[   59.469843] ath10k_pci 0001:02:00.0: boot uploading firmware image c000000000382380 len 378574
+[   59.469857] ath10k_pci 0001:02:00.0: bmi fast download address 0x1234 buffer 0xc000000000382380 length 378574
+[   59.469868] ath10k_pci 0001:02:00.0: bmi lz stream start address 0x1234
+[   59.470186] ath10k_bmi_lz_stream_start 416: ret = 0
+[   59.475088] ath10k_pci 0001:02:00.0: bmi lz data buffer 0xc000000000382380 length 378572
+[   60.675223] ath10k_pci 0001:02:00.0: bmi lz data buffer 0x800000004ecfbb78 length 4
+[   60.675560] ath10k_pci 0001:02:00.0: bmi lz stream start address 0x0
+[   60.675606] ath10k_bmi_lz_stream_start 416: ret = 0
+[   60.680490] ath10k_pci 0001:02:00.0: bmi write address 0x400814 length 4
+[   60.680518] ath10k_pci 0001:02:00.0: pci hif get default pipe
+[   60.680528] ath10k_pci 0001:02:00.0: pci hif map service
+[   60.680541] ath10k_pci 0001:02:00.0: bmi done
+[   60.680570] ath10k_pci 0001:02:00.0: htt tx max num pending tx 2500
+[   60.680690] ath10k_pci 0001:02:00.0: htt rx ring size 2048 fill_level 1023
+[   60.680702] ath10k_pci 0001:02:00.0: boot hif start
+[   60.686308] ath10k_pci 0001:02:00.0: pci rx ce pipe 1 len 20
+[   60.686329] ath10k_pci 0001:02:00.0: pci rx:
+[   60.686341] ath10k_pci 0001:02:00.0: pci rx:
+[   60.698415] ath10k_pci 0001:02:00.0: Target ready! transmit resources: 2 size:1792
+[   60.698428] ath10k_pci 0001:02:00.0: pci hif map service
+[   60.698443] ath10k_pci 0001:02:00.0: boot htc service 'Control' ul pipe 0 dl pipe 1 eid 0 ready
+[   60.698455] ath10k_pci 0001:02:00.0: boot htc service 'Control' eid 0 TX flow control disabled
+[   60.698468] ath10k_pci 0001:02:00.0: boot htc service HTT Data does not allocate target credits
+[   60.698481] ath10k_pci 0001:02:00.0: ath10k_htc_build_tx_ctrl_skb: skb 800000004c271b00
+[   60.698500] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4bb0ad0c len 16 n_items 1
+[   60.698513] ath10k_pci 0001:02:00.0: pci tx 
+[   60.698557] ath10k_pci 0001:02:00.0: ath10k_htc_notify_tx_completion: ep 0 skb 800000004c271b00
+[   60.698582] ath10k_pci 0001:02:00.0: pci rx ce pipe 1 len 20
+[   60.698595] ath10k_pci 0001:02:00.0: pci rx:
+[   60.698606] ath10k_pci 0001:02:00.0: pci rx:
+[   60.698646] ath10k_pci 0001:02:00.0: HTC Service HTT Data connect response: status: 0x0, assigned ep: 0x1
+[   60.698658] ath10k_pci 0001:02:00.0: pci hif map service
+[   60.698671] ath10k_pci 0001:02:00.0: boot htc service 'HTT Data' ul pipe 4 dl pipe 5 eid 1 ready
+[   60.698683] ath10k_pci 0001:02:00.0: boot htc service 'HTT Data' eid 1 TX flow control disabled
+[   60.698698] ath10k_pci 0001:02:00.0: ath10k_htc_build_tx_ctrl_skb: skb 800000004c271c00
+[   60.698713] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4bb0a98c len 16 n_items 1
+[   60.698726] ath10k_pci 0001:02:00.0: pci tx 
+[   60.698763] ath10k_pci 0001:02:00.0: ath10k_htc_notify_tx_completion: ep 0 skb 800000004c271c00
+[   60.698784] ath10k_pci 0001:02:00.0: pci rx ce pipe 1 len 20
+[   60.698795] ath10k_pci 0001:02:00.0: pci rx:
+[   60.698806] ath10k_pci 0001:02:00.0: pci rx:
+[   60.698834] ath10k_pci 0001:02:00.0: HTC Service WMI connect response: status: 0x0, assigned ep: 0x2
+[   60.698846] ath10k_pci 0001:02:00.0: pci hif map service
+[   60.698859] ath10k_pci 0001:02:00.0: boot htc service 'WMI' ul pipe 3 dl pipe 2 eid 2 ready
+[   60.698872] ath10k_pci 0001:02:00.0: ath10k_htc_build_tx_ctrl_skb: skb 800000004c271d00
+[   60.698883] ath10k_pci 0001:02:00.0: HTC is using TX credit flow control
+[   60.698898] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4bb0a60c len 20 n_items 1
+[   60.698910] ath10k_pci 0001:02:00.0: pci tx 
+[   60.698922] ath10k_pci 0001:02:00.0: pci tx 
+[   60.698957] ath10k_pci 0001:02:00.0: ath10k_htc_notify_tx_completion: ep 0 skb 800000004c271d00
+[   60.699023] ath10k_pci 0001:02:00.0: pci rx ce pipe 2 len 284
+[   60.699035] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699046] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699056] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699067] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699078] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699089] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699100] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699111] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699126] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699137] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699148] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699159] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699170] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699181] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699191] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699202] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699213] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699224] ath10k_pci 0001:02:00.0: pci rx:
+[   60.699237] ath10k_pci 0001:02:00.0: htc rx completion ep 2 skb 800000004c329d00
+[   60.699299] ath10k_pci 0001:02:00.0: wmi svc
+[   60.699314] ath10k_pci 0001:02:00.0: wmi svc
+[   60.699326] ath10k_pci 0001:02:00.0: wmi svc
+[   60.699337] ath10k_pci 0001:02:00.0: wmi svc
+[   60.699355] ath10k_pci 0001:02:00.0: wmi mem_req_id 1 num_units 0 num_unit_info 2 unit size 2216 actual units 529
+[   60.699911] ath10k_pci 0001:02:00.0: wmi mem_req_id 2 num_units 1 num_unit_info 12 unit size 256 actual units 52
+[   60.699935] ath10k_pci 0001:02:00.0: wmi mem_req_id 3 num_units 1 num_unit_info 12 unit size 1024 actual units 52
+[   60.699967] ath10k_pci 0001:02:00.0: wmi mem_req_id 4 num_units 1 num_unit_info 12 unit size 4096 actual units 52
+[   60.700047] ath10k_pci 0001:02:00.0: wmi mem_req_id 6 num_units 35 num_unit_info 0 unit size 3072 actual units 35
+[   60.700096] ath10k_pci 0001:02:00.0: wmi mem_req_id 7 num_units 1 num_unit_info 0 unit size 12288 actual units 1
+[   60.700116] ath10k_pci 0001:02:00.0: wmi mem_req_id 5 num_units 0 num_unit_info 2 unit size 1980 actual units 529
+[   60.700400] ath10k_pci 0001:02:00.0: wmi event service ready min_tx_power 0x0000003f max_tx_power 0x0000003f ht_cap 0x0000185b vht_cap 0x339b79fa sw_ver0 0x01000000 sw_ver1 0x00000052 fw_build 0x00000000 phy_capab 0x00000001 num_rf_chains 0x00000004 eeprom_rd 0x00000000 num_mem_reqs 0x00000007
+[   60.700468] ath10k_pci 0001:02:00.0: firmware 10.4-3.4-00082 booted
+[   60.700494] ath10k_pci 0001:02:00.0: wmi ext resource config host type 1 firmware feature bitmap 00000010
+[   60.700512] ath10k_pci 0001:02:00.0: htc ep 2 consumed 1 credits (total 1)
+[   60.700531] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4bb37e00 len 20 n_items 1
+[   60.700545] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700556] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700577] ath10k_pci 0001:02:00.0: wmi chunk 0 len 1172264 requested, addr 0x4b400000
+[   60.700590] ath10k_pci 0001:02:00.0: wmi chunk 1 len 13312 requested, addr 0x4bb18000
+[   60.700596] ath10k_pci 0001:02:00.0: ath10k_htc_notify_tx_completion: ep 2 skb 800000004e55e300
+[   60.700612] ath10k_pci 0001:02:00.0: wmi chunk 2 len 53248 requested, addr 0x4bb20000
+[   60.700624] ath10k_pci 0001:02:00.0: wmi chunk 3 len 212992 requested, addr 0x4bb40000
+[   60.700629] ath10k_pci 0001:02:00.0: pci rx ce pipe 1 len 16
+[   60.700639] ath10k_pci 0001:02:00.0: pci rx:
+[   60.700648] ath10k_pci 0001:02:00.0: htc ep 2 got 1 credits (total 2)
+[   60.700653] ath10k_pci 0001:02:00.0: wmi chunk 4 len 107520 requested, addr 0x4bb80000
+[   60.700662] ath10k_pci 0001:02:00.0: wmi chunk 5 len 12288 requested, addr 0x4bb1c000
+[   60.700671] ath10k_pci 0001:02:00.0: wmi chunk 6 len 1047420 requested, addr 0x4b600000
+[   60.700678] ath10k_pci 0001:02:00.0: wmi init 10.4
+[   60.700694] ath10k_pci 0001:02:00.0: htc ep 2 consumed 1 credits (total 1)
+[   60.700710] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4bb37a80 len 280 n_items 1
+[   60.700722] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700733] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700744] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700755] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700766] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700777] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700788] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700799] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700810] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700821] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700832] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700843] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700854] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700865] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700876] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700887] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700898] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700909] ath10k_pci 0001:02:00.0: pci tx 
+[   60.700951] ath10k_pci 0001:02:00.0: ath10k_htc_notify_tx_completion: ep 2 skb 800000004e55eb00
+[   60.773799] ath10k_pci 0001:02:00.0: pci rx ce pipe 5 len 28
+[   60.773815] ath10k_pci 0001:02:00.0: pci rx:
+[   60.773826] ath10k_pci 0001:02:00.0: pci rx:
+[   60.773839] ath10k_pci 0001:02:00.0: htt rx, msg_type: 0xF
+[   60.773853] ath10k_pci 0001:02:00.0: htt chan change freq 5220 phymode 11ac-vht40
+[   60.775216] ath10k_pci 0001:02:00.0: pci rx ce pipe 2 len 40
+[   60.775227] ath10k_pci 0001:02:00.0: pci rx:
+[   60.775238] ath10k_pci 0001:02:00.0: pci rx:
+[   60.775249] ath10k_pci 0001:02:00.0: pci rx:
+[   60.775264] ath10k_pci 0001:02:00.0: htc rx completion ep 2 skb 800000004c329e00
+[   60.775282] ath10k_pci 0001:02:00.0: wmi event ready sw_version 16777216 abi_version 3 mac_addr 00:02:6f:12:34:50 status 0
+[   60.775337] ath10k_pci 0001:02:00.0: pci rx ce pipe 1 len 16
+[   60.775349] ath10k_pci 0001:02:00.0: pci rx:
+[   60.775362] ath10k_pci 0001:02:00.0: htc ep 2 got 1 credits (total 2)
+[   60.776770] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4b17e000 len 12 n_items 1
+[   60.776791] ath10k_pci 0001:02:00.0: pci tx 
+[   60.776843] ath10k_pci 0001:02:00.0: pci rx ce pipe 5 len 12
+[   60.776855] ath10k_pci 0001:02:00.0: pci rx:
+[   60.776866] ath10k_pci 0001:02:00.0: htt rx, msg_type: 0x0
+[   60.776905] ath10k_pci 0001:02:00.0: htt target version 2.2
+[   60.776919] ath10k_pci 0001:02:00.0: htt frag desc bank cmd
+[   60.776935] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4b17dd80 len 56 n_items 1
+[   60.776947] ath10k_pci 0001:02:00.0: pci tx 
+[   60.776958] ath10k_pci 0001:02:00.0: pci tx 
+[   60.776969] ath10k_pci 0001:02:00.0: pci tx 
+[   60.776980] ath10k_pci 0001:02:00.0: pci tx 
+[   60.776997] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4b17db00 len 48 n_items 1
+[   60.777008] ath10k_pci 0001:02:00.0: pci tx 
+[   60.777019] ath10k_pci 0001:02:00.0: pci tx 
+[   60.777030] ath10k_pci 0001:02:00.0: pci tx 
+[   60.777044] ath10k_pci 0001:02:00.0: htt h2t aggr cfg msg amsdu 3 ampdu 64
+[   60.777058] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4b17d880 len 11 n_items 1
+[   60.777070] ath10k_pci 0001:02:00.0: pci tx 
+[   60.777085] ath10k_pci 0001:02:00.0: wmi disable pktlog
+[   60.777101] ath10k_pci 0001:02:00.0: htc ep 2 consumed 1 credits (total 1)
+[   60.777117] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4b17d600 len 12 n_items 1
+[   60.777129] ath10k_pci 0001:02:00.0: pci tx 
+[   60.777148] ath10k_pci 0001:02:00.0: htt-ver 2.2 wmi-op 6 htt-op 4 cal otp max-sta 512 raw 0 hwcrypto 1
+[   60.777153] ath10k_pci 0001:02:00.0: pci rx ce pipe 5 len 16
+[   60.777160] ath10k_pci 0001:02:00.0: pci rx:
+[   60.777167] ath10k_pci 0001:02:00.0: htt rx, msg_type: 0x15
+[   60.777198] ath10k_pci 0001:02:00.0: ath10k_htc_notify_tx_completion: ep 2 skb 800000004b0cdc00
+[   60.777249] ath10k_pci 0001:02:00.0: pci rx ce pipe 1 len 16
+[   60.777255] ath10k_pci 0001:02:00.0: pci rx:
+[   60.777268] ath10k_pci 0001:02:00.0: htc ep 2 got 1 credits (total 2)
+[   60.786615] ath10k_pci 0001:02:00.0: wmi disable pktlog
+[   60.786630] ath10k_pci 0001:02:00.0: htc ep 2 consumed 1 credits (total 1)
+[   60.786646] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4b17d380 len 12 n_items 1
+[   60.786658] ath10k_pci 0001:02:00.0: pci tx 
+[   60.786675] ath10k_pci 0001:02:00.0: htc ep 2 consumed 1 credits (total 0)
+[   60.786690] ath10k_pci 0001:02:00.0: pci tx item 0 paddr 0x4b17d100 len 16 n_items 1
+[   60.786702] ath10k_pci 0001:02:00.0: pci tx 
+[   60.786724] ath10k_pci 0001:02:00.0: pci rx ce pipe 1 len 16
+[   60.786739] ath10k_pci 0001:02:00.0: pci rx:
+[   60.786753] ath10k_pci 0001:02:00.0: htc ep 2 got 1 credits (total 1)
+[   60.786808] ath10k_pci 0001:02:00.0: ath10k_htc_notify_tx_completion: ep 2 skb 800000004b0cdc00
+[   60.786836] ath10k_pci 0001:02:00.0: ath10k_htc_notify_tx_completion: ep 2 skb 800000004b0cdf00
+[   60.786888] ath10k_pci 0001:02:00.0: pci rx ce pipe 1 len 16
+[   60.786912] ath10k_pci 0001:02:00.0: pci rx:
+[   60.786937] ath10k_pci 0001:02:00.0: htc ep 2 got 1 credits (total 2)
+[   60.786968] ath10k_pci 0001:02:00.0: pci rx ce pipe 1 len 12
+[   60.786987] ath10k_pci 0001:02:00.0: pci rx:
+[   60.787008] ath10k_pci 0001:02:00.0: boot suspend complete
+[   60.789330] ath10k_pci 0001:02:00.0: boot hif stop
+[   60.789389] ath10k_pci 0001:02:00.0: boot qca99x0 chip reset
+[   60.789398]  ath10k_pci_qca99x0_chip_reset 2468: ************
+[   60.795179] ath10k_pci 0001:02:00.0: boot cold reset
+[   60.822796] ath10k_pci 0001:02:00.0: boot cold reset complete
+[   60.822809]  ath10k_pci_qca99x0_chip_reset 2474: ************
+[   60.828560] ath10k_pci 0001:02:00.0: boot waiting target to initialise
+[   60.828573] ath10k_pci 0001:02:00.0: boot target indicator 2
+[   60.828587] ath10k_pci 0001:02:00.0: receive initialized event from target: 00000002
+[   60.836355] ath10k_pci 0001:02:00.0: boot target initialised
+[   60.836363]  ath10k_pci_qca99x0_chip_reset 2481: ************
+[   60.842113] ath10k_pci 0001:02:00.0: boot qca99x0 chip reset complete (cold)
+[   60.846185] ath10k_core_stop 2066: ar_pci->ps_awake = 1
+[   60.851424] ath10k_pci 0001:02:00.0: boot hif power down
+[   60.851446] ath: EEPROM regdomain: 0x0
+[   60.851454] ath: EEPROM indicates default country code should be used
+[   60.851461] ath: doing EEPROM country->regdmn map search
+[   60.851472] ath: country maps to regdmn code: 0x3a
+[   60.851480] ath: Country alpha2 being used: US
+[   60.851487] ath: Regpair used: 0x3a
+[   60.851809] ath10k_pci 0001:02:00.0: dfs region 0x1
+[   60.859078] bus: 'pci': driver_probe_device: matched device 0002:03:00.0 with driver ath10k_pci
+[   60.867874] ath10k_pci_probe: PCI device id 0050:0050
+[   60.873413] ath10k_pci 0002:03:00.0: pci probe 168c:0050 0000:0000
+[   60.873549] PCI: Enabling device 0002:03:00.0 (0000 -> 0002)
+[   61.059496] ath10k_pci 0002:03:00.0: enabling bus mastering
+[   61.074537] ath10k_pci 0002:03:00.0: boot pci_mem 0x80011d00f0000000
+[   61.076764] ath10k_pci 0002:03:00.0: pci irq legacy oper_irq_mode 1 irq_mode 0 reset_mode 0
+[   61.085142] ath10k_pci 0002:03:00.0: boot 988x chip reset
+[   61.085164] ath10k_pci 0002:03:00.0: boot warm reset
+[   61.122816] ath10k_pci 0002:03:00.0: boot init ce src ring id 0 entries 16 base_addr 800000004c274000
+[   61.122846] ath10k_pci 0002:03:00.0: boot ce dest ring id 1 entries 512 base_addr 800000004c200000
+[   61.122870] ath10k_pci 0002:03:00.0: boot ce dest ring id 2 entries 128 base_addr 800000004c275000
+[   61.122895] ath10k_pci 0002:03:00.0: boot init ce src ring id 3 entries 32 base_addr 800000004c276000
+[   61.122936] ath10k_pci 0002:03:00.0: boot init ce src ring id 4 entries 8192 base_addr 800000004c160000
+[   61.122960] ath10k_pci 0002:03:00.0: boot ce dest ring id 5 entries 512 base_addr 800000004c202000
+[   61.122986] ath10k_pci 0002:03:00.0: boot init ce src ring id 7 entries 2 base_addr 800000004c277000
+[   61.123009] ath10k_pci 0002:03:00.0: boot ce dest ring id 7 entries 2 base_addr 800000004b979000
+[   61.123021] ath10k_pci 0002:03:00.0: boot waiting target to initialise
+[   61.123033] ath10k_pci 0002:03:00.0: boot target indicator 0
+[   61.133048] ath10k_pci 0002:03:00.0: boot target indicator 0
+[   61.143064] ath10k_pci 0002:03:00.0: boot target indicator 2
+[   61.143081] ath10k_pci 0002:03:00.0: receive initialized event from target: 00000002
+[   61.150838] ath10k_pci 0002:03:00.0: boot target initialised
+[   61.172840] ath10k_pci 0002:03:00.0: boot init ce src ring id 0 entries 16 base_addr 800000004c274000
+[   61.172870] ath10k_pci 0002:03:00.0: boot ce dest ring id 1 entries 512 base_addr 800000004c200000
+[   61.172894] ath10k_pci 0002:03:00.0: boot ce dest ring id 2 entries 128 base_addr 800000004c275000
+[   61.172920] ath10k_pci 0002:03:00.0: boot init ce src ring id 3 entries 32 base_addr 800000004c276000
+[   61.172960] ath10k_pci 0002:03:00.0: boot init ce src ring id 4 entries 8192 base_addr 800000004c160000
+[   61.172984] ath10k_pci 0002:03:00.0: boot ce dest ring id 5 entries 512 base_addr 800000004c202000
+[   61.173010] ath10k_pci 0002:03:00.0: boot init ce src ring id 7 entries 2 base_addr 800000004c277000
+[   61.173033] ath10k_pci 0002:03:00.0: boot ce dest ring id 7 entries 2 base_addr 800000004b979000
+[   61.173044] ath10k_pci 0002:03:00.0: boot waiting target to initialise
+[   61.173057] ath10k_pci 0002:03:00.0: boot target indicator 0
+[   61.183072] ath10k_pci 0002:03:00.0: boot target indicator 0
+[   61.193088] ath10k_pci 0002:03:00.0: boot target indicator 2
+[   61.193105] ath10k_pci 0002:03:00.0: receive initialized event from target: 00000002
+[   61.200854] ath10k_pci 0002:03:00.0: boot target initialised
+[   61.200865] ath10k_pci 0002:03:00.0: boot warm reset complete
+[   61.200891] ath10k_pci 0002:03:00.0: boot init ce src ring id 0 entries 16 base_addr 800000004c274000
+[   61.200915] ath10k_pci 0002:03:00.0: boot ce dest ring id 1 entries 512 base_addr 800000004c200000
+[   61.200938] ath10k_pci 0002:03:00.0: boot ce dest ring id 2 entries 128 base_addr 800000004c275000
+[   61.200964] ath10k_pci 0002:03:00.0: boot init ce src ring id 3 entries 32 base_addr 800000004c276000
+[   61.201004] ath10k_pci 0002:03:00.0: boot init ce src ring id 4 entries 8192 base_addr 800000004c160000
+[   61.201028] ath10k_pci 0002:03:00.0: boot ce dest ring id 5 entries 512 base_addr 800000004c202000
+[   61.201054] ath10k_pci 0002:03:00.0: boot init ce src ring id 7 entries 2 base_addr 800000004c277000
+[   61.201077] ath10k_pci 0002:03:00.0: boot ce dest ring id 7 entries 2 base_addr 800000004b979000
+[   61.202108] ath10k_pci 0002:03:00.0: boot chip reset complete (warm)
+[   61.202153] ath10k_pci 0002:03:00.0: boot hif power up
+[   61.217222] ath10k_pci 0002:03:00.0: boot 988x chip reset
+[   61.217234] ath10k_pci 0002:03:00.0: boot warm reset
+[   61.252837] ath10k_pci 0002:03:00.0: boot init ce src ring id 0 entries 16 base_addr 800000004c274000
+[   61.252865] ath10k_pci 0002:03:00.0: boot ce dest ring id 1 entries 512 base_addr 800000004c200000
+[   61.252889] ath10k_pci 0002:03:00.0: boot ce dest ring id 2 entries 128 base_addr 800000004c275000
+[   61.252915] ath10k_pci 0002:03:00.0: boot init ce src ring id 3 entries 32 base_addr 800000004c276000
+[   61.252955] ath10k_pci 0002:03:00.0: boot init ce src ring id 4 entries 8192 base_addr 800000004c160000
+[   61.252979] ath10k_pci 0002:03:00.0: boot ce dest ring id 5 entries 512 base_addr 800000004c202000
+[   61.253004] ath10k_pci 0002:03:00.0: boot init ce src ring id 7 entries 2 base_addr 800000004c277000
+[   61.253028] ath10k_pci 0002:03:00.0: boot ce dest ring id 7 entries 2 base_addr 800000004b979000
+[   61.253039] ath10k_pci 0002:03:00.0: boot waiting target to initialise
+[   61.253051] ath10k_pci 0002:03:00.0: boot target indicator 0
+[   61.263068] ath10k_pci 0002:03:00.0: boot target indicator 0
+[   61.273084] ath10k_pci 0002:03:00.0: boot target indicator 2
+[   61.273101] ath10k_pci 0002:03:00.0: receive initialized event from target: 00000002
+[   61.280850] ath10k_pci 0002:03:00.0: boot target initialised
+[   61.292823] ath10k_pci 0002:03:00.0: boot init ce src ring id 0 entries 16 base_addr 800000004c274000
+[   61.292849] ath10k_pci 0002:03:00.0: boot ce dest ring id 1 entries 512 base_addr 800000004c200000
+[   61.292873] ath10k_pci 0002:03:00.0: boot ce dest ring id 2 entries 128 base_addr 800000004c275000
+[   61.292898] ath10k_pci 0002:03:00.0: boot init ce src ring id 3 entries 32 base_addr 800000004c276000
+[   61.292938] ath10k_pci 0002:03:00.0: boot init ce src ring id 4 entries 8192 base_addr 800000004c160000
+[   61.292963] ath10k_pci 0002:03:00.0: boot ce dest ring id 5 entries 512 base_addr 800000004c202000
+[   61.292988] ath10k_pci 0002:03:00.0: boot init ce src ring id 7 entries 2 base_addr 800000004c277000
+[   61.293011] ath10k_pci 0002:03:00.0: boot ce dest ring id 7 entries 2 base_addr 800000004b979000
+[   61.293022] ath10k_pci 0002:03:00.0: boot waiting target to initialise
+[   61.293035] ath10k_pci 0002:03:00.0: boot target indicator 0
+[   61.303050] ath10k_pci 0002:03:00.0: boot target indicator 0
+[   61.313065] ath10k_pci 0002:03:00.0: boot target indicator 2
+[   61.313081] ath10k_pci 0002:03:00.0: receive initialized event from target: 00000002
+[   61.320829] ath10k_pci 0002:03:00.0: boot target initialised
+[   61.320839] ath10k_pci 0002:03:00.0: boot warm reset complete
+[   61.320864] ath10k_pci 0002:03:00.0: boot init ce src ring id 0 entries 16 base_addr 800000004c274000
+[   61.320888] ath10k_pci 0002:03:00.0: boot ce dest ring id 1 entries 512 base_addr 800000004c200000
+[   61.320912] ath10k_pci 0002:03:00.0: boot ce dest ring id 2 entries 128 base_addr 800000004c275000
+[   61.320937] ath10k_pci 0002:03:00.0: boot init ce src ring id 3 entries 32 base_addr 800000004c276000
+[   61.320977] ath10k_pci 0002:03:00.0: boot init ce src ring id 4 entries 8192 base_addr 800000004c160000
+[   61.321001] ath10k_pci 0002:03:00.0: boot ce dest ring id 5 entries 512 base_addr 800000004c202000
+[   61.321026] ath10k_pci 0002:03:00.0: boot init ce src ring id 7 entries 2 base_addr 800000004c277000
+[   61.321050] ath10k_pci 0002:03:00.0: boot ce dest ring id 7 entries 2 base_addr 800000004b979000
+[   61.322077] ath10k_pci 0002:03:00.0: boot chip reset complete (warm)
+[   61.322103] ath10k_pci 0002:03:00.0: boot init ce src ring id 0 entries 16 base_addr 800000004c274000
+[   61.322127] ath10k_pci 0002:03:00.0: boot ce dest ring id 1 entries 512 base_addr 800000004c200000
+[   61.322150] ath10k_pci 0002:03:00.0: boot ce dest ring id 2 entries 128 base_addr 800000004c275000
+[   61.322176] ath10k_pci 0002:03:00.0: boot init ce src ring id 3 entries 32 base_addr 800000004c276000
+[   61.322215] ath10k_pci 0002:03:00.0: boot init ce src ring id 4 entries 8192 base_addr 800000004c160000
+[   61.322239] ath10k_pci 0002:03:00.0: boot ce dest ring id 5 entries 512 base_addr 800000004c202000
+[   61.322264] ath10k_pci 0002:03:00.0: boot init ce src ring id 7 entries 2 base_addr 800000004c277000
+[   61.322287] ath10k_pci 0002:03:00.0: boot ce dest ring id 7 entries 2 base_addr 800000004b979000
+[   61.323309] ath10k_pci 0002:03:00.0: Invalid pcie state addr
+[   61.328974] ath10k_pci 0002:03:00.0: failed to setup init config: -5
+[   61.335409] ath10k_pci 0002:03:00.0: could not start pci hif (-5)
+[   61.341507] ath10k_pci 0002:03:00.0: could not probe fw (-5)
+[   61.347401] ath10k_pci_init 3271:#########
+[   69.169203] ath10k_pci 0000:01:00.0: boot hif power up
+[   69.184292] ath10k_pci 0000:01:00.0: boot qca99x0 chip reset
+[   69.184314]  ath10k_pci_qca99x0_chip_reset 2468: ************
+[   69.190067] ath10k_pci 0000:01:00.0: boot cold reset
+[   69.212808] ath10k_pci 0000:01:00.0: boot cold reset complete
+[   69.212819]  ath10k_pci_qca99x0_chip_reset 2474: ************
+[   69.218570] ath10k_pci 0000:01:00.0: boot waiting target to initialise
+[   69.218583] ath10k_pci 0000:01:00.0: boot target indicator 2
+[   69.218599] ath10k_pci 0000:01:00.0: receive initialized event from target: 00000002
+[   69.226367] ath10k_pci 0000:01:00.0: boot target initialised
+[   69.226376]  ath10k_pci_qca99x0_chip_reset 2481: ************
+[   69.232126] ath10k_pci 0000:01:00.0: boot qca99x0 chip reset complete (cold)
+[   69.232152] ath10k_pci 0000:01:00.0: boot init ce src ring id 0 entries 16 base_addr 800000004ca68000
+[   69.232176] ath10k_pci 0000:01:00.0: boot ce dest ring id 1 entries 512 base_addr 800000004c9d8000
+[   69.232199] ath10k_pci 0000:01:00.0: boot ce dest ring id 2 entries 128 base_addr 800000004ca69000
+[   69.232222] ath10k_pci 0000:01:00.0: boot init ce src ring id 3 entries 32 base_addr 800000004ca6a000
+[   69.232261] ath10k_pci 0000:01:00.0: boot init ce src ring id 4 entries 8192 base_addr 800000004c080000
+[   69.232284] ath10k_pci 0000:01:00.0: boot ce dest ring id 5 entries 512 base_addr 800000004cba4000
+[   69.232308] ath10k_pci 0000:01:00.0: boot init ce src ring id 7 entries 2 base_addr 800000004ca6b000
+[   69.232330] ath10k_pci 0000:01:00.0: boot ce dest ring id 7 entries 2 base_addr 800000004ca6c000
+[   69.232352] ath10k_pci 0000:01:00.0: boot ce dest ring id 8 entries 128 base_addr 800000004ca6d000
+[   69.243485] ath10k_core_start 1810: it is awake!
+[   69.248108] ath10k_pci 0000:01:00.0: bmi start
+[   69.248121] ath10k_pci 0000:01:00.0: bmi write address 0x400800 length 4
+[   72.252786] ath10k_pci 0000:01:00.0: bmi cmd took 301 jiffies hz 100 ret -145
+[   72.253071] ath10k_pci 0000:01:00.0: unable to write to the device (-145)
+[   72.259866] ath10k_init_configure_target 429: settings HTC version ########
+[   72.266856] ath10k_pci 0000:01:00.0: settings HTC version failed (-145)
+[   72.273486] ath10k_pci 0000:01:00.0: Could not init core: -22
+[   72.279237] ath10k_pci 0000:01:00.0: boot hif power down
+

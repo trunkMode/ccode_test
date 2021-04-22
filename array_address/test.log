@@ -1,0 +1,4 @@
+= Start
+@ /lib64/libc.so.6:(_IO_file_doallocate+0x72)[0x7f17122f34a2] + 0x25d6450 0x400
+@ ./a.out:[0x4006c7] + 0x25d6860 0x64
+@ /lib64/libc.so.6:[0x7f17123f61d4] - 0x25d6450

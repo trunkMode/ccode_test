@@ -11,7 +11,7 @@ int main()
     printf("ctime = %s\n", ctime(&ts));
 
     tm = localtime(&ts);
-    printf("%d/%d/%d %d:%d:%d\n", tm->tm_year + 1900,
+    printf("localtime:%d/%d/%d %d:%d:%d\n", tm->tm_year + 1900,
            tm->tm_mon + 1, tm->tm_mday, tm->tm_hour, tm->tm_min, tm->tm_sec);
 
     /* gettimeofday */
@@ -20,10 +20,14 @@ int main()
 
 	struct timeval tv;
 	struct timezone tz;
+	char time_str[512] = {0};
 	gettimeofday(&tv, &tz);
 	tm = localtime(&tv.tv_sec);
-	printf("%d/%d/%d %d:%d:%d\n", tm->tm_year + 1900, 
+	printf("localtime:%d/%d/%d %d:%d:%d\n", tm->tm_year + 1900, 
 		   tm->tm_mon + 1, tm->tm_mday, tm->tm_hour, tm->tm_min, tm->tm_sec);
+
+	strftime(time_str, sizeof(time_str), "%F %T", tm);
+	printf("strftime: %s\n", time_str);
 
 	printf("tz_minuteswest = %d, tz_dsttime = %d\n", tz.tz_minuteswest, tz.tz_dsttime);
 
@@ -34,7 +38,7 @@ int main()
 
 	gettimeofday(&tv, &tz);
 	tm = localtime(&tv.tv_sec);
-	printf("%d/%d/%d %d:%d:%d\n", tm->tm_year + 1900, 
+	printf("localtime:%d/%d/%d %d:%d:%d\n", tm->tm_year + 1900, 
 		   tm->tm_mon + 1, tm->tm_mday, tm->tm_hour, tm->tm_min, tm->tm_sec);
 
 	printf("tz_minuteswest = %d, tz_dsttime = %d\n", tz.tz_minuteswest, tz.tz_dsttime);
