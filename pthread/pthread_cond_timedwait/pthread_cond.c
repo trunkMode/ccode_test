@@ -8,7 +8,7 @@
 pthread_mutex_t         mutex;
 pthread_mutexattr_t     mutex_attr;
 pthread_cond_t          cond;
-#define COND_WAIT_COUNT     1
+#define COND_WAIT_COUNT     10
 
 #define PTHREAD_TIMED_WAIT(task_name, n)                                            \
 do {                                                                                \
@@ -40,9 +40,10 @@ void *cond_wait_thread(void *arg)
     snprintf(name, sizeof(name), "cond_wait_%d", i);
     prctl(PR_SET_NAME, name, 0, 0, 0);
 
+    sleep(5);
     while (1) {
         pthread_mutex_lock(&mutex);
-        PTHREAD_TIMED_WAIT(name, 2);
+        PTHREAD_TIMED_WAIT(name, 200);
         printf("%s %d: %s is processing something\n", name, __LINE__, name);
         pthread_mutex_unlock(&mutex);
     //    sleep(1);
@@ -51,23 +52,26 @@ void *cond_wait_thread(void *arg)
 
 void *cond_notify_thread(void *arg)
 {
+    int cnt = 0;
     pthread_detach(pthread_self());
 
     prctl(PR_SET_NAME, "notify", 0, 0, 0);
 
-    while (1) {
-        sleep(4);
+    sleep(2);
+    while (cnt++ < 10) {
         pthread_mutex_lock(&mutex);
+        printf(" =============== notify start============ \n");
 #if 1
         pthread_cond_signal(&cond);
-        pthread_cond_signal(&cond);
-        pthread_cond_signal(&cond);
-        pthread_cond_signal(&cond);
+//        pthread_cond_signal(&cond);
+//        pthread_cond_signal(&cond);
+//        pthread_cond_signal(&cond);
 #else
         pthread_cond_broadcast(&cond);
 #endif
         printf(" =============== notify end============ \n");
         pthread_mutex_unlock(&mutex);
+//	sleep(1);
     }
 }
 
@@ -84,13 +88,19 @@ int main()
         return -1;
     }
 
+#if 1
+    if (pthread_create(&tid, NULL, cond_notify_thread, NULL)) {
+        printf("Failed to create cond_notify_thread \n");
+        return -1;
+    }
+#endif
     for (i = 0; i < COND_WAIT_COUNT; i++) {
         if (pthread_create(&tid, NULL, cond_wait_thread, (void *)i)) {
             printf("Failed to create cond_wait_thread_%d\n", i);
             return -1;
         }
     }
-#if 1
+#if 0
     if (pthread_create(&tid, NULL, cond_notify_thread, NULL)) {
         printf("Failed to create cond_notify_thread \n");
         return -1;
