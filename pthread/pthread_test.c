@@ -1,34 +1,45 @@
-#include <unistd.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <pthread.h>
+#include <assert.h>
 
-typedef void*(*FUNCPTR)(void *);
+volatile int a = 0;
+volatile int b = 0;
 
-void *thread_task(void *arg)
+void* writer(void* arg)
 {
-	int ret;
-	printf("thread task has been started !\n");
-
-	ret = pthread_detach(pthread_self());
-	printf("(1) call pthread_detach return %d\n", ret);
-
-	ret = pthread_detach(pthread_self());
-	printf("(2) call pthread_detach return %d\n", ret);
-
-	ret = pthread_detach(pthread_self());
-	printf("(3) call pthread_detach return %d\n", ret);
-	return NULL;
+    a = 1;          // write #1
+    b = 1;          // write #2 (may become visible first!)
+    return NULL;
 }
+
+void* reader(void* arg)
+{
+    while (b == 0); // wait until writer sets b
+
+    // NO MEMORY BARRIER HERE
+    if (a == 0) {
+        printf("❌ Reordering observed: b=1 but a=0\n");
+        assert(0);
+    }
+    return NULL;
+}
+
 int main()
 {
-	pthread_t tid;
+    pthread_t t1, t2;
 
-	if (pthread_create(&tid, NULL, (FUNCPTR)thread_task, NULL)) {
-		printf("Failed to create threads\n");
-		return -1;
-	}
+    for (int i = 0; i < 10000000; i++) {
+        a = 0;
+        b = 0;
 
-	sleep(20);
+        pthread_create(&t2, NULL, reader, NULL);
+        pthread_create(&t1, NULL, writer, NULL);
 
-	return 0;
+        pthread_join(t1, NULL);
+        pthread_join(t2, NULL);
+    }
+
+    printf("Done\n");
+    return 0;
 }
+

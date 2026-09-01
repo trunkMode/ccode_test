@@ -30,7 +30,7 @@ int main()
 
 	mtrace();
 	
-	printf("&a = %p, &a[0] = %p, &&a[0] = %p\n", &a, &a[0], &a);
+	printf("char a[6]; The address is:\na=%p, &a = %p, &a[0] = %p, &&a[0] = %p\n", a, &a, &a[0], &a);
 	printf("p = %p, q = %p\n");
 
 	two_dimension_array_test();
